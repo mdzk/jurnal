@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - SPPD</title>
+    <title>Login</title>
 
-    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/compiled/png/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/app.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/app-dark.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/auth.css" />
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/compiled/png/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/app.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/app-dark.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/auth.css" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
-                        <a href="index.html"><img src="<?= base_url(); ?>/assets/compiled/png/logo.png" alt="Logo" /></a>
+                        <a href="index.html"><img src="<?= base_url(); ?>assets/compiled/png/logo.png" alt="Logo" /></a>
                     </div>
                     <h1 class="auth-title">Log in.</h1>
                     <p class="auth-subtitle mb-5">

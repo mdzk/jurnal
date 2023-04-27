@@ -4,29 +4,29 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - SPPD</title>
+    <title>Dashboard</title>
 
-    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/compiled/png/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="<?= base_url(); ?>assets/compiled/png/favicon.png" type="image/x-icon" />
 
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/app.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/app-dark.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/iconly.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/app.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/app-dark.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/iconly.css" />
 
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/extensions/sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/extensions/sweetalert2/sweetalert2.min.css" />
 
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/extensions/simple-datatables/style.css" />
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/compiled/css/table-datatable.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/extensions/simple-datatables/style.css" />
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/compiled/css/table-datatable.css" />
 </head>
 
 <body>
-    <script src="<?= base_url(); ?>/assets/static/js/initTheme.js"></script>
+    <script src="<?= base_url(); ?>assets/static/js/initTheme.js"></script>
     <div id="app">
         <div id="sidebar">
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="index.html"><img src="<?= base_url(); ?>/assets/compiled/png/logo.png" alt="Logo" srcset="" /></a>
+                            <a href="index.html"><img src="<?= base_url(); ?>assets/compiled/png/logo.png" alt="Logo" srcset="" /></a>
                         </div>
                         <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 21 21">
@@ -104,7 +104,7 @@
             <footer>
                 <div class="footer clearfix mb-0 text-muted">
                     <div class="float-start">
-                        <p><?= date('Y'); ?> &copy; SPPD</p>
+                        <p><?= date('Y'); ?> &copy; Rancangan Jurnal Harian</p>
                     </div>
                     <!-- <div class="float-end">
                         <p>
@@ -117,15 +117,15 @@
             </footer>
         </div>
     </div>
-    <script src="<?= base_url(); ?>/assets/static/js/components/dark.js"></script>
-    <script src="<?= base_url(); ?>/assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="<?= base_url(); ?>assets/static/js/components/dark.js"></script>
+    <script src="<?= base_url(); ?>assets/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 
-    <script src="<?= base_url(); ?>/assets/compiled/js/app.js"></script>
-    <script src="<?= base_url(); ?>/assets/extensions/jquery/jquery.min.js"></script>
+    <script src="<?= base_url(); ?>assets/compiled/js/app.js"></script>
+    <script src="<?= base_url(); ?>assets/extensions/jquery/jquery.min.js"></script>
 
 
     <!-- Need: Apexcharts -->
-    <script src="<?= base_url(); ?>/assets/extensions/apexcharts/apexcharts.min.js"></script>
+    <script src="<?= base_url(); ?>assets/extensions/apexcharts/apexcharts.min.js"></script>
     <script>
         var wtf = $.ajax({
             url: "<?= base_url() . '/api/terlaksana'; ?>",
@@ -133,10 +133,10 @@
             dataType: 'json'
         }).responseJSON;
     </script>
-    <script src="<?= base_url(); ?>/assets/static/js/pages/dashboard.js"></script>
+    <script src="<?= base_url(); ?>assets/static/js/pages/dashboard.js"></script>
 
     <!-- Sweetalert -->
-    <script src="<?= base_url(); ?>/assets/extensions/sweetalert2/sweetalert2.min.js"></script>
+    <script src="<?= base_url(); ?>assets/extensions/sweetalert2/sweetalert2.min.js"></script>
 
     <?php if (session()->getFlashdata('pesan')) : ?>
         <script>
@@ -148,8 +148,8 @@
         </script>
     <?php endif; ?>
 
-    <script src="<?= base_url(); ?>/assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
-    <script src="<?= base_url(); ?>/assets/static/js/pages/simple-datatables.js"></script>
+    <script src="<?= base_url(); ?>assets/extensions/simple-datatables/umd/simple-datatables.js"></script>
+    <script src="<?= base_url(); ?>assets/static/js/pages/simple-datatables.js"></script>
 </body>
 
 </html>
