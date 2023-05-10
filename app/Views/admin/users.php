@@ -32,7 +32,7 @@
     <section class="section">
         <div class="row" id="basic-table">
             <div class="col-12 col-md-6">
-                <button class="btn btn-primary rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">+ Pengguna Baru</button>
+                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">+ Pengguna Baru</button>
                 <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
 
@@ -40,8 +40,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title">Registration</h5>
-                                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
-                                        <i data-feather="x"></i>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                     </button>
                                 </div>
 
@@ -123,17 +122,13 @@
                                                 <td class="text-bold-500">
                                                     <ul class="list-inline m-0 d-flex">
                                                         <li class="list-inline-item mail-delete">
-                                                            <button type="button" class="btn btn-light-primary btn-icon action-icon" data-bs-toggle="modal" data-bs-target="#edituser<?= $user['id_users']; ?>">
-                                                                <span class="fonticon-wrap">
-                                                                    <i class="bi bi-pencil-fill"></i>
-                                                                </span>
+                                                            <button type="button" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#edituser<?= $user['id_users']; ?>">
+                                                                <i class="ti-pencil"></i>
                                                             </button>
                                                         </li>
                                                         <li class="list-inline-item mail-unread">
-                                                            <button type="button" class="btn btn-light-danger btn-icon action-icon" data-bs-toggle="modal" data-bs-target="#hapususer<?= $user['id_users']; ?>">
-                                                                <span class="fonticon-wrap d-inline">
-                                                                    <i class="bi bi-trash-fill"></i>
-                                                                </span>
+                                                            <button type="button" class="td-n btn c-red-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapususer<?= $user['id_users']; ?>">
+                                                                <i class="ti-trash"></i>
                                                             </button>
                                                         </li>
 
@@ -145,8 +140,7 @@
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 class="modal-title">Peringatan</h5>
-                                                                    <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
-                                                                        <i data-feather="x"></i>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                                                     </button>
                                                                 </div>
 
@@ -163,7 +157,7 @@
 
                                                                             <span class="d-sm-block">Tidak</span>
                                                                         </button>
-                                                                        <button name="submit" type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                                                                        <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
 
                                                                             <span class="d-sm-block">Ya</span>
                                                                         </button>
@@ -186,8 +180,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title">Edit user</h5>
-                                                                <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
-                                                                    <i data-feather="x"></i>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                                                                 </button>
                                                             </div>
                                                             <div class="modal-body">
@@ -245,7 +238,7 @@
 
                                                                     <span class="d-sm-block">Batal</span>
                                                                 </button>
-                                                                <button name="submit" type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                                                <button name="submit" type="submit" class="btn btn-color btn-primary ml-1" data-bs-dismiss="modal">
 
                                                                     <span class="d-sm-block">Simpan</span>
                                                                 </button>

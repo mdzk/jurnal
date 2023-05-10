@@ -47,11 +47,11 @@ class Setting extends BaseController
             ]);
 
             session()->setFlashdata('pesan', 'Data berhasil diedit');
-            return redirect()->to('setting');
+            return redirect()->back();
         } else {
             // JIKA TIDAK VALID
             Session()->setFlashdata('errors', \config\Services::validation()->getErrors());
-            return redirect()->to('setting');
+            return redirect()->back();
         }
     }
 }

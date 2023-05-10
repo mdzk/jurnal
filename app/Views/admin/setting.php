@@ -48,7 +48,7 @@
                                         <div class="ms-3 name">
                                             <span class="text-muted">Nama</span>
                                             <h5 class="font-bold"><?= $user['name']; ?>
-                                                <button type="button" class="btn btn-sm btn-light-secondary btn-icon action-icon" data-bs-toggle="modal" data-bs-target="#editnama"> Edit
+                                                <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editnama"> Edit
                                                 </button>
                                             </h5>
                                         </div>
@@ -75,7 +75,7 @@
                                         <div class="ms-3 name">
                                             <span class="text-muted">Username</span>
                                             <h5 class="font-bold"><?= $user['username']; ?>
-                                                <button type="button" class="btn btn-sm btn-light-secondary btn-icon action-icon" data-bs-toggle="modal" data-bs-target="#editusername"> Edit
+                                                <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editusername"> Edit
                                                 </button>
                                             </h5>
                                         </div>
@@ -101,7 +101,7 @@
 
                                         <div class="ms-3 name">
                                             <h5 class="font-bold">Password
-                                                <button type="button" class="btn btn-sm btn-light-secondary btn-icon action-icon" data-bs-toggle="modal" data-bs-target="#editpassword"> Edit
+                                                <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editpassword"> Edit
                                                 </button>
                                             </h5>
                                         </div>
@@ -130,7 +130,7 @@
                                 <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
                                     <span class="d-sm-block">Batal</span>
                                 </button>
-                                <button type="submit" name="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                <button type="submit" name="submit" class="btn btn-primary ml-1 btn-color" data-bs-dismiss="modal">
                                     <span class="d-sm-block">Simpan</span>
                                 </button>
                             </div>
@@ -157,7 +157,7 @@
                                 <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
                                     <span class="d-sm-block">Batal</span>
                                 </button>
-                                <button type="submit" name="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                <button type="submit" name="submit" class="btn btn-primary ml-1 btn-color" data-bs-dismiss="modal">
                                     <span class="d-sm-block">Simpan</span>
                                 </button>
                             </div>
@@ -191,7 +191,7 @@
                                 <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
                                     <span class="d-sm-block">Batal</span>
                                 </button>
-                                <button type="submit" name="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                <button type="submit" name="submit" class="btn btn-primary ml-1 btn-color" data-bs-dismiss="modal">
                                     <span class="d-sm-block">Simpan</span>
                                 </button>
                             </div>

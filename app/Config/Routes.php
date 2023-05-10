@@ -37,6 +37,21 @@ $routes->get('/', 'Home::index', ['as' => 'home', 'filter' => 'auth']);
 $routes->post('/pdf/spt', 'PdfController::spt', ['as' => 'pdf-spt', 'filter' => 'auth']);
 $routes->post('/pdf/kwitansi', 'PdfController::kwitansi', ['as' => 'pdf-kwitansi', 'filter' => 'auth']);
 
+// Kinerja Section
+$routes->get('/kinerja', 'Kinerja::index', ['as' => 'kinerja', 'filter' => 'auth']);
+$routes->post('/kinerja/add', 'Kinerja::add', ['as' => 'kinerja-add', 'filter' => 'auth']);
+$routes->get('/kinerja/edit/(:num)', 'Kinerja::edit/$1', ['as' => 'kinerja-edit', 'filter' => 'auth']);
+$routes->post('/kinerja/delete', 'Kinerja::delete', ['as' => 'kinerja-delete', 'filter' => 'auth']);
+$routes->post('/kinerja/update', 'Kinerja::update', ['as' => 'kinerja-update', 'filter' => 'auth']);
+
+// Jurnal Section
+$routes->get('/jurnal', 'Jurnal::index', ['as' => 'jurnal', 'filter' => 'auth']);
+$routes->post('/jurnal/save', 'Jurnal::save', ['as' => 'jurnal-save', 'filter' => 'auth']);
+$routes->get('/jurnal/add', 'Jurnal::add', ['as' => 'jurnal-add', 'filter' => 'auth']);
+$routes->get('/jurnal/edit/(:num)', 'Jurnal::edit/$1', ['as' => 'jurnal-edit', 'filter' => 'auth']);
+$routes->post('/jurnal/delete', 'Jurnal::delete', ['as' => 'jurnal-delete', 'filter' => 'auth']);
+$routes->post('/jurnal/update', 'Jurnal::update', ['as' => 'jurnal-update', 'filter' => 'auth']);
+
 // Users Section
 $routes->get('/users', 'Users::index', ['as' => 'users', 'filter' => 'auth:admin']);
 $routes->post('/users/add', 'Users::add', ['as' => 'users-add', 'filter' => 'auth:admin']);

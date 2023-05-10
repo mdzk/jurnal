@@ -9,13 +9,16 @@ class Users extends BaseController
 
     public function index()
     {
-
-        $user       = new UsersModel();
-        $data = [
-            'user'  => $user->find(session()->get('id_users')),
-            'users'  => $user->findAll(),
-        ];
-        return view('admin/users', $data);
+        if (session('role') == 'admin') {
+            $user       = new UsersModel();
+            $data = [
+                'user'  => $user->find(session()->get('id_users')),
+                'users'  => $user->findAll(),
+            ];
+            return view('admin/users', $data);
+        } else {
+            return redirect()->to('/');
+        }
     }
 
     public function add()
