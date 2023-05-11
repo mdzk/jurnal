@@ -32,6 +32,39 @@
         <div class="row" id="basic-table">
             <div class="col-12 col-md-12">
                 <a href="<?= base_url(); ?>pegawai/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Pegawai Harian</a>
+                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Pegawai</button>
+                <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <form action="<?= route_to('pdf-pegawai'); ?>" method="POST">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Cetak Pegawai</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <label for="name">Cetak Berdasarkan</label>
+                                        <div class="position-relative">
+                                            <select class="form-control" name="filter" id="">
+                                                <option value="pangkat">Pangkat</option>
+                                                <option value="jabatan">Jabatan</option>
+                                                <option value="masa_kerja">Masa Kerja</option>
+                                                <option value="pendidikan">Pendidikan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button name="submit" type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                        <span class="d-sm-block">Submit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                     <div class="table-responsive">
                         <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">

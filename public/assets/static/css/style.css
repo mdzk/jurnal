@@ -14487,7 +14487,9 @@ a.btn:hover {
 .sidebar-logo a .logo>img {
   background-position: 0;
   background-repeat: no-repeat;
-  width: 40px
+  width: 40px;
+  padding: 10px;
+  margin-left: 13px;
 }
 
 .sidebar-logo a .logo-text {

@@ -39,7 +39,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Kegiatan</th>
-                                <th>Nama User</th>
+                                <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
+                                    <th>Nama User</th>
+                                <?php endif; ?>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>Tempat</th>
@@ -53,7 +55,9 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Kegiatan</th>
-                                <th>Nama User</th>
+                                <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
+                                    <th>Nama User</th>
+                                <?php endif; ?>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>Tempat</th>
@@ -69,7 +73,7 @@
                                 <tr>
                                     <td><?= $i++; ?></td>
                                     <td><?= $data['nama']; ?></td>
-                                    <?php if (session('role') == 'admin') : ?>
+                                    <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                         <td><?= $data['name']; ?></td>
                                     <?php endif; ?>
                                     <td><?= $data['tanggal']; ?></td>

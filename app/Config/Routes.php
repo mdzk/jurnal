@@ -34,8 +34,10 @@ $routes->setAutoRoute(false);
 // }, ['as' => 'home', 'filter' => 'auth:admin']);
 
 $routes->get('/', 'Home::index', ['as' => 'home', 'filter' => 'auth']);
-$routes->post('/pdf/spt', 'PdfController::spt', ['as' => 'pdf-spt', 'filter' => 'auth']);
-$routes->post('/pdf/kwitansi', 'PdfController::kwitansi', ['as' => 'pdf-kwitansi', 'filter' => 'auth']);
+// $routes->get('/pegawai', function () {
+//     return view('export/pdf_pegawai');
+// });
+$routes->post('/pdf/pegawai', 'PdfController::pegawai', ['as' => 'pdf-pegawai', 'filter' => 'auth']);
 
 // Kinerja Section
 $routes->get('/kinerja', 'Kinerja::index', ['as' => 'kinerja', 'filter' => 'auth']);
@@ -61,7 +63,6 @@ $routes->get('/pegawai/add', 'Pegawai::add', ['as' => 'pegawai-add', 'filter' =>
 $routes->get('/pegawai/edit/(:num)', 'Pegawai::edit/$1', ['as' => 'pegawai-edit', 'filter' => 'auth']);
 $routes->post('/pegawai/delete', 'Pegawai::delete', ['as' => 'pegawai-delete', 'filter' => 'auth']);
 $routes->post('/pegawai/update', 'Pegawai::update', ['as' => 'pegawai-update', 'filter' => 'auth']);
-
 
 // Users Section
 $routes->get('/users', 'Users::index', ['as' => 'users', 'filter' => 'auth:admin']);

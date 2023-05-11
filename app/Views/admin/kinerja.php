@@ -92,7 +92,7 @@
                                 <th>Realisasi Waktu</th>
                                 <th>Kuantitas</th>
                                 <th>Point</th>
-                                <?php if (session('role') == 'admin') : ?>
+                                <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                     <th>Nama User</th>
                                 <?php endif; ?>
                                 <th>Status</th>
@@ -106,7 +106,7 @@
                                 <th>Realisasi Waktu</th>
                                 <th>Kuantitas</th>
                                 <th>Point</th>
-                                <?php if (session('role') == 'admin') : ?>
+                                <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                     <th>Nama User</th>
                                 <?php endif; ?>
                                 <th>Status</th>
@@ -122,7 +122,7 @@
                                     <td><?= $data['realisasi']; ?></td>
                                     <td><?= $data['kuantitas']; ?></td>
                                     <td><?= $data['point']; ?></td>
-                                    <?php if (session('role') == 'admin') : ?>
+                                    <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                         <td><?= $data['name']; ?></td>
                                     <?php endif; ?>
                                     <td><span class="badge bg-<?= $data['status'] == 'pending' ? 'warning' : 'primary'; ?>"><?= $data['status']; ?></span></td>

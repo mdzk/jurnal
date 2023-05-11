@@ -88,7 +88,7 @@
                                         <div class="logo"><img src="<?= base_url(); ?>assets/static/images/logo.png" alt=""></div>
                                     </div>
                                     <div class="peer peer-greed">
-                                        <h5 class="lh-1 mB-0 logo-text">Adminator</h5>
+                                        <h5 class="lh-1 mB-0 logo-text">Jurnal Harian</h5>
                                     </div>
                                 </div>
                             </a></div>
