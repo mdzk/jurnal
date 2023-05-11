@@ -101,10 +101,11 @@
                     <li class="nav-item <?= get_url(2, '') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('home'); ?>"><span class="icon-holder"><i class="c-blue-500 ti-home"></i> </span><span class="title">Dashboard</span></a></li>
                     <li class="nav-item <?= get_url(2, 'kinerja') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('kinerja'); ?>"><span class="icon-holder"><i class="c-red-500 ti-files"></i> </span><span class="title">Capaian Kinerja</span></a></li>
                     <li class="nav-item <?= get_url(2, 'jurnal') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('jurnal'); ?>"><span class="icon-holder"><i class="c-purple-500 ti-files"></i> </span><span class="title">Jurnal Harian</span></a></li>
+                    <li class="nav-item <?= get_url(2, 'pegawai') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('pegawai'); ?>"><span class="icon-holder"><i class="c-blue-500 ti-files"></i> </span><span class="title">Pegawai</span></a></li>
                     <?php if (session('role') == 'admin') : ?>
-                        <li class="nav-item <?= get_url(2, 'users') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('users'); ?>"><span class="icon-holder"><i class="c-green-500 ti-user"></i> </span><span class="title">Kelola Akun</span></a></li>
+                        <li class="nav-item <?= get_url(2, 'users') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('users'); ?>"><span class="icon-holder"><i class="c-green-500 fa fa-users"></i> </span><span class="title">Kelola Akun</span></a></li>
                     <?php endif; ?>
-                    <li class="nav-item <?= get_url(2, 'setting') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('setting'); ?>"><span class="icon-holder"><i class="c-brown-500 ti-settings"></i> </span><span class="title">Pengaturan</span></a></li>
+                    <li class="nav-item <?= get_url(2, 'setting') ? 'actived' : ''; ?>"><a class="sidebar-link" href="<?= route_to('setting'); ?>"><span class="icon-holder"><i class="c-brown-500 fa fa-gear"></i> </span><span class="title">Pengaturan</span></a></li>
 
                     <!-- <li class="nav-item dropdown"><a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder"><i class="c-red-500 ti-files"></i> </span><span class="title">Pages</span> <span class="arrow"><i class="ti-angle-right"></i></span></a>
                         <ul class="dropdown-menu">

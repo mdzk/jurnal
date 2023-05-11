@@ -39,10 +39,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Kegiatan</th>
+                                <th>Nama User</th>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>Tempat</th>
                                 <th>Penyelenggara</th>
+                                <th>Status</th>
                                 <th>Foto</th>
                                 <th>Action</th>
                             </tr>
@@ -51,10 +53,12 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama Kegiatan</th>
+                                <th>Nama User</th>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
                                 <th>Tempat</th>
                                 <th>Penyelenggara</th>
+                                <th>Status</th>
                                 <th>Foto</th>
                                 <th>Action</th>
                             </tr>
@@ -65,61 +69,110 @@
                                 <tr>
                                     <td><?= $i++; ?></td>
                                     <td><?= $data['nama']; ?></td>
+                                    <?php if (session('role') == 'admin') : ?>
+                                        <td><?= $data['name']; ?></td>
+                                    <?php endif; ?>
                                     <td><?= $data['tanggal']; ?></td>
                                     <td><?= $data['jam_mulai']; ?> - <?= $data['jam_berakhir']; ?></td>
                                     <td><?= $data['tempat']; ?></td>
                                     <td><?= $data['penyelenggara']; ?></td>
+                                    <td><span class="badge bg-<?= $data['status'] == 'pending' ? 'warning' : 'primary'; ?>"><?= $data['status']; ?></span></td>
                                     <td>
                                         <img src="<?= base_url(); ?>foto/<?= $data['foto'] ?>" style="width: 150px; height: 150px;object-fit: cover;">
                                     </td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
-                                            <li class="list-inline-item mail-delete">
-                                                <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
-                                                    <i class="ti-pencil"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item mail-unread">
-                                                <button type="button" class="td-n btn c-red-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapusjurnal<?= $data['id_jurnal']; ?>">
-                                                    <i class="ti-trash"></i>
-                                                </button>
-                                            </li>
+                                            <?php if ($data['status'] == 'pending') : ?>
+
+                                                <li class="list-inline-item mail-delete">
+                                                    <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
+                                                        <i class="ti-pencil"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="list-inline-item mail-unread">
+                                                    <button type="button" class="td-n btn c-red-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapusjurnal<?= $data['id_jurnal']; ?>">
+                                                        <i class="ti-trash"></i>
+                                                    </button>
+                                                </li>
+
+                                                <!--Hapus User Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="hapusjurnal<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Peringatan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('jurnal-delete'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <p>
+                                                                        Apakah anda yakin ingin menghapus jurnal harian ini?
+                                                                    </p>
+                                                                </div>
+                                                                <input type="number" name="id_jurnal" value="<?= $data['id_jurnal']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Hapus User Modal Content End-->
+                                            <?php endif; ?>
+
+                                            <?php if ($data['status'] == 'pending' && session('role') == 'admin') : ?>
+                                                <li class="list-inline-item mail-unread">
+                                                    <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnal<?= $data['id_jurnal']; ?>">
+                                                        <i class="ti-check"></i>
+                                                    </button>
+                                                </li>
+
+                                                <!--Verifikasi Jurnal Harian Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="verifjurnal<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Peringatan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('jurnal-verif'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <p>
+                                                                        Apakah anda yakin ingin verifikasi jurnal harian ini?
+                                                                    </p>
+                                                                </div>
+                                                                <input type="number" name="id_jurnal" value="<?= $data['id_jurnal']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Verifikasi Jurnal Harian Modal Content End-->
+                                            <?php endif; ?>
                                         </ul>
                                     </td>
                                 </tr>
 
-                                <!--Hapus User Modal Content -->
-                                <div class="modal fade text-left modal-borderless" id="hapusjurnal<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Peringatan</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                </button>
-                                            </div>
 
-                                            <form action="<?= route_to('jurnal-delete'); ?>" method="POST">
-
-                                                <div class="modal-body">
-                                                    <p>
-                                                        Apakah anda yakin ingin menghapus jurnal harian ini?
-                                                    </p>
-                                                </div>
-                                                <input type="number" name="id_jurnal" value="<?= $data['id_jurnal']; ?>" hidden>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
-                                                        <span class="d-sm-block">Tidak</span>
-                                                    </button>
-                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
-                                                        <span class="d-sm-block">Ya</span>
-                                                    </button>
-                                                </div>
-                                            </form>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Hapus User Modal Content End-->
                             <?php endforeach; ?>
                         </tbody>
                     </table>

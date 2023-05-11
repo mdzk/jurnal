@@ -43,6 +43,7 @@ $routes->post('/kinerja/add', 'Kinerja::add', ['as' => 'kinerja-add', 'filter' =
 $routes->get('/kinerja/edit/(:num)', 'Kinerja::edit/$1', ['as' => 'kinerja-edit', 'filter' => 'auth']);
 $routes->post('/kinerja/delete', 'Kinerja::delete', ['as' => 'kinerja-delete', 'filter' => 'auth']);
 $routes->post('/kinerja/update', 'Kinerja::update', ['as' => 'kinerja-update', 'filter' => 'auth']);
+$routes->post('/kinerja/verif', 'Kinerja::verif', ['as' => 'kinerja-verif', 'filter' => 'auth']);
 
 // Jurnal Section
 $routes->get('/jurnal', 'Jurnal::index', ['as' => 'jurnal', 'filter' => 'auth']);
@@ -51,6 +52,16 @@ $routes->get('/jurnal/add', 'Jurnal::add', ['as' => 'jurnal-add', 'filter' => 'a
 $routes->get('/jurnal/edit/(:num)', 'Jurnal::edit/$1', ['as' => 'jurnal-edit', 'filter' => 'auth']);
 $routes->post('/jurnal/delete', 'Jurnal::delete', ['as' => 'jurnal-delete', 'filter' => 'auth']);
 $routes->post('/jurnal/update', 'Jurnal::update', ['as' => 'jurnal-update', 'filter' => 'auth']);
+$routes->post('/jurnal/verif', 'Jurnal::verif', ['as' => 'jurnal-verif', 'filter' => 'auth']);
+
+// Pegawai Section
+$routes->get('/pegawai', 'Pegawai::index', ['as' => 'pegawai', 'filter' => 'auth']);
+$routes->post('/pegawai/save', 'Pegawai::save', ['as' => 'pegawai-save', 'filter' => 'auth']);
+$routes->get('/pegawai/add', 'Pegawai::add', ['as' => 'pegawai-add', 'filter' => 'auth']);
+$routes->get('/pegawai/edit/(:num)', 'Pegawai::edit/$1', ['as' => 'pegawai-edit', 'filter' => 'auth']);
+$routes->post('/pegawai/delete', 'Pegawai::delete', ['as' => 'pegawai-delete', 'filter' => 'auth']);
+$routes->post('/pegawai/update', 'Pegawai::update', ['as' => 'pegawai-update', 'filter' => 'auth']);
+
 
 // Users Section
 $routes->get('/users', 'Users::index', ['as' => 'users', 'filter' => 'auth:admin']);

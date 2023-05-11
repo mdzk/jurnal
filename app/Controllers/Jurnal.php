@@ -11,9 +11,15 @@ class Jurnal extends BaseController
     {
 
         $jurnal = new JurnalModel();
-        $data = [
-            'jurnal'  => $jurnal->findAll(),
-        ];
+        if (session('role') == 'user') {
+            $data = [
+                'jurnal'  => $jurnal->where('id_users', session('id_users'))->findAll(),
+            ];
+        } else {
+            $data = [
+                'jurnal'  => $jurnal->join('users', 'users.id_users = jurnal.id_users')->findAll(),
+            ];
+        }
         return view('admin/jurnal', $data);
     }
 
@@ -81,6 +87,7 @@ class Jurnal extends BaseController
                 'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                 'penyelenggara' => $this->request->getVar('penyelenggara'),
                 'id_users' => session('id_users'),
+                'status' => "pending",
                 'foto' => $nama_file,
             ]);
             $foto->move('foto', $nama_file);
@@ -98,17 +105,39 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $data = $jurnal->find($this->request->getVar('id_jurnal'));
-        unlink('foto/' . $data['foto']);
-        $jurnal->delete($this->request->getVar('id_jurnal'));
-        session()->setFlashdata('pesan', 'Jurnal Harian berhasil dihapus');
-        return redirect()->back();
+        if ($data['status'] == 'pending') {
+            unlink('foto/' . $data['foto']);
+            $jurnal->delete($this->request->getVar('id_jurnal'));
+            session()->setFlashdata('pesan', 'Jurnal Harian berhasil dihapus');
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function verif()
+    {
+        $jurnal = new JurnalModel();
+        $data = $jurnal->find($this->request->getVar('id_jurnal'));
+        if ($data['status'] == 'pending' && session('role') == 'admin') {
+            $data = [
+                'status' => 'terverifikasi',
+            ];
+            $jurnal->set($data)
+                ->where('id_jurnal', $this->request->getVar('id_jurnal'))
+                ->update();
+            session()->setFlashdata('pesan', 'Jurnal Harian berhasil diverifikasi');
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
     }
 
     public function edit($id)
     {
         $jurnal = new JurnalModel();
         $getData = $jurnal->find($id);
-        if (session('id_users') == $getData['id_users'] && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
             $data = [
                 'jurnal'  => $jurnal->find($id),
             ];
@@ -122,7 +151,7 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $getData = $jurnal->find($this->request->getVar('id_jurnal'));
-        if (session('id_users') == $getData['id_users'] && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
             if ($this->validate([
                 'nama' => [
                     'label' => 'Nama Kegiatan',
@@ -178,6 +207,7 @@ class Jurnal extends BaseController
                         'jam_mulai' => $this->request->getVar('jam_mulai'),
                         'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
+                        'status' => "pending",
                         'id_users' => session('id_users'),
                     ];
                     $jurnal->set($data)
@@ -193,6 +223,7 @@ class Jurnal extends BaseController
                         'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
                         'id_users' => session('id_users'),
+                        'status' => "pending",
                         'foto' => $nama_file,
                     ];
                     unlink('foto/' . $getData['foto']);
