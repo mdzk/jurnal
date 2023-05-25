@@ -31,43 +31,45 @@
     <section class="section">
         <div class="row" id="basic-table">
             <div class="col-12 col-md-12">
-                <a href="<?= base_url(); ?>pegawai/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Pegawai Harian</a>
-                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Pegawai</button>
-                <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                        <form action="<?= route_to('pdf-pegawai'); ?>" method="POST">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Cetak Pegawai</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    </button>
-                                </div>
+                <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
+                    <a href="<?= base_url(); ?>pegawai/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Pegawai Harian</a>
+                    <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Pegawai</button>
+                    <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable" role="document">
+                            <form action="<?= route_to('pdf-pegawai'); ?>" method="POST">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Cetak Pegawai</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                        </button>
+                                    </div>
 
-                                <div class="modal-body">
-                                    <div class="form-group mb-3">
-                                        <label for="name">Cetak Berdasarkan</label>
-                                        <div class="position-relative">
-                                            <select class="form-control" name="filter" id="">
-                                                <option value="pangkat">Pangkat</option>
-                                                <option value="jabatan">Jabatan</option>
-                                                <option value="masa_kerja">Masa Kerja</option>
-                                                <option value="pendidikan">Pendidikan</option>
-                                            </select>
+                                    <div class="modal-body">
+                                        <div class="form-group mb-3">
+                                            <label for="name">Cetak Berdasarkan</label>
+                                            <div class="position-relative">
+                                                <select class="form-control" name="filter" id="">
+                                                    <option value="pangkat">Pangkat</option>
+                                                    <option value="jabatan">Jabatan</option>
+                                                    <option value="masa_kerja">Masa Kerja</option>
+                                                    <option value="pendidikan">Pendidikan</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="modal-footer">
+                                        <button name="submit" type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                            <span class="d-sm-block">Submit</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="modal-footer">
-                                    <button name="submit" type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
-                                        <span class="d-sm-block">Submit</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                     <div class="table-responsive">
-                        <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <table id="dataTable" class="table table-responsive">
                             <thead>
                                 <tr>
                                     <th>#</th>
@@ -81,7 +83,9 @@
                                     <th>Tingkat Pendidikan</th>
                                     <th>Instansi Pendidikan</th>
                                     <th>Tahun Lulus</th>
-                                    <th>Action</th>
+                                    <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
+                                        <th>Action</th>
+                                    <?php endif; ?>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -97,7 +101,10 @@
                                     <th>Tingkat Pendidikan</th>
                                     <th>Instansi Pendidikan</th>
                                     <th>Tahun Lulus</th>
-                                    <th>Action</th>
+                                    <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
+                                        <th>Action</th>
+                                    <?php endif; ?>
+
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -110,59 +117,60 @@
                                         <td><?= $data['jabatan']; ?></td>
                                         <td><?= $data['tmt_jabatan']; ?></td>
                                         <td><?= $data['kerja_thn']; ?> Tahun <?= $data['kerja_bln']; ?> Bulan</td>
-                                        <td><?= $data['golongan']; ?></td>
+                                        <td><?= $data['nama_golongan']; ?></td>
                                         <td><?= $data['tmt_golongan']; ?></td>
                                         <td><?= $data['pendidikan']; ?></td>
                                         <td><?= $data['instansi_pendidikan']; ?></td>
                                         <td><?= $data['thn_lulus']; ?></td>
-                                        <td>
-                                            <ul class="list-inline m-0 d-flex">
-                                                <li class="list-inline-item mail-delete">
-                                                    <a href="<?= base_url(''); ?>pegawai/edit/<?= $data['id_pegawai']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
-                                                        <i class="ti-pencil"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="list-inline-item mail-unread">
-                                                    <button type="button" class="td-n btn c-red-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapuspegawai<?= $data['id_pegawai']; ?>">
-                                                        <i class="ti-trash"></i>
-                                                    </button>
-                                                </li>
-                                            </ul>
-                                        </td>
+                                        <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
+                                            <td>
+                                                <ul class="list-inline m-0 d-flex">
+                                                    <li class="list-inline-item mail-delete">
+                                                        <a href="<?= base_url(''); ?>pegawai/edit/<?= $data['id_pegawai']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
+                                                            <i class="ti-pencil"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li class="list-inline-item mail-unread">
+                                                        <button type="button" class="td-n btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapuspegawai<?= $data['id_pegawai']; ?>">
+                                                            <i class="ti-trash"></i>
+                                                        </button>
+                                                        <!--Hapus User Modal Content -->
+                                                        <div class="modal fade text-left modal-borderless" id="hapuspegawai<?= $data['id_pegawai']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Peringatan</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                        </button>
+                                                                    </div>
+
+                                                                    <form action="<?= route_to('pegawai-delete'); ?>" method="POST">
+
+                                                                        <div class="modal-body">
+                                                                            <p>
+                                                                                Apakah anda yakin ingin menghapus pegawai harian ini?
+                                                                            </p>
+                                                                        </div>
+                                                                        <input type="number" name="id_pegawai" value="<?= $data['id_pegawai']; ?>" hidden>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                                <span class="d-sm-block">Tidak</span>
+                                                                            </button>
+                                                                            <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                                <span class="d-sm-block">Ya</span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </form>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--Hapus User Modal Content End-->
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        <?php endif; ?>
                                     </tr>
-
-                                    <!--Hapus User Modal Content -->
-                                    <div class="modal fade text-left modal-borderless" id="hapuspegawai<?= $data['id_pegawai']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Peringatan</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                                    </button>
-                                                </div>
-
-                                                <form action="<?= route_to('pegawai-delete'); ?>" method="POST">
-
-                                                    <div class="modal-body">
-                                                        <p>
-                                                            Apakah anda yakin ingin menghapus pegawai harian ini?
-                                                        </p>
-                                                    </div>
-                                                    <input type="number" name="id_pegawai" value="<?= $data['id_pegawai']; ?>" hidden>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
-                                                            <span class="d-sm-block">Tidak</span>
-                                                        </button>
-                                                        <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
-                                                            <span class="d-sm-block">Ya</span>
-                                                        </button>
-                                                    </div>
-                                                </form>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Hapus User Modal Content End-->
                                 <?php endforeach; ?>
                             </tbody>
                         </table>

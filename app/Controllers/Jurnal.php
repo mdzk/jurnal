@@ -105,7 +105,7 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $data = $jurnal->find($this->request->getVar('id_jurnal'));
-        if ($data['status'] == 'pending') {
+        if ($data['status'] == 'pending' || session('role') == 'admin') {
             unlink('foto/' . $data['foto']);
             $jurnal->delete($this->request->getVar('id_jurnal'));
             session()->setFlashdata('pesan', 'Jurnal Harian berhasil dihapus');

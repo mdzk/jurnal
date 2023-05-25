@@ -56,6 +56,55 @@
                                     </div>
 
                                     <div class="form-group has-icon-left">
+                                        <label for="name">NIP</label>
+                                        <div class="position-relative">
+                                            <input type="number" name="nip" class="form-control" placeholder="Masukkan NIP" id="name">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="role">Pangkat/Golongan</label>
+                                        <select class="form-select" name="golongan" id="role">
+                                            <?php foreach ($golongan as $data) : ?>
+                                                <option value="<?= $data['id_golongan']; ?>"><?= $data['nama_golongan']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group has-icon-left">
+                                        <label for="name">Jabatan</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="jabatan" class="form-control" placeholder="Masukkan Jabatan" id="name">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group has-icon-left">
+                                        <label for="name">Unit Kerja</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="unit" class="form-control" placeholder="Masukkan Unit Kerja" id="name">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group has-icon-left">
+                                        <label for="name">Kepala Bidang</label>
+                                        <div class="position-relative">
+                                            <input type="text" name="kepala" class="form-control" placeholder="Masukkan Kepala Bidang" id="name">
+                                            <div class="form-control-icon">
+                                                <i class="bi bi-person"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group has-icon-left">
                                         <label for="username">Username</label>
                                         <div class="position-relative">
                                             <input type="text" name="username" class="form-control" placeholder="Masukkan Username" id="username">
@@ -189,6 +238,55 @@
                                                                     <div class="position-relative">
 
                                                                         <input value="<?= $user['name']; ?>" type="text" name="name" class="form-control" placeholder="Masukkan nama" id="name">
+                                                                        <div class="form-control-icon">
+                                                                            <i class="bi bi-person"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group has-icon-left">
+                                                                    <label for="name">NIP</label>
+                                                                    <div class="position-relative">
+                                                                        <input value="<?= $user['nip']; ?>" type="number" name="nip" class="form-control" placeholder="Masukkan NIP" id="name">
+                                                                        <div class="form-control-icon">
+                                                                            <i class="bi bi-person"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="role">Pangkat/Golongan</label>
+                                                                    <select class="form-select" name="golongan" id="role">
+                                                                        <?php foreach ($golongan as $data) : ?>
+                                                                            <option value="<?= $data['id_golongan']; ?>" <?= $user['golongan'] == $data['id_golongan'] ? 'selected' : ''; ?>><?= $data['nama_golongan']; ?></option>
+                                                                        <?php endforeach; ?>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="form-group has-icon-left">
+                                                                    <label for="name">Jabatan</label>
+                                                                    <div class="position-relative">
+                                                                        <input value="<?= $user['jabatan']; ?>" type="text" name="jabatan" class="form-control" placeholder="Masukkan Jabatan" id="name">
+                                                                        <div class="form-control-icon">
+                                                                            <i class="bi bi-person"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group has-icon-left">
+                                                                    <label for="name">Unit Kerja</label>
+                                                                    <div class="position-relative">
+                                                                        <input value="<?= $user['unit']; ?>" type="text" name="unit" class="form-control" placeholder="Masukkan Unit Kerja" id="name">
+                                                                        <div class="form-control-icon">
+                                                                            <i class="bi bi-person"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group has-icon-left">
+                                                                    <label for="name">Kepala Bidang</label>
+                                                                    <div class="position-relative">
+                                                                        <input value="<?= $user['kepala']; ?>" type="text" name="kepala" class="form-control" placeholder="Masukkan Kepala Bidang" id="name">
                                                                         <div class="form-control-icon">
                                                                             <i class="bi bi-person"></i>
                                                                         </div>

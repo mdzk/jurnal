@@ -84266,7 +84266,7 @@ table.dataTable.no-footer {
 }
 
 .dataTables_wrapper {
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-bottom: 5px
 }
 

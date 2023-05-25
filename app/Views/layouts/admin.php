@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/static/images/logo.png" type="image/x-icon" />
     <link href="<?= base_url(); ?>assets/static/css/jquery.dataTables.min.css" rel="stylesheet">
-
     <title>Dashboard</title>
     <style>
         #loader {
@@ -61,7 +60,6 @@
             }
         }
     </style>
-    <script defer="defer" src="<?= base_url(); ?>assets/static/js/main.js"></script>
     <link href="<?= base_url(); ?>assets/static/css/style.css" rel="stylesheet">
 </head>
 
@@ -130,7 +128,7 @@
                     </ul>
                     <ul class="nav-right">
                         <li class="dropdown"><a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-bs-toggle="dropdown">
-                                <div class="peer mR-10"><img class="w-2r bdrs-50p" src="<?= base_url(); ?>assets/static/images/default.jpg" alt=""></div>
+                                <!-- <div class="peer mR-10"><img class="w-2r bdrs-50p" src="<?= base_url(); ?>foto/<?= session('foto'); ?>" alt=""></div> -->
                                 <div class="peer"><span class="fsz-sm c-grey-900"><?= session('name'); ?></span></div>
                             </a>
                             <ul class="dropdown-menu fsz-sm">
@@ -163,6 +161,17 @@
             )
         </script>
     <?php endif; ?>
+
+    <script src="<?= base_url(); ?>assets/static/js/jquery-3.7.0.js"></script>
+    <script>
+        var dataJurnal = $.ajax({
+            url: "<?= base_url() . 'api/terlaksana'; ?>",
+            async: false,
+            dataType: 'json'
+        }).responseJSON;
+    </script>
+    <script src="<?= base_url(); ?>assets/static/js/main.js"></script>
+
 </body>
 
 </html>

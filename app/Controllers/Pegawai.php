@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\GolonganModel;
 use App\Models\PegawaiModel;
 
 class Pegawai extends BaseController
@@ -12,14 +13,18 @@ class Pegawai extends BaseController
         $pegawai = new PegawaiModel();
 
         $data = [
-            'pegawai'  => $pegawai->findAll(),
+            'pegawai'  => $pegawai->join('golongan', 'golongan.id_golongan = pegawai.golongan')->findAll(),
         ];
         return view('admin/pegawai', $data);
     }
 
     public function add()
     {
-        return view('admin/pegawai-add');
+        $golongan = new GolonganModel();
+        $data = [
+            'golongan' => $golongan->findAll(),
+        ];
+        return view('admin/pegawai-add', $data);
     }
 
     public function save()
@@ -137,8 +142,10 @@ class Pegawai extends BaseController
     public function edit($id)
     {
         $pegawai = new PegawaiModel();
+        $golongan = new GolonganModel();
         $data = [
             'data'  => $pegawai->find($id),
+            'golongan' => $golongan->findAll(),
         ];
         return view('admin/pegawai-edit', $data);
     }

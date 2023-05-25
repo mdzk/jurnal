@@ -77,7 +77,12 @@
                             <div class="form-group mb-3">
                                 <label for="name">Golongan/Pangkat</label>
                                 <div class="position-relative">
-                                    <input required type="text" name="golongan" class="form-control" placeholder="V/a" id="name">
+                                    <select class="form-control" required name="golongan" id="">
+                                        <option value="" disabled selected>-- Pilih Pangkat/Golongan --</option>
+                                        <?php foreach ($golongan as $data) : ?>
+                                            <option value="<?= $data['id_golongan']; ?>"><?= $data['nama_golongan']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
                                 </div>
                             </div>
 

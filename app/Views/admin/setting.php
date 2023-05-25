@@ -31,7 +31,7 @@
     <section class="section">
         <div class="row">
 
-            <form action="<?= route_to('setting-update'); ?>" method="POST">
+            <form action="<?= route_to('setting-update'); ?>" method="POST" enctype="multipart/form-data">
                 <input type="number" name="id_users" hidden value="<?= $user['id_users']; ?>">
                 <div class="col-12">
                     <div class="card mx-2 my-2">
@@ -102,6 +102,32 @@
                                         <div class="ms-3 name">
                                             <h5 class="font-bold">Password
                                                 <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editpassword"> Edit
+                                                </button>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mx-2 my-2">
+                        <div class="card-body py-4 px-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex align-items-center">
+
+                                        <div class="avatar me-1">
+                                            <div class="stats-icon purple">
+                                                <i class="iconly-boldLock"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="ms-3 name">
+                                            <h5 class="font-bold">Profile Picture
+                                                <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#profilepicture"> Edit
                                                 </button>
                                             </h5>
                                         </div>
@@ -184,6 +210,35 @@
                                             <i class="bi bi-lock"></i>
                                         </div>
                                     </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
+                                    <span class="d-sm-block">Batal</span>
+                                </button>
+                                <button type="submit" name="submit" class="btn btn-primary ml-1 btn-color" data-bs-dismiss="modal">
+                                    <span class="d-sm-block">Simpan</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Edit Password Modal Content End-->
+
+                <!--Edit Profile Picture Modal Content -->
+                <div class="modal fade text-left modal-borderless" id="profilepicture">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Profile Picture</h5>
+                            </div>
+                            <input type="hidden" wire:model="userId">
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label for="basicInput">Upload Foto</label>
+                                    <input type="file" name="foto" class="form-control" id="basicInput" accept="image/png, image/jpeg">
                                 </div>
 
                             </div>

@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\GolonganModel;
 use App\Models\UsersModel;
 
 class Auth extends BaseController
@@ -17,9 +18,12 @@ class Auth extends BaseController
     {
         $session  = session();
         $model    = new UsersModel();
+        $golonganModel    = new GolonganModel();
+
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
         $data = $model->where('username', $username)->first();
+        $golongan = $golonganModel->where('id_golongan', $data['golongan'])->first();
         if ($data) {
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
@@ -29,6 +33,13 @@ class Auth extends BaseController
                     'name'      => $data['name'],
                     'role'      => $data['role'],
                     'username'  => $data['username'],
+                    'nip'  => $data['nip'],
+                    'unit'  => $data['unit'],
+                    'id_golongan'  => $data['golongan'],
+                    'golongan'  => $golongan['nama_golongan'],
+                    'kepala'  => $data['kepala'],
+                    'jabatan'  => $data['jabatan'],
+                    'picture'  => $data['picture'],
                     'logged_in' => TRUE
                 ];
                 $session->set($ses_data);

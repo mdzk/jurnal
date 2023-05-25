@@ -34,10 +34,12 @@ $routes->setAutoRoute(false);
 // }, ['as' => 'home', 'filter' => 'auth:admin']);
 
 $routes->get('/', 'Home::index', ['as' => 'home', 'filter' => 'auth']);
-// $routes->get('/pegawai', function () {
-//     return view('export/pdf_pegawai');
+$routes->get('/api/terlaksana', 'Home::terlaksana', ['as' => 'api-terlaksana', 'filter' => 'auth']);
+// $routes->get('/jurnal_test', function () {
+//     return view('export/pdf_jurnal');
 // });
 $routes->post('/pdf/pegawai', 'PdfController::pegawai', ['as' => 'pdf-pegawai', 'filter' => 'auth']);
+$routes->post('/pdf/jurnal', 'PdfController::jurnal', ['as' => 'pdf-jurnal', 'filter' => 'auth']);
 
 // Kinerja Section
 $routes->get('/kinerja', 'Kinerja::index', ['as' => 'kinerja', 'filter' => 'auth']);
@@ -58,11 +60,11 @@ $routes->post('/jurnal/verif', 'Jurnal::verif', ['as' => 'jurnal-verif', 'filter
 
 // Pegawai Section
 $routes->get('/pegawai', 'Pegawai::index', ['as' => 'pegawai', 'filter' => 'auth']);
-$routes->post('/pegawai/save', 'Pegawai::save', ['as' => 'pegawai-save', 'filter' => 'auth']);
-$routes->get('/pegawai/add', 'Pegawai::add', ['as' => 'pegawai-add', 'filter' => 'auth']);
-$routes->get('/pegawai/edit/(:num)', 'Pegawai::edit/$1', ['as' => 'pegawai-edit', 'filter' => 'auth']);
-$routes->post('/pegawai/delete', 'Pegawai::delete', ['as' => 'pegawai-delete', 'filter' => 'auth']);
-$routes->post('/pegawai/update', 'Pegawai::update', ['as' => 'pegawai-update', 'filter' => 'auth']);
+$routes->post('/pegawai/save', 'Pegawai::save', ['as' => 'pegawai-save', 'filter' => 'auth:admin,pimpinan']);
+$routes->get('/pegawai/add', 'Pegawai::add', ['as' => 'pegawai-add', 'filter' => 'auth:admin,pimpinan']);
+$routes->get('/pegawai/edit/(:num)', 'Pegawai::edit/$1', ['as' => 'pegawai-edit', 'filter' => 'auth:admin,pimpinan']);
+$routes->post('/pegawai/delete', 'Pegawai::delete', ['as' => 'pegawai-delete', 'filter' => 'auth:admin,pimpinan']);
+$routes->post('/pegawai/update', 'Pegawai::update', ['as' => 'pegawai-update', 'filter' => 'auth:admin,pimpinan']);
 
 // Users Section
 $routes->get('/users', 'Users::index', ['as' => 'users', 'filter' => 'auth:admin']);

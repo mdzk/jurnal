@@ -26,6 +26,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
+        <?php if ($errors = session()->getFlashdata('not-found')) : ?>
+            <div class="alert alert-danger alert-dismissible show fade">
+                <li><?= $errors ?></li>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
     </div>
 
     <!-- Basic Tables start -->
@@ -33,6 +39,32 @@
         <div class="row" id="basic-table">
             <div class="col-12 col-md-12">
                 <a href="<?= base_url(); ?>jurnal/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Jurnal Harian</a>
+                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Jurnal</button>
+                <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <form action="<?= route_to('pdf-jurnal'); ?>" method="POST">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Cetak Jurnal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <label for="name">Pilih Tanggal</label>
+                                        <input type="date" name="tanggal" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button name="submit" type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                        <span class="d-sm-block">Submit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="bgc-white bd bdrs-3 p-20 mB-20">
                     <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
@@ -86,13 +118,14 @@
                                     </td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
-                                            <?php if ($data['status'] == 'pending') : ?>
-
-                                                <li class="list-inline-item mail-delete">
-                                                    <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
-                                                        <i class="ti-pencil"></i>
-                                                    </a>
-                                                </li>
+                                            <?php if ($data['status'] == 'pending' || session('role') == 'admin') : ?>
+                                                <?php if ($data['status'] == 'pending') : ?>
+                                                    <li class="list-inline-item mail-delete">
+                                                        <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
+                                                            <i class="ti-pencil"></i>
+                                                        </a>
+                                                    </li>
+                                                <?php endif; ?>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-red-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapusjurnal<?= $data['id_jurnal']; ?>">
                                                         <i class="ti-trash"></i>

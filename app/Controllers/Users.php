@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\GolonganModel;
 use App\Models\UsersModel;
 
 class Users extends BaseController
@@ -11,9 +12,11 @@ class Users extends BaseController
     {
         if (session('role') == 'admin') {
             $user       = new UsersModel();
+            $golongan       = new GolonganModel();
             $data = [
                 'user'  => $user->find(session()->get('id_users')),
                 'users'  => $user->findAll(),
+                'golongan'  => $golongan->orderBy('nama_golongan', "ASC")->findAll(),
             ];
             return view('admin/users', $data);
         } else {
@@ -53,12 +56,53 @@ class Users extends BaseController
                     'required' => '{field} Wajib diisi !',
                 ]
             ],
+            'nip' => [
+                'label' => 'NIP',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'golongan' => [
+                'label' => 'Pangkat / Golongan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'jabatan' => [
+                'label' => 'Jabatan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'unit' => [
+                'label' => 'Unit Kerja',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'kepala' => [
+                'label' => 'Kepala Bidang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
         ])) {
             $user = new UsersModel();
             $user->save([
                 'name' => $this->request->getVar('name'),
                 'username' => $this->request->getVar('username'),
+                'nip' => $this->request->getVar('nip'),
+                'golongan' => $this->request->getVar('golongan'),
+                'jabatan' => $this->request->getVar('jabatan'),
+                'unit' => $this->request->getVar('unit'),
+                'kepala' => $this->request->getVar('kepala'),
                 'role' => $this->request->getVar('role'),
+                'picture' => 'default.jpg',
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             ]);
 
@@ -74,6 +118,10 @@ class Users extends BaseController
     public function delete()
     {
         $user = new UsersModel();
+        $data = $user->find($this->request->getVar('id_users'));
+        if ($data['picture'] !== 'default.jpg') {
+            unlink('foto/' . $data['picture']);
+        }
         $user->delete($this->request->getVar('id_users'));
         session()->setFlashdata('pesan', 'Akun berhasil dihapus');
         return redirect()->to('users');
@@ -107,12 +155,53 @@ class Users extends BaseController
                     'required' => '{field} Wajib diisi !',
                 ]
             ],
+            'nip' => [
+                'label' => 'NIP',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'golongan' => [
+                'label' => 'Pangkat / Golongan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'jabatan' => [
+                'label' => 'Jabatan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'unit' => [
+                'label' => 'Unit Kerja',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
+            'kepala' => [
+                'label' => 'Kepala Bidang',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
         ])) {
             $user->replace([
                 'id_users' => $this->request->getVar('id_users'),
                 'name' => $this->request->getVar('name'),
-                'role' => $this->request->getVar('role'),
                 'username' => $this->request->getVar('username'),
+                'nip' => $this->request->getVar('nip'),
+                'golongan' => $this->request->getVar('golongan'),
+                'jabatan' => $this->request->getVar('jabatan'),
+                'unit' => $this->request->getVar('unit'),
+                'kepala' => $this->request->getVar('kepala'),
+                'role' => $this->request->getVar('role'),
+                'picture' => $data['picture'],
                 'password' => empty($this->request->getVar('password')) ? $data['password'] : password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
             ]);
 
