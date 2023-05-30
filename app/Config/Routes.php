@@ -40,6 +40,7 @@ $routes->get('/api/terlaksana', 'Home::terlaksana', ['as' => 'api-terlaksana', '
 // });
 $routes->post('/pdf/pegawai', 'PdfController::pegawai', ['as' => 'pdf-pegawai', 'filter' => 'auth']);
 $routes->post('/pdf/jurnal', 'PdfController::jurnal', ['as' => 'pdf-jurnal', 'filter' => 'auth']);
+$routes->post('/pdf/jurnal-bulan', 'PdfController::jurnal_bulan', ['as' => 'pdf-jurnal-bulan', 'filter' => 'auth']);
 
 // Kinerja Section
 $routes->get('/kinerja', 'Kinerja::index', ['as' => 'kinerja', 'filter' => 'auth']);

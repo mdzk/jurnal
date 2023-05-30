@@ -128,52 +128,55 @@
                                     <td><span class="badge bg-<?= $data['status'] == 'pending' ? 'warning' : 'primary'; ?>"><?= $data['status']; ?></span></td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
-                                            <?php if ($data['status'] == 'pending') : ?>
+                                            <?php if ($data['status'] == 'pending' && $data['id_users'] == session('id_users')) : ?>
 
                                                 <li class="list-inline-item mail-delete">
                                                     <a href="<?= base_url(''); ?>kinerja/edit/<?= $data['id_kinerja']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
                                                         <i class="ti-pencil"></i>
                                                     </a>
                                                 </li>
+                                            <?php endif; ?>
+
+                                            <?php if ($data['id_users'] == session('id_users') || session('role') == 'admin') : ?>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapuskinerja<?= $data['id_kinerja']; ?>">
                                                         <i class="ti-trash"></i>
                                                     </button>
                                                 </li>
+                                            <?php endif; ?>
 
-                                                <!--Hapus User Modal Content -->
-                                                <div class="modal fade text-left modal-borderless" id="hapuskinerja<?= $data['id_kinerja']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title">Peringatan</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                            <!--Hapus User Modal Content -->
+                                            <div class="modal fade text-left modal-borderless" id="hapuskinerja<?= $data['id_kinerja']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Peringatan</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                            </button>
+                                                        </div>
+
+                                                        <form action="<?= route_to('kinerja-delete'); ?>" method="POST">
+
+                                                            <div class="modal-body">
+                                                                <p>
+                                                                    Apakah anda yakin ingin menghapus capaian kinerja ini?
+                                                                </p>
+                                                            </div>
+                                                            <input type="number" name="id_kinerja" value="<?= $data['id_kinerja']; ?>" hidden>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                    <span class="d-sm-block">Tidak</span>
+                                                                </button>
+                                                                <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                    <span class="d-sm-block">Ya</span>
                                                                 </button>
                                                             </div>
+                                                        </form>
 
-                                                            <form action="<?= route_to('kinerja-delete'); ?>" method="POST">
-
-                                                                <div class="modal-body">
-                                                                    <p>
-                                                                        Apakah anda yakin ingin menghapus capaian kinerja ini?
-                                                                    </p>
-                                                                </div>
-                                                                <input type="number" name="id_kinerja" value="<?= $data['id_kinerja']; ?>" hidden>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
-                                                                        <span class="d-sm-block">Tidak</span>
-                                                                    </button>
-                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
-                                                                        <span class="d-sm-block">Ya</span>
-                                                                    </button>
-                                                                </div>
-                                                            </form>
-
-                                                        </div>
                                                     </div>
                                                 </div>
-                                                <!--Hapus User Modal Content End-->
-                                            <?php endif; ?>
+                                            </div>
+                                            <!--Hapus User Modal Content End-->
                                             <?php if ($data['status'] == 'pending' && session('role') == 'admin') : ?>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifkinerja<?= $data['id_kinerja']; ?>">

@@ -61,6 +61,7 @@
         }
     </style>
     <link href="<?= base_url(); ?>assets/static/css/style.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/static/css/select2.min.css" rel="stylesheet">
 </head>
 
 <body class="app">
@@ -163,12 +164,16 @@
     <?php endif; ?>
 
     <script src="<?= base_url(); ?>assets/static/js/jquery-3.7.0.js"></script>
+    <script src="<?= base_url(); ?>assets/static/js/select2.min.js"></script>
     <script>
         var dataJurnal = $.ajax({
             url: "<?= base_url() . 'api/terlaksana'; ?>",
             async: false,
             dataType: 'json'
         }).responseJSON;
+        $(document).ready(function() {
+            $('#kinerja').select2();
+        });
     </script>
     <script src="<?= base_url(); ?>assets/static/js/main.js"></script>
 

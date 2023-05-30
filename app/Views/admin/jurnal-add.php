@@ -35,6 +35,16 @@
                     <form action="<?= route_to('jurnal-save'); ?>" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
                             <div class="form-group mb-3">
+                                <label for="name">Capaian Kinerja</label>
+                                <div class="position-relative">
+                                    <select name="id_kinerja" class="form-control" id="kinerja">
+                                        <?php foreach ($kinerja as $data) : ?>
+                                            <option value="<?= $data['id_kinerja']; ?>"><?= $data['capaian']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="name">Nama Kegiatan</label>
                                 <div class="position-relative">
                                     <input type="text" name="nama" class="form-control" placeholder="Input Data Laporan" id="name">

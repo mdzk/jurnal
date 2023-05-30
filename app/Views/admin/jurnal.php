@@ -39,7 +39,7 @@
         <div class="row" id="basic-table">
             <div class="col-12 col-md-12">
                 <a href="<?= base_url(); ?>jurnal/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Jurnal Harian</a>
-                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Jurnal</button>
+                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Jurnal Harian</button>
                 <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
                         <form action="<?= route_to('pdf-jurnal'); ?>" method="POST">
@@ -54,6 +54,53 @@
                                     <div class="form-group mb-3">
                                         <label for="name">Pilih Tanggal</label>
                                         <input type="date" name="tanggal" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button name="submit" type="submit" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                        <span class="d-sm-block">Submit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#cetakbulan">Cetak Jurnal Bulanan</button>
+                <div class="modal fade text-left modal-borderless" id="cetakbulan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                        <form action="<?= route_to('pdf-jurnal-bulan'); ?>" method="POST">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Cetak Jurnal</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="form-group mb-3">
+                                        <label for="name">Pilih Bulan</label>
+                                        <select name="bulan" class="form-control">
+                                            <option value="1">Januari</option>
+                                            <option value="2">Februari</option>
+                                            <option value="3">Maret</option>
+                                            <option value="4">April</option>
+                                            <option value="5">Mei</option>
+                                            <option value="6">Juni</option>
+                                            <option value="7">Juli</option>
+                                            <option value="8">Agustus</option>
+                                            <option value="9">September</option>
+                                            <option value="10">Oktober</option>
+                                            <option value="11">November</option>
+                                            <option value="12">Desember</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="name">Pilih Tahun</label>
+                                        <select name="tahun" class="form-control">
+                                            <?php for ($x = $jurnal_lama; $x <= $jurnal_terbaru; $x++) : ?>
+                                                <option name="bulan" value="<?= $x; ?>"><?= $x; ?></option>
+                                            <?php endfor; ?>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer">

@@ -77,7 +77,7 @@ class Kinerja extends BaseController
     {
         $kinerja = new KinerjaModel();
         $data = $kinerja->find($this->request->getVar('id_kinerja'));
-        if ($data['status'] == 'pending') {
+        if ($data['id_users'] == session('id_users')) {
             $kinerja->delete($this->request->getVar('id_kinerja'));
             session()->setFlashdata('pesan', 'Capaian Kinerja berhasil dihapus');
             return redirect()->back();

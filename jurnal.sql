@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 25, 2023 at 03:20 PM
+-- Generation Time: May 30, 2023 at 12:04 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -71,7 +71,8 @@ CREATE TABLE `jurnal` (
   `jam_mulai` time NOT NULL,
   `jam_berakhir` time NOT NULL,
   `status` enum('terverifikasi','pending') NOT NULL,
-  `id_users` int(11) NOT NULL
+  `id_users` int(11) NOT NULL,
+  `id_kinerja` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -95,7 +96,8 @@ CREATE TABLE `kinerja` (
 --
 
 INSERT INTO `kinerja` (`id_kinerja`, `capaian`, `realisasi`, `kuantitas`, `point`, `status`, `id_users`) VALUES
-(6, 'Membuat Laporan Harian', '8 Bulan', '3 dokumen', 20, 'terverifikasi', 2);
+(6, 'Membuat Laporan Harian', '8 Bulan', '3 dokumen', 20, 'terverifikasi', 2),
+(9, 'Membuat Modul', '1 Bulan', ' 3 Dokumen', 20, 'pending', 2);
 
 -- --------------------------------------------------------
 
@@ -151,8 +153,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_users`, `name`, `username`, `password`, `role`, `nip`, `golongan`, `jabatan`, `unit`, `kepala`, `picture`) VALUES
-(2, 'Muhammad Dzaky', 'admin', '$2y$10$4UDQyhiz801cUw50KR008uHU2Cgu05OyTF8w7AzggtzGF4kKXrwy2', 'admin', 111, 2, 'Direktur', 'Kominfo', 'Ir. Budi, S.Ag.', '1685009042_5ae5366a5f1efa252bde.jpg'),
-(3, 'Muhammad Dzaky', 'user', '$2y$10$YcxItNHg/b.xcZ6G/38sWeIqEc.LnlWnBJGiF68oL66Mw/KyJvLK2', 'user', 999, 2, 'Staff', 'Kominfo', 'Ir. Budi, S.Ag.', 'default.jpg'),
+(2, 'Muhammad Dzaky', 'admin', '$2y$10$4UDQyhiz801cUw50KR008uHU2Cgu05OyTF8w7AzggtzGF4kKXrwy2', 'admin', 111, 2, 'Direktur', 'Kominfo', 'Ir. Budi, S.Ag.', '1685441027_46a9664eb6474314c30e.png'),
+(3, 'John Doe', 'user', '$2y$10$YcxItNHg/b.xcZ6G/38sWeIqEc.LnlWnBJGiF68oL66Mw/KyJvLK2', 'user', 999, 2, 'Staff', 'Kominfo', 'Ir. Budi, S.Ag.', 'default.jpg'),
 (4, 'Kasubag Umum', 'pimpinan', '$2y$10$PqQXLr7cjChaEK6L.YAykuA/0m561ZCGcSr1cnXGqMEXfLEUlYaAu', 'pimpinan', 222, 3, 'Pimpinan', 'Kominfo', 'Dra. Siti, S.Ag.', 'default.jpg');
 
 --
@@ -203,13 +205,13 @@ ALTER TABLE `golongan`
 -- AUTO_INCREMENT for table `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `kinerja`
 --
 ALTER TABLE `kinerja`
-  MODIFY `id_kinerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kinerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `pegawai`

@@ -36,6 +36,16 @@
                         <input value="<?= $jurnal['id_jurnal']; ?>" name="id_jurnal" required hidden>
                         <div class="card-body">
                             <div class="form-group mb-3">
+                                <label for="name">Capaian Kinerja</label>
+                                <div class="position-relative">
+                                    <select name="id_kinerja" class="form-control" id="kinerja">
+                                        <?php foreach ($kinerja as $data) : ?>
+                                            <option value="<?= $data['id_kinerja']; ?>" <?= $jurnal['id_kinerja'] == $data['id_kinerja'] ? 'selected' : ''; ?>><?= $data['capaian']; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="name">Nama Kegiatan</label>
                                 <div class="position-relative">
                                     <input required value="<?= $jurnal['nama']; ?>" type="text" name="nama" class="form-control" placeholder="Input Data Laporan" id="name">

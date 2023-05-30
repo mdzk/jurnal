@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\JurnalModel;
+use App\Models\KinerjaModel;
 
 class Jurnal extends BaseController
 {
@@ -11,21 +12,48 @@ class Jurnal extends BaseController
     {
 
         $jurnal = new JurnalModel();
+        $jurnalTerlama = $jurnal->where('status', 'terverifikasi')->where('id_users', session('id_users'))->orderBy('tanggal', "ASC")->first();
+        $jurnalTerbaru = $jurnal->where('status', 'terverifikasi')->where('id_users', session('id_users'))->orderBy('tanggal', "DESC")->first();
+
         if (session('role') == 'user') {
-            $data = [
-                'jurnal'  => $jurnal->where('id_users', session('id_users'))->findAll(),
-            ];
+            if (!empty($jurnalTerlama)) {
+                $data = [
+                    'jurnal_terbaru' => date('Y', strtotime($jurnalTerbaru['tanggal'])),
+                    'jurnal_lama' => date('Y', strtotime($jurnalTerlama['tanggal'])),
+                    'jurnal'  => $jurnal->where('id_users', session('id_users'))->findAll(),
+                ];
+            } else {
+                $data = [
+                    'jurnal_terbaru' => date('Y'),
+                    'jurnal_lama' => date('Y'),
+                    'jurnal'  => $jurnal->where('id_users', session('id_users'))->findAll(),
+                ];
+            }
         } else {
-            $data = [
-                'jurnal'  => $jurnal->join('users', 'users.id_users = jurnal.id_users')->findAll(),
-            ];
+            if (!empty($jurnalTerlama)) {
+                $data = [
+                    'jurnal_terbaru' => date('Y', strtotime($jurnalTerbaru['tanggal'])),
+                    'jurnal_lama' => date('Y', strtotime($jurnalTerlama['tanggal'])),
+                    'jurnal'  => $jurnal->join('users', 'users.id_users = jurnal.id_users')->findAll(),
+                ];
+            } else {
+                $data = [
+                    'jurnal_terbaru' => date('Y'),
+                    'jurnal_lama' => date('Y'),
+                    'jurnal'  => $jurnal->join('users', 'users.id_users = jurnal.id_users')->findAll(),
+                ];
+            }
         }
         return view('admin/jurnal', $data);
     }
 
     public function add()
     {
-        return view('admin/jurnal-add');
+        $kinerja = new KinerjaModel();
+        $data = [
+            'kinerja' => $kinerja->where('id_users', session('id_users'))->findAll(),
+        ];
+        return view('admin/jurnal-add', $data);
     }
 
     public function save()
@@ -87,6 +115,7 @@ class Jurnal extends BaseController
                 'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                 'penyelenggara' => $this->request->getVar('penyelenggara'),
                 'id_users' => session('id_users'),
+                'id_kinerja' => $this->request->getVar('id_kinerja'),
                 'status' => "pending",
                 'foto' => $nama_file,
             ]);
@@ -136,9 +165,11 @@ class Jurnal extends BaseController
     public function edit($id)
     {
         $jurnal = new JurnalModel();
+        $kinerja = new KinerjaModel();
         $getData = $jurnal->find($id);
         if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
             $data = [
+                'kinerja' => $kinerja->where('status', 'terverifikasi')->where('id_users', session('id_users'))->findAll(),
                 'jurnal'  => $jurnal->find($id),
             ];
             return view('admin/jurnal-edit', $data);
@@ -207,6 +238,7 @@ class Jurnal extends BaseController
                         'jam_mulai' => $this->request->getVar('jam_mulai'),
                         'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
+                        'id_kinerja' => $this->request->getVar('id_kinerja'),
                         'status' => "pending",
                         'id_users' => session('id_users'),
                     ];
@@ -222,6 +254,7 @@ class Jurnal extends BaseController
                         'jam_mulai' => $this->request->getVar('jam_mulai'),
                         'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
+                        'id_kinerja' => $this->request->getVar('id_kinerja'),
                         'id_users' => session('id_users'),
                         'status' => "pending",
                         'foto' => $nama_file,

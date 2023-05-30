@@ -54,9 +54,8 @@ class PdfController extends BaseController
     {
         $jurnal = new JurnalModel();
         $id = $this->request->getVar('tanggal');
-        $data_jurnal = $jurnal->where('id_users', session('id_users'))->where('tanggal', $id)->findAll();
-
-        if (!$data_jurnal) {
+        $data_jurnal = $jurnal->where('status', 'terverifikasi')->where('id_users', session('id_users'))->where('tanggal', $id)->findAll();
+        if (!$data_jurnal || !$data_jurnal_bulan) {
             session()->setFlashdata('not-found', 'Data tidak ditemukan');
             return redirect()->back();
         } else {
@@ -70,6 +69,33 @@ class PdfController extends BaseController
             ];
 
             $dompdf->loadHtml(view('/export/pdf_jurnal', $data));
+
+            $dompdf->setPaper(array(0, 0, 609.4488, 935.433), 'portrait');
+            $dompdf->render();
+            $dompdf->stream($filename);
+            exit();
+        }
+    }
+
+    public function jurnal_bulan()
+    {
+        $jurnal = new JurnalModel();
+        $data_jurnal_bulan = $jurnal->where('status', 'terverifikasi')->where('id_users', session('id_users'))->where('MONTH(tanggal)', $this->request->getVar('bulan'))->where('YEAR(tanggal)', $this->request->getVar('tahun'))->findAll();
+        if (!$data_jurnal_bulan) {
+            session()->setFlashdata('not-found', 'Data tidak ditemukan');
+            return redirect()->back();
+        } else {
+            $filename = date('y-m-d-H-i-s') . '-jurnal';
+            $dompdf = new Dompdf();
+            $user = new UsersModel();
+            $data = [
+                'bulan' => $this->request->getVar('bulan'),
+                'tahun' => $this->request->getVar('tahun'),
+                'user' => $user->join('golongan', 'golongan.id_golongan = users.golongan')->find(session('id_users')),
+                'jurnal'  => $data_jurnal_bulan,
+            ];
+
+            $dompdf->loadHtml(view('/export/pdf_jurnal_bulan', $data));
             $dompdf->setPaper(array(0, 0, 609.4488, 935.433), 'portrait');
             $dompdf->render();
             $dompdf->stream($filename);
