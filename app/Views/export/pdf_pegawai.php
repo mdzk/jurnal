@@ -100,7 +100,7 @@
                     <td><?= $data['jabatan']; ?></td>
                     <td><?= $data['tmt_jabatan']; ?></td>
                     <td><?= $data['kerja_thn']; ?> Tahun <?= $data['kerja_bln']; ?> Bulan</td>
-                    <td><?= $data['golongan']; ?></td>
+                    <td><?= $data['nama_golongan']; ?></td>
                     <td><?= $data['tmt_golongan']; ?></td>
                     <td><?= $data['pendidikan']; ?></td>
                     <td><?= $data['instansi_pendidikan']; ?></td>

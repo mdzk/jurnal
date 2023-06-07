@@ -22,25 +22,25 @@ class PdfController extends BaseController
         $pegawai = new PegawaiModel();
         if ($filter == 'pangkat') {
             $data = [
-                'pegawai'  => $pegawai->orderBy('golongan', 'DESC')->findAll(),
+                'pegawai'  => $pegawai->join('golongan', 'golongan.id_golongan = pegawai.golongan')->orderBy('golongan', 'DESC')->findAll(),
             ];
         }
 
         if ($filter == 'jabatan') {
             $data = [
-                'pegawai'  => $pegawai->orderBy('jabatan', 'DESC')->findAll(),
+                'pegawai'  => $pegawai->join('golongan', 'golongan.id_golongan = pegawai.golongan')->orderBy('jabatan', 'DESC')->findAll(),
             ];
         }
 
         if ($filter == 'masa_kerja') {
             $data = [
-                'pegawai'  => $pegawai->orderBy('kerja_thn', 'DESC')->findAll(),
+                'pegawai'  => $pegawai->join('golongan', 'golongan.id_golongan = pegawai.golongan')->orderBy('kerja_thn', 'DESC')->findAll(),
             ];
         }
 
         if ($filter == 'pangkat') {
             $data = [
-                'pegawai'  => $pegawai->orderBy('pendidikan', 'DESC')->findAll(),
+                'pegawai'  => $pegawai->join('golongan', 'golongan.id_golongan = pegawai.golongan')->orderBy('pendidikan', 'DESC')->findAll(),
             ];
         }
         $dompdf->loadHtml(view('/export/pdf_pegawai', $data));
