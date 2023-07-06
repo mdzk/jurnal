@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="form-group mb-3">
-                                <label for="name">Kuantitas Output</label>
+                                <label for="name">Output</label>
                                 <div class="position-relative">
                                     <input value="<?= $kinerja['kuantitas']; ?>" type="text" name="kuantitas" class="form-control" placeholder="3 Dokumen" id="name">
                                 </div>

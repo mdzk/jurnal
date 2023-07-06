@@ -14403,7 +14403,7 @@ a.btn:hover {
   list-style-type: none
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .sidebar {
     width: 70px
   }
@@ -14513,7 +14513,7 @@ a.btn:hover {
   }
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .sidebar-logo .mobile-toggle {
     display: none
   }
@@ -14682,7 +14682,7 @@ a.btn:hover {
   width: 35px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .is-collapsed .sidebar {
     width: 70px
   }
@@ -14730,7 +14730,7 @@ a.btn:hover {
   }
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .is-collapsed .sidebar {
     width: 280px
   }
@@ -14784,7 +14784,7 @@ a.btn:hover {
   }
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .header {
     width: calc(100% - 70px)
   }
@@ -14993,7 +14993,7 @@ a.btn:hover {
   }
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .is-collapsed .header {
     width: calc(100% - 280px)
   }
@@ -15007,7 +15007,7 @@ a.btn:hover {
   transition: all .2s ease
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .page-container {
     padding-left: 70px
   }
@@ -15045,7 +15045,7 @@ a.btn:hover {
   transition: all .2s ease
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .full-container {
     left: 0;
     padding-left: 70px
@@ -15068,7 +15068,7 @@ a.btn:hover {
   }
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .is-collapsed .page-container {
     padding-left: 280px
   }
@@ -15084,7 +15084,7 @@ a.btn:hover {
   }
 }
 
-@media screen and (min-width:992px) and (max-width:1439px) {
+@media screen and (min-width:992px) and (max-width:1079px) {
   .is-collapsed .full-container {
     left: 280px;
     padding-left: 0
@@ -15589,7 +15589,7 @@ footer {
   transform: translate(-50%, -50%)
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .centerY\@xl\+ {
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -15709,7 +15709,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .centerY\@xl- {
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -15805,7 +15805,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .centerY\@lg {
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -15910,7 +15910,7 @@ footer {
   padding: 0 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-0\@xl\+ {
     margin-left: 0 !important;
     margin-right: 0 !important
@@ -16060,7 +16060,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-0\@xl- {
     margin-left: 0 !important;
     margin-right: 0 !important
@@ -16180,7 +16180,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-0\@lg {
     margin-left: 0 !important;
     margin-right: 0 !important
@@ -16298,7 +16298,7 @@ footer {
   padding: .5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-1\@xl\+ {
     margin-left: -.5px !important;
     margin-right: -.5px !important
@@ -16448,7 +16448,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-1\@xl- {
     margin-left: -.5px !important;
     margin-right: -.5px !important
@@ -16568,7 +16568,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-1\@lg {
     margin-left: -.5px !important;
     margin-right: -.5px !important
@@ -16686,7 +16686,7 @@ footer {
   padding: 1px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-2\@xl\+ {
     margin-left: -1px !important;
     margin-right: -1px !important
@@ -16836,7 +16836,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-2\@xl- {
     margin-left: -1px !important;
     margin-right: -1px !important
@@ -16956,7 +16956,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-2\@lg {
     margin-left: -1px !important;
     margin-right: -1px !important
@@ -17074,7 +17074,7 @@ footer {
   padding: 1.5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-3\@xl\+ {
     margin-left: -1.5px !important;
     margin-right: -1.5px !important
@@ -17224,7 +17224,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-3\@xl- {
     margin-left: -1.5px !important;
     margin-right: -1.5px !important
@@ -17344,7 +17344,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-3\@lg {
     margin-left: -1.5px !important;
     margin-right: -1.5px !important
@@ -17462,7 +17462,7 @@ footer {
   padding: 2px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-4\@xl\+ {
     margin-left: -2px !important;
     margin-right: -2px !important
@@ -17612,7 +17612,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-4\@xl- {
     margin-left: -2px !important;
     margin-right: -2px !important
@@ -17732,7 +17732,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-4\@lg {
     margin-left: -2px !important;
     margin-right: -2px !important
@@ -17850,7 +17850,7 @@ footer {
   padding: 2.5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-5\@xl\+ {
     margin-left: -2.5px !important;
     margin-right: -2.5px !important
@@ -18000,7 +18000,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-5\@xl- {
     margin-left: -2.5px !important;
     margin-right: -2.5px !important
@@ -18120,7 +18120,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-5\@lg {
     margin-left: -2.5px !important;
     margin-right: -2.5px !important
@@ -18238,7 +18238,7 @@ footer {
   padding: 5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-10\@xl\+ {
     margin-left: -5px !important;
     margin-right: -5px !important
@@ -18388,7 +18388,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-10\@xl- {
     margin-left: -5px !important;
     margin-right: -5px !important
@@ -18508,7 +18508,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-10\@lg {
     margin-left: -5px !important;
     margin-right: -5px !important
@@ -18626,7 +18626,7 @@ footer {
   padding: 7.5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-15\@xl\+ {
     margin-left: -7.5px !important;
     margin-right: -7.5px !important
@@ -18776,7 +18776,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-15\@xl- {
     margin-left: -7.5px !important;
     margin-right: -7.5px !important
@@ -18896,7 +18896,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-15\@lg {
     margin-left: -7.5px !important;
     margin-right: -7.5px !important
@@ -19014,7 +19014,7 @@ footer {
   padding: 10px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-20\@xl\+ {
     margin-left: -10px !important;
     margin-right: -10px !important
@@ -19164,7 +19164,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-20\@xl- {
     margin-left: -10px !important;
     margin-right: -10px !important
@@ -19284,7 +19284,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-20\@lg {
     margin-left: -10px !important;
     margin-right: -10px !important
@@ -19402,7 +19402,7 @@ footer {
   padding: 12.5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-25\@xl\+ {
     margin-left: -12.5px !important;
     margin-right: -12.5px !important
@@ -19552,7 +19552,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-25\@xl- {
     margin-left: -12.5px !important;
     margin-right: -12.5px !important
@@ -19672,7 +19672,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-25\@lg {
     margin-left: -12.5px !important;
     margin-right: -12.5px !important
@@ -19790,7 +19790,7 @@ footer {
   padding: 15px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-30\@xl\+ {
     margin-left: -15px !important;
     margin-right: -15px !important
@@ -19940,7 +19940,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-30\@xl- {
     margin-left: -15px !important;
     margin-right: -15px !important
@@ -20060,7 +20060,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-30\@lg {
     margin-left: -15px !important;
     margin-right: -15px !important
@@ -20178,7 +20178,7 @@ footer {
   padding: 17.5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-35\@xl\+ {
     margin-left: -17.5px !important;
     margin-right: -17.5px !important
@@ -20328,7 +20328,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-35\@xl- {
     margin-left: -17.5px !important;
     margin-right: -17.5px !important
@@ -20448,7 +20448,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-35\@lg {
     margin-left: -17.5px !important;
     margin-right: -17.5px !important
@@ -20566,7 +20566,7 @@ footer {
   padding: 20px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-40\@xl\+ {
     margin-left: -20px !important;
     margin-right: -20px !important
@@ -20716,7 +20716,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-40\@xl- {
     margin-left: -20px !important;
     margin-right: -20px !important
@@ -20836,7 +20836,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-40\@lg {
     margin-left: -20px !important;
     margin-right: -20px !important
@@ -20954,7 +20954,7 @@ footer {
   padding: 25px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-50\@xl\+ {
     margin-left: -25px !important;
     margin-right: -25px !important
@@ -21104,7 +21104,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-50\@xl- {
     margin-left: -25px !important;
     margin-right: -25px !important
@@ -21224,7 +21224,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-50\@lg {
     margin-left: -25px !important;
     margin-right: -25px !important
@@ -21342,7 +21342,7 @@ footer {
   padding: 30px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-60\@xl\+ {
     margin-left: -30px !important;
     margin-right: -30px !important
@@ -21492,7 +21492,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-60\@xl- {
     margin-left: -30px !important;
     margin-right: -30px !important
@@ -21612,7 +21612,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-60\@lg {
     margin-left: -30px !important;
     margin-right: -30px !important
@@ -21730,7 +21730,7 @@ footer {
   padding: 35px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-70\@xl\+ {
     margin-left: -35px !important;
     margin-right: -35px !important
@@ -21880,7 +21880,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-70\@xl- {
     margin-left: -35px !important;
     margin-right: -35px !important
@@ -22000,7 +22000,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-70\@lg {
     margin-left: -35px !important;
     margin-right: -35px !important
@@ -22118,7 +22118,7 @@ footer {
   padding: 40px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-80\@xl\+ {
     margin-left: -40px !important;
     margin-right: -40px !important
@@ -22268,7 +22268,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-80\@xl- {
     margin-left: -40px !important;
     margin-right: -40px !important
@@ -22388,7 +22388,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-80\@lg {
     margin-left: -40px !important;
     margin-right: -40px !important
@@ -22506,7 +22506,7 @@ footer {
   padding: 45px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-90\@xl\+ {
     margin-left: -45px !important;
     margin-right: -45px !important
@@ -22656,7 +22656,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-90\@xl- {
     margin-left: -45px !important;
     margin-right: -45px !important
@@ -22776,7 +22776,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-90\@lg {
     margin-left: -45px !important;
     margin-right: -45px !important
@@ -22894,7 +22894,7 @@ footer {
   padding: 50px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-100\@xl\+ {
     margin-left: -50px !important;
     margin-right: -50px !important
@@ -23044,7 +23044,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-100\@xl- {
     margin-left: -50px !important;
     margin-right: -50px !important
@@ -23164,7 +23164,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-100\@lg {
     margin-left: -50px !important;
     margin-right: -50px !important
@@ -23282,7 +23282,7 @@ footer {
   padding: 55px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-110\@xl\+ {
     margin-left: -55px !important;
     margin-right: -55px !important
@@ -23432,7 +23432,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-110\@xl- {
     margin-left: -55px !important;
     margin-right: -55px !important
@@ -23552,7 +23552,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-110\@lg {
     margin-left: -55px !important;
     margin-right: -55px !important
@@ -23670,7 +23670,7 @@ footer {
   padding: 60px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-120\@xl\+ {
     margin-left: -60px !important;
     margin-right: -60px !important
@@ -23820,7 +23820,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-120\@xl- {
     margin-left: -60px !important;
     margin-right: -60px !important
@@ -23940,7 +23940,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-120\@lg {
     margin-left: -60px !important;
     margin-right: -60px !important
@@ -24058,7 +24058,7 @@ footer {
   padding: 65px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-130\@xl\+ {
     margin-left: -65px !important;
     margin-right: -65px !important
@@ -24208,7 +24208,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-130\@xl- {
     margin-left: -65px !important;
     margin-right: -65px !important
@@ -24328,7 +24328,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-130\@lg {
     margin-left: -65px !important;
     margin-right: -65px !important
@@ -24446,7 +24446,7 @@ footer {
   padding: 70px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-140\@xl\+ {
     margin-left: -70px !important;
     margin-right: -70px !important
@@ -24596,7 +24596,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-140\@xl- {
     margin-left: -70px !important;
     margin-right: -70px !important
@@ -24716,7 +24716,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-140\@lg {
     margin-left: -70px !important;
     margin-right: -70px !important
@@ -24834,7 +24834,7 @@ footer {
   padding: 75px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-150\@xl\+ {
     margin-left: -75px !important;
     margin-right: -75px !important
@@ -24984,7 +24984,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-150\@xl- {
     margin-left: -75px !important;
     margin-right: -75px !important
@@ -25104,7 +25104,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-150\@lg {
     margin-left: -75px !important;
     margin-right: -75px !important
@@ -25222,7 +25222,7 @@ footer {
   padding: 80px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .gapX-160\@xl\+ {
     margin-left: -80px !important;
     margin-right: -80px !important
@@ -25372,7 +25372,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .gapX-160\@xl- {
     margin-left: -80px !important;
     margin-right: -80px !important
@@ -25492,7 +25492,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .gapX-160\@lg {
     margin-left: -80px !important;
     margin-right: -80px !important
@@ -25651,7 +25651,7 @@ footer {
   display: inline-flex
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .d-f\@xl\+ {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -25721,7 +25721,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .d-f\@xl- {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -25777,7 +25777,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .d-f\@lg {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -25834,7 +25834,7 @@ footer {
   flex-wrap: nowrap
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fxw-w\@xl\+ {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap
@@ -25919,7 +25919,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fxw-w\@xl- {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap
@@ -25987,7 +25987,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fxw-w\@lg {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap
@@ -26072,7 +26072,7 @@ footer {
   flex-direction: row-reverse
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fxd-c\@xl\+ {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -26252,7 +26252,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fxd-c\@xl- {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -26396,7 +26396,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fxd-c\@lg {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -26534,7 +26534,7 @@ footer {
   align-items: stretch
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ai-fs\@xl\+ {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -26694,7 +26694,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ai-fs\@xl- {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -26822,7 +26822,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ai-fs\@lg {
     -webkit-box-align: start;
     -ms-flex-align: start;
@@ -26943,7 +26943,7 @@ footer {
   align-self: stretch
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .as-fs\@xl\+ {
     -ms-flex-item-align: start;
     align-self: flex-start
@@ -27078,7 +27078,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .as-fs\@xl- {
     -ms-flex-item-align: start;
     align-self: flex-start
@@ -27186,7 +27186,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .as-fs\@lg {
     -ms-flex-item-align: start;
     align-self: flex-start
@@ -27297,7 +27297,7 @@ footer {
   align-content: space-around
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ac-fs\@xl\+ {
     -ms-flex-line-pack: start;
     align-content: flex-start
@@ -27457,7 +27457,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ac-fs\@xl- {
     -ms-flex-line-pack: start;
     align-content: flex-start
@@ -27585,7 +27585,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ac-fs\@lg {
     -ms-flex-line-pack: start;
     align-content: flex-start
@@ -27710,7 +27710,7 @@ footer {
   justify-content: space-around
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .jc-fs\@xl\+ {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -27865,7 +27865,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .jc-fs\@xl- {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -27989,7 +27989,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .jc-fs\@lg {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -28094,7 +28094,7 @@ footer {
   flex: 1
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fx-n\@xl\+ {
     -webkit-box-flex: 0;
     -ms-flex: none;
@@ -28164,7 +28164,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fx-n\@xl- {
     -webkit-box-flex: 0;
     -ms-flex: none;
@@ -28220,7 +28220,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fx-n\@lg {
     -webkit-box-flex: 0;
     -ms-flex: none;
@@ -28272,7 +28272,7 @@ footer {
   flex-basis: 0
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fxb-a\@xl\+ {
     -ms-flex-preferred-size: auto;
     flex-basis: auto
@@ -28332,7 +28332,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fxb-a\@xl- {
     -ms-flex-preferred-size: auto;
     flex-basis: auto
@@ -28380,7 +28380,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fxb-a\@lg {
     -ms-flex-preferred-size: auto;
     flex-basis: auto
@@ -28428,7 +28428,7 @@ footer {
   flex-grow: 0
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fxg-1\@xl\+ {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -28498,7 +28498,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fxg-1\@xl- {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -28554,7 +28554,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fxg-1\@lg {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -28606,7 +28606,7 @@ footer {
   flex-shrink: 0
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fxs-1\@xl\+ {
     -ms-flex-negative: 1;
     flex-shrink: 1
@@ -28666,7 +28666,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fxs-1\@xl- {
     -ms-flex-negative: 1;
     flex-shrink: 1
@@ -28714,7 +28714,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fxs-1\@lg {
     -ms-flex-negative: 1;
     flex-shrink: 1
@@ -28756,7 +28756,7 @@ footer {
   order: 0
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-0\@xl\+ {
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
@@ -28796,7 +28796,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-0\@xl- {
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
@@ -28828,7 +28828,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-0\@lg {
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
@@ -28858,7 +28858,7 @@ footer {
   order: 1
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-1\@xl\+ {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -28898,7 +28898,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-1\@xl- {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -28930,7 +28930,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-1\@lg {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
@@ -28960,7 +28960,7 @@ footer {
   order: 2
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-2\@xl\+ {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -29000,7 +29000,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-2\@xl- {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -29032,7 +29032,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-2\@lg {
     -webkit-box-ordinal-group: 3;
     -ms-flex-order: 2;
@@ -29062,7 +29062,7 @@ footer {
   order: 3
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-3\@xl\+ {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
@@ -29102,7 +29102,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-3\@xl- {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
@@ -29134,7 +29134,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-3\@lg {
     -webkit-box-ordinal-group: 4;
     -ms-flex-order: 3;
@@ -29164,7 +29164,7 @@ footer {
   order: 4
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-4\@xl\+ {
     -webkit-box-ordinal-group: 5;
     -ms-flex-order: 4;
@@ -29204,7 +29204,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-4\@xl- {
     -webkit-box-ordinal-group: 5;
     -ms-flex-order: 4;
@@ -29236,7 +29236,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-4\@lg {
     -webkit-box-ordinal-group: 5;
     -ms-flex-order: 4;
@@ -29266,7 +29266,7 @@ footer {
   order: 5
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-5\@xl\+ {
     -webkit-box-ordinal-group: 6;
     -ms-flex-order: 5;
@@ -29306,7 +29306,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-5\@xl- {
     -webkit-box-ordinal-group: 6;
     -ms-flex-order: 5;
@@ -29338,7 +29338,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-5\@lg {
     -webkit-box-ordinal-group: 6;
     -ms-flex-order: 5;
@@ -29368,7 +29368,7 @@ footer {
   order: 6
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-6\@xl\+ {
     -webkit-box-ordinal-group: 7;
     -ms-flex-order: 6;
@@ -29408,7 +29408,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-6\@xl- {
     -webkit-box-ordinal-group: 7;
     -ms-flex-order: 6;
@@ -29440,7 +29440,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-6\@lg {
     -webkit-box-ordinal-group: 7;
     -ms-flex-order: 6;
@@ -29470,7 +29470,7 @@ footer {
   order: 7
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-7\@xl\+ {
     -webkit-box-ordinal-group: 8;
     -ms-flex-order: 7;
@@ -29510,7 +29510,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-7\@xl- {
     -webkit-box-ordinal-group: 8;
     -ms-flex-order: 7;
@@ -29542,7 +29542,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-7\@lg {
     -webkit-box-ordinal-group: 8;
     -ms-flex-order: 7;
@@ -29572,7 +29572,7 @@ footer {
   order: 8
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-8\@xl\+ {
     -webkit-box-ordinal-group: 9;
     -ms-flex-order: 8;
@@ -29612,7 +29612,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-8\@xl- {
     -webkit-box-ordinal-group: 9;
     -ms-flex-order: 8;
@@ -29644,7 +29644,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-8\@lg {
     -webkit-box-ordinal-group: 9;
     -ms-flex-order: 8;
@@ -29674,7 +29674,7 @@ footer {
   order: 9
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-9\@xl\+ {
     -webkit-box-ordinal-group: 10;
     -ms-flex-order: 9;
@@ -29714,7 +29714,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-9\@xl- {
     -webkit-box-ordinal-group: 10;
     -ms-flex-order: 9;
@@ -29746,7 +29746,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-9\@lg {
     -webkit-box-ordinal-group: 10;
     -ms-flex-order: 9;
@@ -29776,7 +29776,7 @@ footer {
   order: 10
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-10\@xl\+ {
     -webkit-box-ordinal-group: 11;
     -ms-flex-order: 10;
@@ -29816,7 +29816,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-10\@xl- {
     -webkit-box-ordinal-group: 11;
     -ms-flex-order: 10;
@@ -29848,7 +29848,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-10\@lg {
     -webkit-box-ordinal-group: 11;
     -ms-flex-order: 10;
@@ -29878,7 +29878,7 @@ footer {
   order: 11
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-11\@xl\+ {
     -webkit-box-ordinal-group: 12;
     -ms-flex-order: 11;
@@ -29918,7 +29918,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-11\@xl- {
     -webkit-box-ordinal-group: 12;
     -ms-flex-order: 11;
@@ -29950,7 +29950,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-11\@lg {
     -webkit-box-ordinal-group: 12;
     -ms-flex-order: 11;
@@ -29980,7 +29980,7 @@ footer {
   order: 12
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ord-12\@xl\+ {
     -webkit-box-ordinal-group: 13;
     -ms-flex-order: 12;
@@ -30020,7 +30020,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ord-12\@xl- {
     -webkit-box-ordinal-group: 13;
     -ms-flex-order: 12;
@@ -30052,7 +30052,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ord-12\@lg {
     -webkit-box-ordinal-group: 13;
     -ms-flex-order: 12;
@@ -30100,7 +30100,7 @@ footer {
   display: none !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .d-b\@xl\+ {
     display: block !important
   }
@@ -30230,7 +30230,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .d-b\@xl- {
     display: block !important
   }
@@ -30334,7 +30334,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .d-b\@lg {
     display: block !important
   }
@@ -30448,7 +30448,7 @@ footer {
   overflow-x: scroll !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ov-h\@xl\+ {
     overflow: hidden !important
   }
@@ -30638,7 +30638,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ov-h\@xl- {
     overflow: hidden !important
   }
@@ -30790,7 +30790,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ov-h\@lg {
     overflow: hidden !important
   }
@@ -30916,7 +30916,7 @@ footer {
   float: none !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .fl-l\@xl\+ {
     float: left !important
   }
@@ -30986,7 +30986,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .fl-l\@xl- {
     float: left !important
   }
@@ -31042,7 +31042,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .fl-l\@lg {
     float: left !important
   }
@@ -31096,7 +31096,7 @@ footer {
   vertical-align: bottom !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .va-t\@xl\+ {
     vertical-align: top !important
   }
@@ -31166,7 +31166,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .va-t\@xl- {
     vertical-align: top !important
   }
@@ -31222,7 +31222,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .va-t\@lg {
     vertical-align: top !important
   }
@@ -31284,7 +31284,7 @@ footer {
   position: fixed !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .pos-s\@xl\+ {
     position: static !important
   }
@@ -31394,7 +31394,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .pos-s\@xl- {
     position: static !important
   }
@@ -31482,7 +31482,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .pos-s\@lg {
     position: static !important
   }
@@ -31552,7 +31552,7 @@ footer {
   z-index: 0 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-0\@xl\+ {
     z-index: 0 !important
   }
@@ -31582,7 +31582,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-0\@xl- {
     z-index: 0 !important
   }
@@ -31606,7 +31606,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-0\@lg {
     z-index: 0 !important
   }
@@ -31628,7 +31628,7 @@ footer {
   z-index: 1000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-1\@xl\+ {
     z-index: 1000 !important
   }
@@ -31658,7 +31658,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-1\@xl- {
     z-index: 1000 !important
   }
@@ -31682,7 +31682,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-1\@lg {
     z-index: 1000 !important
   }
@@ -31704,7 +31704,7 @@ footer {
   z-index: 2000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-2\@xl\+ {
     z-index: 2000 !important
   }
@@ -31734,7 +31734,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-2\@xl- {
     z-index: 2000 !important
   }
@@ -31758,7 +31758,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-2\@lg {
     z-index: 2000 !important
   }
@@ -31780,7 +31780,7 @@ footer {
   z-index: 3000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-3\@xl\+ {
     z-index: 3000 !important
   }
@@ -31810,7 +31810,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-3\@xl- {
     z-index: 3000 !important
   }
@@ -31834,7 +31834,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-3\@lg {
     z-index: 3000 !important
   }
@@ -31856,7 +31856,7 @@ footer {
   z-index: 4000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-4\@xl\+ {
     z-index: 4000 !important
   }
@@ -31886,7 +31886,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-4\@xl- {
     z-index: 4000 !important
   }
@@ -31910,7 +31910,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-4\@lg {
     z-index: 4000 !important
   }
@@ -31932,7 +31932,7 @@ footer {
   z-index: 5000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-5\@xl\+ {
     z-index: 5000 !important
   }
@@ -31962,7 +31962,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-5\@xl- {
     z-index: 5000 !important
   }
@@ -31986,7 +31986,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-5\@lg {
     z-index: 5000 !important
   }
@@ -32008,7 +32008,7 @@ footer {
   z-index: 6000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-6\@xl\+ {
     z-index: 6000 !important
   }
@@ -32038,7 +32038,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-6\@xl- {
     z-index: 6000 !important
   }
@@ -32062,7 +32062,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-6\@lg {
     z-index: 6000 !important
   }
@@ -32084,7 +32084,7 @@ footer {
   z-index: 7000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-7\@xl\+ {
     z-index: 7000 !important
   }
@@ -32114,7 +32114,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-7\@xl- {
     z-index: 7000 !important
   }
@@ -32138,7 +32138,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-7\@lg {
     z-index: 7000 !important
   }
@@ -32160,7 +32160,7 @@ footer {
   z-index: 8000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-8\@xl\+ {
     z-index: 8000 !important
   }
@@ -32190,7 +32190,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-8\@xl- {
     z-index: 8000 !important
   }
@@ -32214,7 +32214,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-8\@lg {
     z-index: 8000 !important
   }
@@ -32236,7 +32236,7 @@ footer {
   z-index: 9000 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .z-9\@xl\+ {
     z-index: 9000 !important
   }
@@ -32266,7 +32266,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .z-9\@xl- {
     z-index: 9000 !important
   }
@@ -32290,7 +32290,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .z-9\@lg {
     z-index: 9000 !important
   }
@@ -32396,7 +32396,7 @@ footer {
   margin-right: 0 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-0\@xl\+ {
     margin: 0 !important
   }
@@ -32706,7 +32706,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-0\@xl- {
     margin: 0 !important
   }
@@ -32954,7 +32954,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-0\@lg {
     margin: 0 !important
   }
@@ -33200,7 +33200,7 @@ footer {
   margin-right: -1px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-1\@xl\+ {
     margin: 1px !important
   }
@@ -33510,7 +33510,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-1\@xl- {
     margin: 1px !important
   }
@@ -33758,7 +33758,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-1\@lg {
     margin: 1px !important
   }
@@ -34004,7 +34004,7 @@ footer {
   margin-right: -2px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-2\@xl\+ {
     margin: 2px !important
   }
@@ -34314,7 +34314,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-2\@xl- {
     margin: 2px !important
   }
@@ -34562,7 +34562,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-2\@lg {
     margin: 2px !important
   }
@@ -34808,7 +34808,7 @@ footer {
   margin-right: -3px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-3\@xl\+ {
     margin: 3px !important
   }
@@ -35118,7 +35118,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-3\@xl- {
     margin: 3px !important
   }
@@ -35366,7 +35366,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-3\@lg {
     margin: 3px !important
   }
@@ -35612,7 +35612,7 @@ footer {
   margin-right: -4px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-4\@xl\+ {
     margin: 4px !important
   }
@@ -35922,7 +35922,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-4\@xl- {
     margin: 4px !important
   }
@@ -36170,7 +36170,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-4\@lg {
     margin: 4px !important
   }
@@ -36416,7 +36416,7 @@ footer {
   margin-right: -5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-5\@xl\+ {
     margin: 5px !important
   }
@@ -36726,7 +36726,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-5\@xl- {
     margin: 5px !important
   }
@@ -36974,7 +36974,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-5\@lg {
     margin: 5px !important
   }
@@ -37220,7 +37220,7 @@ footer {
   margin-right: -10px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-10\@xl\+ {
     margin: 10px !important
   }
@@ -37530,7 +37530,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-10\@xl- {
     margin: 10px !important
   }
@@ -37778,7 +37778,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-10\@lg {
     margin: 10px !important
   }
@@ -38024,7 +38024,7 @@ footer {
   margin-right: -15px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-15\@xl\+ {
     margin: 15px !important
   }
@@ -38334,7 +38334,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-15\@xl- {
     margin: 15px !important
   }
@@ -38582,7 +38582,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-15\@lg {
     margin: 15px !important
   }
@@ -38828,7 +38828,7 @@ footer {
   margin-right: -20px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-20\@xl\+ {
     margin: 20px !important
   }
@@ -39138,7 +39138,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-20\@xl- {
     margin: 20px !important
   }
@@ -39386,7 +39386,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-20\@lg {
     margin: 20px !important
   }
@@ -39632,7 +39632,7 @@ footer {
   margin-right: -25px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-25\@xl\+ {
     margin: 25px !important
   }
@@ -39942,7 +39942,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-25\@xl- {
     margin: 25px !important
   }
@@ -40190,7 +40190,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-25\@lg {
     margin: 25px !important
   }
@@ -40436,7 +40436,7 @@ footer {
   margin-right: -30px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-30\@xl\+ {
     margin: 30px !important
   }
@@ -40746,7 +40746,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-30\@xl- {
     margin: 30px !important
   }
@@ -40994,7 +40994,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-30\@lg {
     margin: 30px !important
   }
@@ -41240,7 +41240,7 @@ footer {
   margin-right: -35px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-35\@xl\+ {
     margin: 35px !important
   }
@@ -41550,7 +41550,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-35\@xl- {
     margin: 35px !important
   }
@@ -41798,7 +41798,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-35\@lg {
     margin: 35px !important
   }
@@ -42044,7 +42044,7 @@ footer {
   margin-right: -40px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-40\@xl\+ {
     margin: 40px !important
   }
@@ -42354,7 +42354,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-40\@xl- {
     margin: 40px !important
   }
@@ -42602,7 +42602,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-40\@lg {
     margin: 40px !important
   }
@@ -42848,7 +42848,7 @@ footer {
   margin-right: -50px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-50\@xl\+ {
     margin: 50px !important
   }
@@ -43158,7 +43158,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-50\@xl- {
     margin: 50px !important
   }
@@ -43406,7 +43406,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-50\@lg {
     margin: 50px !important
   }
@@ -43652,7 +43652,7 @@ footer {
   margin-right: -60px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-60\@xl\+ {
     margin: 60px !important
   }
@@ -43962,7 +43962,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-60\@xl- {
     margin: 60px !important
   }
@@ -44210,7 +44210,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-60\@lg {
     margin: 60px !important
   }
@@ -44456,7 +44456,7 @@ footer {
   margin-right: -70px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-70\@xl\+ {
     margin: 70px !important
   }
@@ -44766,7 +44766,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-70\@xl- {
     margin: 70px !important
   }
@@ -45014,7 +45014,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-70\@lg {
     margin: 70px !important
   }
@@ -45260,7 +45260,7 @@ footer {
   margin-right: -80px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-80\@xl\+ {
     margin: 80px !important
   }
@@ -45570,7 +45570,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-80\@xl- {
     margin: 80px !important
   }
@@ -45818,7 +45818,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-80\@lg {
     margin: 80px !important
   }
@@ -46064,7 +46064,7 @@ footer {
   margin-right: -90px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-90\@xl\+ {
     margin: 90px !important
   }
@@ -46374,7 +46374,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-90\@xl- {
     margin: 90px !important
   }
@@ -46622,7 +46622,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-90\@lg {
     margin: 90px !important
   }
@@ -46868,7 +46868,7 @@ footer {
   margin-right: -100px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-100\@xl\+ {
     margin: 100px !important
   }
@@ -47178,7 +47178,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-100\@xl- {
     margin: 100px !important
   }
@@ -47426,7 +47426,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-100\@lg {
     margin: 100px !important
   }
@@ -47672,7 +47672,7 @@ footer {
   margin-right: -110px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-110\@xl\+ {
     margin: 110px !important
   }
@@ -47982,7 +47982,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-110\@xl- {
     margin: 110px !important
   }
@@ -48230,7 +48230,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-110\@lg {
     margin: 110px !important
   }
@@ -48476,7 +48476,7 @@ footer {
   margin-right: -120px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-120\@xl\+ {
     margin: 120px !important
   }
@@ -48786,7 +48786,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-120\@xl- {
     margin: 120px !important
   }
@@ -49034,7 +49034,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-120\@lg {
     margin: 120px !important
   }
@@ -49280,7 +49280,7 @@ footer {
   margin-right: -130px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-130\@xl\+ {
     margin: 130px !important
   }
@@ -49590,7 +49590,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-130\@xl- {
     margin: 130px !important
   }
@@ -49838,7 +49838,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-130\@lg {
     margin: 130px !important
   }
@@ -50084,7 +50084,7 @@ footer {
   margin-right: -140px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-140\@xl\+ {
     margin: 140px !important
   }
@@ -50394,7 +50394,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-140\@xl- {
     margin: 140px !important
   }
@@ -50642,7 +50642,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-140\@lg {
     margin: 140px !important
   }
@@ -50888,7 +50888,7 @@ footer {
   margin-right: -150px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-150\@xl\+ {
     margin: 150px !important
   }
@@ -51198,7 +51198,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-150\@xl- {
     margin: 150px !important
   }
@@ -51446,7 +51446,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-150\@lg {
     margin: 150px !important
   }
@@ -51692,7 +51692,7 @@ footer {
   margin-right: -160px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-160\@xl\+ {
     margin: 160px !important
   }
@@ -52002,7 +52002,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-160\@xl- {
     margin: 160px !important
   }
@@ -52250,7 +52250,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-160\@lg {
     margin: 160px !important
   }
@@ -52461,7 +52461,7 @@ footer {
   margin-left: auto !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .m-a\@xl\+ {
     margin: auto !important
   }
@@ -52596,7 +52596,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .m-a\@xl- {
     margin: auto !important
   }
@@ -52704,7 +52704,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .m-a\@lg {
     margin: auto !important
   }
@@ -52976,7 +52976,7 @@ footer {
   padding-right: 0 !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-0\@xl\+ {
     padding: 0 !important
   }
@@ -53136,7 +53136,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-0\@xl- {
     padding: 0 !important
   }
@@ -53264,7 +53264,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-0\@lg {
     padding: 0 !important
   }
@@ -53390,7 +53390,7 @@ footer {
   padding-right: 1px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-1\@xl\+ {
     padding: 1px !important
   }
@@ -53550,7 +53550,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-1\@xl- {
     padding: 1px !important
   }
@@ -53678,7 +53678,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-1\@lg {
     padding: 1px !important
   }
@@ -53804,7 +53804,7 @@ footer {
   padding-right: 2px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-2\@xl\+ {
     padding: 2px !important
   }
@@ -53964,7 +53964,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-2\@xl- {
     padding: 2px !important
   }
@@ -54092,7 +54092,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-2\@lg {
     padding: 2px !important
   }
@@ -54218,7 +54218,7 @@ footer {
   padding-right: 3px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-3\@xl\+ {
     padding: 3px !important
   }
@@ -54378,7 +54378,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-3\@xl- {
     padding: 3px !important
   }
@@ -54506,7 +54506,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-3\@lg {
     padding: 3px !important
   }
@@ -54632,7 +54632,7 @@ footer {
   padding-right: 4px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-4\@xl\+ {
     padding: 4px !important
   }
@@ -54792,7 +54792,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-4\@xl- {
     padding: 4px !important
   }
@@ -54920,7 +54920,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-4\@lg {
     padding: 4px !important
   }
@@ -55046,7 +55046,7 @@ footer {
   padding-right: 5px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-5\@xl\+ {
     padding: 5px !important
   }
@@ -55206,7 +55206,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-5\@xl- {
     padding: 5px !important
   }
@@ -55334,7 +55334,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-5\@lg {
     padding: 5px !important
   }
@@ -55460,7 +55460,7 @@ footer {
   padding-right: 10px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-10\@xl\+ {
     padding: 10px !important
   }
@@ -55620,7 +55620,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-10\@xl- {
     padding: 10px !important
   }
@@ -55748,7 +55748,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-10\@lg {
     padding: 10px !important
   }
@@ -55874,7 +55874,7 @@ footer {
   padding-right: 15px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-15\@xl\+ {
     padding: 15px !important
   }
@@ -56034,7 +56034,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-15\@xl- {
     padding: 15px !important
   }
@@ -56162,7 +56162,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-15\@lg {
     padding: 15px !important
   }
@@ -56288,7 +56288,7 @@ footer {
   padding-right: 20px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-20\@xl\+ {
     padding: 20px !important
   }
@@ -56448,7 +56448,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-20\@xl- {
     padding: 20px !important
   }
@@ -56576,7 +56576,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-20\@lg {
     padding: 20px !important
   }
@@ -56702,7 +56702,7 @@ footer {
   padding-right: 25px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-25\@xl\+ {
     padding: 25px !important
   }
@@ -56862,7 +56862,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-25\@xl- {
     padding: 25px !important
   }
@@ -56990,7 +56990,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-25\@lg {
     padding: 25px !important
   }
@@ -57116,7 +57116,7 @@ footer {
   padding-right: 30px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-30\@xl\+ {
     padding: 30px !important
   }
@@ -57276,7 +57276,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-30\@xl- {
     padding: 30px !important
   }
@@ -57404,7 +57404,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-30\@lg {
     padding: 30px !important
   }
@@ -57530,7 +57530,7 @@ footer {
   padding-right: 35px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-35\@xl\+ {
     padding: 35px !important
   }
@@ -57690,7 +57690,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-35\@xl- {
     padding: 35px !important
   }
@@ -57818,7 +57818,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-35\@lg {
     padding: 35px !important
   }
@@ -57944,7 +57944,7 @@ footer {
   padding-right: 40px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-40\@xl\+ {
     padding: 40px !important
   }
@@ -58104,7 +58104,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-40\@xl- {
     padding: 40px !important
   }
@@ -58232,7 +58232,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-40\@lg {
     padding: 40px !important
   }
@@ -58358,7 +58358,7 @@ footer {
   padding-right: 50px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-50\@xl\+ {
     padding: 50px !important
   }
@@ -58518,7 +58518,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-50\@xl- {
     padding: 50px !important
   }
@@ -58646,7 +58646,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-50\@lg {
     padding: 50px !important
   }
@@ -58772,7 +58772,7 @@ footer {
   padding-right: 60px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-60\@xl\+ {
     padding: 60px !important
   }
@@ -58932,7 +58932,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-60\@xl- {
     padding: 60px !important
   }
@@ -59060,7 +59060,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-60\@lg {
     padding: 60px !important
   }
@@ -59186,7 +59186,7 @@ footer {
   padding-right: 70px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-70\@xl\+ {
     padding: 70px !important
   }
@@ -59346,7 +59346,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-70\@xl- {
     padding: 70px !important
   }
@@ -59474,7 +59474,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-70\@lg {
     padding: 70px !important
   }
@@ -59600,7 +59600,7 @@ footer {
   padding-right: 80px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-80\@xl\+ {
     padding: 80px !important
   }
@@ -59760,7 +59760,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-80\@xl- {
     padding: 80px !important
   }
@@ -59888,7 +59888,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-80\@lg {
     padding: 80px !important
   }
@@ -60014,7 +60014,7 @@ footer {
   padding-right: 90px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-90\@xl\+ {
     padding: 90px !important
   }
@@ -60174,7 +60174,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-90\@xl- {
     padding: 90px !important
   }
@@ -60302,7 +60302,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-90\@lg {
     padding: 90px !important
   }
@@ -60428,7 +60428,7 @@ footer {
   padding-right: 100px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-100\@xl\+ {
     padding: 100px !important
   }
@@ -60588,7 +60588,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-100\@xl- {
     padding: 100px !important
   }
@@ -60716,7 +60716,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-100\@lg {
     padding: 100px !important
   }
@@ -60842,7 +60842,7 @@ footer {
   padding-right: 110px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-110\@xl\+ {
     padding: 110px !important
   }
@@ -61002,7 +61002,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-110\@xl- {
     padding: 110px !important
   }
@@ -61130,7 +61130,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-110\@lg {
     padding: 110px !important
   }
@@ -61256,7 +61256,7 @@ footer {
   padding-right: 120px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-120\@xl\+ {
     padding: 120px !important
   }
@@ -61416,7 +61416,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-120\@xl- {
     padding: 120px !important
   }
@@ -61544,7 +61544,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-120\@lg {
     padding: 120px !important
   }
@@ -61670,7 +61670,7 @@ footer {
   padding-right: 130px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-130\@xl\+ {
     padding: 130px !important
   }
@@ -61830,7 +61830,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-130\@xl- {
     padding: 130px !important
   }
@@ -61958,7 +61958,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-130\@lg {
     padding: 130px !important
   }
@@ -62084,7 +62084,7 @@ footer {
   padding-right: 140px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-140\@xl\+ {
     padding: 140px !important
   }
@@ -62244,7 +62244,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-140\@xl- {
     padding: 140px !important
   }
@@ -62372,7 +62372,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-140\@lg {
     padding: 140px !important
   }
@@ -62498,7 +62498,7 @@ footer {
   padding-right: 150px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-150\@xl\+ {
     padding: 150px !important
   }
@@ -62658,7 +62658,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-150\@xl- {
     padding: 150px !important
   }
@@ -62786,7 +62786,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-150\@lg {
     padding: 150px !important
   }
@@ -62912,7 +62912,7 @@ footer {
   padding-right: 160px !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .p-160\@xl\+ {
     padding: 160px !important
   }
@@ -63072,7 +63072,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .p-160\@xl- {
     padding: 160px !important
   }
@@ -63200,7 +63200,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .p-160\@lg {
     padding: 160px !important
   }
@@ -63312,7 +63312,7 @@ footer {
   left: 0
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-0\@xl\+ {
     top: 0
   }
@@ -63402,7 +63402,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-0\@xl- {
     top: 0
   }
@@ -63474,7 +63474,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-0\@lg {
     top: 0
   }
@@ -63544,7 +63544,7 @@ footer {
   left: 1px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-1\@xl\+ {
     top: 1px
   }
@@ -63634,7 +63634,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-1\@xl- {
     top: 1px
   }
@@ -63706,7 +63706,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-1\@lg {
     top: 1px
   }
@@ -63776,7 +63776,7 @@ footer {
   left: 2px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-2\@xl\+ {
     top: 2px
   }
@@ -63866,7 +63866,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-2\@xl- {
     top: 2px
   }
@@ -63938,7 +63938,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-2\@lg {
     top: 2px
   }
@@ -64008,7 +64008,7 @@ footer {
   left: 3px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-3\@xl\+ {
     top: 3px
   }
@@ -64098,7 +64098,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-3\@xl- {
     top: 3px
   }
@@ -64170,7 +64170,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-3\@lg {
     top: 3px
   }
@@ -64240,7 +64240,7 @@ footer {
   left: 4px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-4\@xl\+ {
     top: 4px
   }
@@ -64330,7 +64330,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-4\@xl- {
     top: 4px
   }
@@ -64402,7 +64402,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-4\@lg {
     top: 4px
   }
@@ -64472,7 +64472,7 @@ footer {
   left: 5px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-5\@xl\+ {
     top: 5px
   }
@@ -64562,7 +64562,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-5\@xl- {
     top: 5px
   }
@@ -64634,7 +64634,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-5\@lg {
     top: 5px
   }
@@ -64704,7 +64704,7 @@ footer {
   left: 10px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-10\@xl\+ {
     top: 10px
   }
@@ -64794,7 +64794,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-10\@xl- {
     top: 10px
   }
@@ -64866,7 +64866,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-10\@lg {
     top: 10px
   }
@@ -64936,7 +64936,7 @@ footer {
   left: 15px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-15\@xl\+ {
     top: 15px
   }
@@ -65026,7 +65026,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-15\@xl- {
     top: 15px
   }
@@ -65098,7 +65098,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-15\@lg {
     top: 15px
   }
@@ -65168,7 +65168,7 @@ footer {
   left: 20px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-20\@xl\+ {
     top: 20px
   }
@@ -65258,7 +65258,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-20\@xl- {
     top: 20px
   }
@@ -65330,7 +65330,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-20\@lg {
     top: 20px
   }
@@ -65400,7 +65400,7 @@ footer {
   left: 25px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-25\@xl\+ {
     top: 25px
   }
@@ -65490,7 +65490,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-25\@xl- {
     top: 25px
   }
@@ -65562,7 +65562,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-25\@lg {
     top: 25px
   }
@@ -65632,7 +65632,7 @@ footer {
   left: 30px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-30\@xl\+ {
     top: 30px
   }
@@ -65722,7 +65722,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-30\@xl- {
     top: 30px
   }
@@ -65794,7 +65794,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-30\@lg {
     top: 30px
   }
@@ -65864,7 +65864,7 @@ footer {
   left: 35px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-35\@xl\+ {
     top: 35px
   }
@@ -65954,7 +65954,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-35\@xl- {
     top: 35px
   }
@@ -66026,7 +66026,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-35\@lg {
     top: 35px
   }
@@ -66096,7 +66096,7 @@ footer {
   left: 40px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-40\@xl\+ {
     top: 40px
   }
@@ -66186,7 +66186,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-40\@xl- {
     top: 40px
   }
@@ -66258,7 +66258,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-40\@lg {
     top: 40px
   }
@@ -66328,7 +66328,7 @@ footer {
   left: 50px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-50\@xl\+ {
     top: 50px
   }
@@ -66418,7 +66418,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-50\@xl- {
     top: 50px
   }
@@ -66490,7 +66490,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-50\@lg {
     top: 50px
   }
@@ -66560,7 +66560,7 @@ footer {
   left: 60px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-60\@xl\+ {
     top: 60px
   }
@@ -66650,7 +66650,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-60\@xl- {
     top: 60px
   }
@@ -66722,7 +66722,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-60\@lg {
     top: 60px
   }
@@ -66792,7 +66792,7 @@ footer {
   left: 70px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-70\@xl\+ {
     top: 70px
   }
@@ -66882,7 +66882,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-70\@xl- {
     top: 70px
   }
@@ -66954,7 +66954,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-70\@lg {
     top: 70px
   }
@@ -67024,7 +67024,7 @@ footer {
   left: 80px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-80\@xl\+ {
     top: 80px
   }
@@ -67114,7 +67114,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-80\@xl- {
     top: 80px
   }
@@ -67186,7 +67186,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-80\@lg {
     top: 80px
   }
@@ -67256,7 +67256,7 @@ footer {
   left: 90px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-90\@xl\+ {
     top: 90px
   }
@@ -67346,7 +67346,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-90\@xl- {
     top: 90px
   }
@@ -67418,7 +67418,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-90\@lg {
     top: 90px
   }
@@ -67488,7 +67488,7 @@ footer {
   left: 100px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-100\@xl\+ {
     top: 100px
   }
@@ -67578,7 +67578,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-100\@xl- {
     top: 100px
   }
@@ -67650,7 +67650,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-100\@lg {
     top: 100px
   }
@@ -67720,7 +67720,7 @@ footer {
   left: 110px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-110\@xl\+ {
     top: 110px
   }
@@ -67810,7 +67810,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-110\@xl- {
     top: 110px
   }
@@ -67882,7 +67882,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-110\@lg {
     top: 110px
   }
@@ -67952,7 +67952,7 @@ footer {
   left: 120px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-120\@xl\+ {
     top: 120px
   }
@@ -68042,7 +68042,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-120\@xl- {
     top: 120px
   }
@@ -68114,7 +68114,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-120\@lg {
     top: 120px
   }
@@ -68184,7 +68184,7 @@ footer {
   left: 130px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-130\@xl\+ {
     top: 130px
   }
@@ -68274,7 +68274,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-130\@xl- {
     top: 130px
   }
@@ -68346,7 +68346,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-130\@lg {
     top: 130px
   }
@@ -68416,7 +68416,7 @@ footer {
   left: 140px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-140\@xl\+ {
     top: 140px
   }
@@ -68506,7 +68506,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-140\@xl- {
     top: 140px
   }
@@ -68578,7 +68578,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-140\@lg {
     top: 140px
   }
@@ -68648,7 +68648,7 @@ footer {
   left: 150px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-150\@xl\+ {
     top: 150px
   }
@@ -68738,7 +68738,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-150\@xl- {
     top: 150px
   }
@@ -68810,7 +68810,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-150\@lg {
     top: 150px
   }
@@ -68880,7 +68880,7 @@ footer {
   left: 160px
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .t-160\@xl\+ {
     top: 160px
   }
@@ -68970,7 +68970,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .t-160\@xl- {
     top: 160px
   }
@@ -69042,7 +69042,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .t-160\@lg {
     top: 160px
   }
@@ -69122,7 +69122,7 @@ footer {
   left: 50%
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .tl-50p\@xl\+ {
     left: 50%;
     top: 50%
@@ -69262,7 +69262,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .tl-50p\@xl- {
     left: 50%;
     top: 50%
@@ -69374,7 +69374,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .tl-50p\@lg {
     left: 50%;
     top: 50%
@@ -69528,7 +69528,7 @@ footer {
   width: 6rem
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
 
   .sz-1\/4r\@xl\+,
   .w-1\/4r\@xl\+ {
@@ -69893,7 +69893,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
 
   .sz-1\/4r\@xl-,
   .w-1\/4r\@xl- {
@@ -70185,7 +70185,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
 
   .sz-1\/4r\@lg,
   .w-1\/4r\@lg {
@@ -70456,7 +70456,7 @@ footer {
   width: auto
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .w-0\@xl\+ {
     width: 0
   }
@@ -70726,7 +70726,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .w-0\@xl- {
     width: 0
   }
@@ -70942,7 +70942,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .w-0\@lg {
     width: 0
   }
@@ -71174,7 +71174,7 @@ footer {
   height: 6rem
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
 
   .h-1\/4r\@xl\+,
   .sz-1\/4r\@xl\+ {
@@ -71539,7 +71539,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
 
   .h-1\/4r\@xl-,
   .sz-1\/4r\@xl- {
@@ -71831,7 +71831,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
 
   .h-1\/4r\@lg,
   .sz-1\/4r\@lg {
@@ -72066,7 +72066,7 @@ footer {
   height: 100vh
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .h-0\@xl\+ {
     height: 0
   }
@@ -72156,7 +72156,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .h-0\@xl- {
     height: 0
   }
@@ -72228,7 +72228,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .h-0\@lg {
     height: 0
   }
@@ -72290,7 +72290,7 @@ footer {
   max-height: 100%
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .mw-100p\@xl\+ {
     max-width: 100%
   }
@@ -72340,7 +72340,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .mw-100p\@xl- {
     max-width: 100%
   }
@@ -72380,7 +72380,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .mw-100p\@lg {
     max-width: 100%
   }
@@ -72422,7 +72422,7 @@ footer {
   text-align: right !important
 }
 
-@media screen and (min-width:1440px) {
+@media screen and (min-width:1080px) {
   .ta-c\@xl\+ {
     text-align: center !important
   }
@@ -72492,7 +72492,7 @@ footer {
   }
 }
 
-@media screen and (max-width:1439px) {
+@media screen and (max-width:1079px) {
   .ta-c\@xl- {
     text-align: center !important
   }
@@ -72548,7 +72548,7 @@ footer {
   }
 }
 
-@media screen and (min-width:1199px) and (max-width:1439px) {
+@media screen and (min-width:1199px) and (max-width:1079px) {
   .ta-c\@lg {
     text-align: center !important
   }

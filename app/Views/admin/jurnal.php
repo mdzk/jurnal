@@ -116,10 +116,11 @@
                     <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No</th>
                                 <th>Nama Kegiatan</th>
                                 <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                     <th>Nama User</th>
+                                    <th>Unit Kerja</th>
                                 <?php endif; ?>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
@@ -132,10 +133,11 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>#</th>
-                                <th>Nama Kegiatan</th>
+                                <th>No</th>
+                                <th>Nama Kerja</th>
                                 <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                     <th>Nama User</th>
+                                    <th>Unit Kegiatan</th>
                                 <?php endif; ?>
                                 <th>Tanggal</th>
                                 <th>Waktu</th>
@@ -154,6 +156,7 @@
                                     <td><?= $data['nama']; ?></td>
                                     <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                         <td><?= $data['name']; ?></td>
+                                        <td><?= $data['unit']; ?></td>
                                     <?php endif; ?>
                                     <td><?= $data['tanggal']; ?></td>
                                     <td><?= $data['jam_mulai']; ?> - <?= $data['jam_berakhir']; ?></td>

@@ -64,8 +64,12 @@
                     </div>
                 </div>
                 -->
-
+                <h2>Dashboard</h2>
                 <div class="col-md-8">
+                 
+
+                    <header style= "background:#008B8B ; color: #fff; padding: 10px; text-align: center;"> E-GaWai</header>
+
                     <div class="layers bd bgc-white p-20">
                         <div class="layer w-100 mB-10">
                             <h6 class="lh-1">Data Profile</h6>
@@ -80,7 +84,7 @@
                                         <table>
                                             <thead>
                                                 <tr>
-                                                    <th>Nama</th>
+                                 <th>Nama</th>
                                                     <td>&nbsp;: <?= $user['name']; ?></td>
                                                 </tr>
                                                 <tr>
@@ -100,7 +104,7 @@
                                                     <td>&nbsp;: <?= $user['unit']; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <th>Kepala Bidang</th>
+                                                    <th>Atasan</th>
                                                     <td>&nbsp;: <?= $user['kepala']; ?></td>
                                                 </tr>
                                             </thead>
@@ -150,16 +154,17 @@
                 <div class="bgc-white bd bdrs-3 p-20 mB-20 mt-5">
                     <div class="row">
                         <div class="layer w-100 mB-10">
-                            <h6 class="lh-1">Jurnal Harian Bulan Ini</h6>
+                            <h6 class="lh-1">Jurnal Harian</h6>
                         </div>
                         <div class="col-12">
                             <table id="dataTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>No</th>
                                         <th>Nama Kegiatan</th>
                                         <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                             <th>Nama User</th>
+                                            <th>Unit Kerja</th>
                                         <?php endif; ?>
                                         <th>Tanggal</th>
                                         <th>Waktu</th>
@@ -172,10 +177,12 @@
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>#</th>
+
+                                        <th>No</th>
                                         <th>Nama Kegiatan</th>
                                         <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                             <th>Nama User</th>
+                                            <th>Unit Kerja</th>
                                         <?php endif; ?>
                                         <th>Tanggal</th>
                                         <th>Waktu</th>
@@ -194,6 +201,7 @@
                                             <td><?= $data['nama']; ?></td>
                                             <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                                 <td><?= $data['name']; ?></td>
+                                                <td><?= $data['unit']; ?> </td>
                                             <?php endif; ?>
                                             <td><?= $data['tanggal']; ?></td>
                                             <td><?= $data['jam_mulai']; ?> - <?= $data['jam_berakhir']; ?></td>
@@ -310,7 +318,7 @@
                 <div class="bd bgc-white">
                     <div class="layers">
                         <div class="layer w-100 pX-20 pT-20">
-                            <h6 class="lh-1">Monthly Stats</h6>
+                            <h6 class="lh-1">Statistik Kegiatan Pegawai</h6>
                         </div>
                         <div class="layer w-100 p-20"><canvas id="line-chart" height="220"></canvas></div>
                     </div>

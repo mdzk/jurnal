@@ -87,7 +87,7 @@
                                         <div class="logo"><img src="<?= base_url(); ?>assets/static/images/logo.png" alt=""></div>
                                     </div>
                                     <div class="peer peer-greed">
-                                        <h5 class="lh-1 mB-0 logo-text">Jurnal Harian</h5>
+                                        <h5 class="lh-1 mB-0 logo-text">E-GaWai</h5>
                                     </div>
                                 </div>
                             </a></div>
@@ -146,8 +146,7 @@
                     <?= $this->renderSection('content'); ?>
                 </div>
             </main><!-- ### $App Screen Footer ### -->
-            <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600"><span>Copyright © <?= date('Y'); ?>. All rights
-                    reserved.</span></footer>
+            <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600"><span>Copyright © <?= date('Y'); ?></span></footer>
         </div>
     </div>
     <!-- Sweetalert -->

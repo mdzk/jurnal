@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <link rel="shortcut icon" href="<?= base_url(); ?>assets/static/images/logo.png" type="image/x-icon" />
 
-    <title>Sign In</title>
+    <title>Sign In | E-GaWai</title>
     <style>
         #loader {
             transition: all .3s ease-in-out;
@@ -83,6 +83,7 @@
             </div>
         </div>
         <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
+            <h4 class="fw-300 c-grey-900 mB-40"><center>E-GaWai</center></h4>
             <h4 class="fw-300 c-grey-900 mB-40"><b>Login</b></h4>
             <?php if (session()->getFlashdata('msg')) : ?>
                 <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>

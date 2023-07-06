@@ -55,7 +55,7 @@ class PdfController extends BaseController
         $jurnal = new JurnalModel();
         $id = $this->request->getVar('tanggal');
         $data_jurnal = $jurnal->where('status', 'terverifikasi')->where('id_users', session('id_users'))->where('tanggal', $id)->findAll();
-        if (!$data_jurnal || !$data_jurnal_bulan) {
+        if (!$data_jurnal || !$data_jurnal) {
             session()->setFlashdata('not-found', 'Data tidak ditemukan');
             return redirect()->back();
         } else {

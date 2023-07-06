@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group mb-3">
-                                        <label for="name">Kuantitas Output</label>
+                                        <label for="name">Output</label>
                                         <div class="position-relative">
                                             <input type="text" name="kuantitas" class="form-control" placeholder="3 Dokumen" id="name">
                                         </div>
@@ -90,7 +90,7 @@
                                 <th>#</th>
                                 <th>Capaian Kinerja</th>
                                 <th>Realisasi Waktu</th>
-                                <th>Kuantitas</th>
+                                <th>Output</th>
                                 <th>Point</th>
                                 <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                     <th>Nama User</th>
@@ -104,7 +104,7 @@
                                 <th>#</th>
                                 <th>Capaian Kinerja</th>
                                 <th>Realisasi Waktu</th>
-                                <th>Kuantitas</th>
+                                <th>Output</th>
                                 <th>Point</th>
                                 <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                     <th>Nama User</th>

@@ -127,7 +127,7 @@
         <tr class="data-header">
             <td>JABATAN</td>
             <td>: <?= $user['jabatan']; ?></td>
-            <td>Tanggal</td>
+            <td>Bulan</td>
             <td>: <?= $monthName = date('F', mktime(0, 0, 0, $bulan, 10));; ?> <?= $tahun; ?></td>
         </tr>
         <tr class="data-header">
@@ -145,6 +145,7 @@
                 <th>Kegiatan</th>
                 <th>Tempat</th>
                 <th>Penyelenggara</th>
+                <th>Foto</th>
             </tr>
         </thead>
         <tbody>
@@ -163,6 +164,8 @@
                     <td><?= $data['nama']; ?></td>
                     <td><?= $data['tempat']; ?></td>
                     <td><?= $data['penyelenggara']; ?></td>
+                    <td>
+                    <img src="<?= base_url(); ?>foto/<?= $data['foto'] ?>" style="width: 100px; height: 100px;object-fit: cover;"> </td>
                 </tr>
                 <?php $total_jam += $since_start->h; ?>
             <?php endforeach; ?>
@@ -173,7 +176,7 @@
         <tr>
             <td>
                 <span style="text-decoration: underline;">Penilaian Kepala Bidang Langsung :</span> <br>
-                Sesuai fakta dan kepatuhan maka yang bersangkutan pada hari ini telah melaksanakan seluruh tugas selama <?= $total_jam; ?> jam.
+                Sesuai fakta dan kepatuhan maka yang bersangkutan pada bulan ini telah melaksanakan seluruh tugas selama <?= $total_jam; ?> jam.
                 Mengetahui Kepala Bidang
             </td>
             <td>Tanggamus, <?= date('d F Y'); ?> <br>

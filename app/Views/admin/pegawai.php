@@ -32,7 +32,7 @@
         <div class="row" id="basic-table">
             <div class="col-12 col-md-12">
                 <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
-                    <a href="<?= base_url(); ?>pegawai/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Pegawai Harian</a>
+                    <a href="<?= base_url(); ?>pegawai/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Tambah Data Pegawai</a>
                     <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Pegawai</button>
                     <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-scrollable" role="document">
