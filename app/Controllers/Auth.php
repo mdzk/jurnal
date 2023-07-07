@@ -23,11 +23,11 @@ class Auth extends BaseController
         $username = $this->request->getVar('username');
         $password = $this->request->getVar('password');
         $data = $model->where('username', $username)->first();
-        $golongan = $golonganModel->where('id_golongan', $data['golongan'])->first();
         if ($data) {
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
             if ($verify_pass) {
+                $golongan = $golonganModel->where('id_golongan', $data['golongan'])->first();
                 $ses_data = [
                     'id_users'   => $data['id_users'],
                     'name'      => $data['name'],

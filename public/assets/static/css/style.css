@@ -14260,7 +14260,7 @@ body {
   color: #72777a;
   font-size: 14px;
   letter-spacing: .2px;
-  overflow-x: hidden
+  /* overflow-x: hidden */
 }
 
 .h1,

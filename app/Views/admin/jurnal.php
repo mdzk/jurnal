@@ -38,7 +38,9 @@
     <section class="section">
         <div class="row" id="basic-table">
             <div class="col-12 col-md-12">
-                <a href="<?= base_url(); ?>jurnal/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Jurnal Harian</a>
+                <?php if (session('role') == 'user') : ?>
+                    <a href="<?= base_url(); ?>jurnal/add" class="btn btn-primary btn-color rounded-pill mb-4">+ Jurnal Harian</a>
+                <?php endif; ?>
                 <button class="btn btn-primary btn-color rounded-pill mb-4" data-bs-toggle="modal" data-bs-target="#tambahuser">Cetak Jurnal Harian</button>
                 <div class="modal fade text-left modal-borderless" id="tambahuser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -162,20 +164,35 @@
                                     <td><?= $data['jam_mulai']; ?> - <?= $data['jam_berakhir']; ?></td>
                                     <td><?= $data['tempat']; ?></td>
                                     <td><?= $data['penyelenggara']; ?></td>
-                                    <td><span class="badge bg-<?= $data['status'] == 'pending' ? 'warning' : 'primary'; ?>"><?= $data['status']; ?></span></td>
+                                    <td><span class="badge <?php if ($data['status'] !== 'terverifikasi') {
+                                                                echo 'bg-warning';
+                                                            } else {
+                                                                echo 'bg-primary';
+                                                            } ?>">
+                                            <?php if ($data['status'] == 'terverifikasi') {
+                                                echo 'Terverifikasi';
+                                            } ?>
+
+                                            <?php if ($data['status'] == 'admin') {
+                                                echo 'Menunggu Admin';
+                                            } ?>
+
+                                            <?php if ($data['status'] == 'pimpinan') {
+                                                echo 'Menunggu Pimpinan';
+                                            }
+                                            ?>
+                                        </span></td>
                                     <td>
-                                        <img src="<?= base_url(); ?>foto/<?= $data['foto'] ?>" style="width: 150px; height: 150px;object-fit: cover;">
+                                        <img src=" <?= base_url(); ?>foto/<?= $data['foto'] ?>" style="width: 150px; height: 150px;object-fit: cover;">
                                     </td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
-                                            <?php if ($data['status'] == 'pending' || session('role') == 'admin') : ?>
-                                                <?php if ($data['status'] == 'pending') : ?>
-                                                    <li class="list-inline-item mail-delete">
-                                                        <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
-                                                            <i class="ti-pencil"></i>
-                                                        </a>
-                                                    </li>
-                                                <?php endif; ?>
+                                            <?php if ($data['status'] == 'admin' && session('role') == 'user') : ?>
+                                                <li class="list-inline-item mail-delete">
+                                                    <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
+                                                        <i class="ti-pencil"></i>
+                                                    </a>
+                                                </li>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-red-500 cH-blue-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapusjurnal<?= $data['id_jurnal']; ?>">
                                                         <i class="ti-trash"></i>
@@ -216,7 +233,7 @@
                                                 <!--Hapus User Modal Content End-->
                                             <?php endif; ?>
 
-                                            <?php if ($data['status'] == 'pending' && session('role') == 'admin') : ?>
+                                            <?php if ($data['status'] == 'admin' && session('role') == 'admin') : ?>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnal<?= $data['id_jurnal']; ?>">
                                                         <i class="ti-check"></i>
@@ -234,6 +251,46 @@
                                                             </div>
 
                                                             <form action="<?= route_to('jurnal-verif'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <p>
+                                                                        Apakah anda yakin ingin verifikasi jurnal harian ini?
+                                                                    </p>
+                                                                </div>
+                                                                <input type="number" name="id_jurnal" value="<?= $data['id_jurnal']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Verifikasi Jurnal Harian Modal Content End-->
+                                            <?php endif; ?>
+
+                                            <?php if ($data['status'] == 'pimpinan' && session('role') == 'pimpinan') : ?>
+                                                <li class="list-inline-item mail-unread">
+                                                    <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnalp<?= $data['id_jurnal']; ?>">
+                                                        <i class="ti-check"></i>
+                                                    </button>
+                                                </li>
+
+                                                <!--Verifikasi Pimpinan Jurnal Harian Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="verifjurnalp<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Peringatan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('jurnal-verif-pimpinan'); ?>" method="POST">
 
                                                                 <div class="modal-body">
                                                                     <p>

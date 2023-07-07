@@ -60,7 +60,7 @@ class Kinerja extends BaseController
                 'realisasi' => $this->request->getVar('realisasi'),
                 'kuantitas' => $this->request->getVar('kuantitas'),
                 'point' => $this->request->getVar('point'),
-                'status' => 'pending',
+                'status' => 'admin',
                 'id_users' => session('id_users'),
             ]);
 
@@ -77,7 +77,7 @@ class Kinerja extends BaseController
     {
         $kinerja = new KinerjaModel();
         $data = $kinerja->find($this->request->getVar('id_kinerja'));
-        if ($data['id_users'] == session('id_users')) {
+        if ($data['id_users'] == session('id_users') && $data['status'] == 'admin') {
             $kinerja->delete($this->request->getVar('id_kinerja'));
             session()->setFlashdata('pesan', 'Capaian Kinerja berhasil dihapus');
             return redirect()->back();
@@ -90,7 +90,26 @@ class Kinerja extends BaseController
     {
         $kinerja = new KinerjaModel();
         $data = $kinerja->find($this->request->getVar('id_kinerja'));
-        if ($data['status'] == 'pending' && session('role') == 'admin') {
+        if ($data['status'] == 'admin' && session('role') == 'admin') {
+            $data = [
+                'status' => 'pimpinan',
+            ];
+            $kinerja->set($data)
+                ->where('id_kinerja', $this->request->getVar('id_kinerja'))
+                ->update();
+
+            session()->setFlashdata('pesan', 'Capaian Kinerja berhasil diverifikasi');
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function verifPimpinan()
+    {
+        $kinerja = new KinerjaModel();
+        $data = $kinerja->find($this->request->getVar('id_kinerja'));
+        if ($data['status'] == 'pimpinan' && session('role') == 'pimpinan') {
             $data = [
                 'status' => 'terverifikasi',
             ];
@@ -110,7 +129,7 @@ class Kinerja extends BaseController
         $kinerja = new KinerjaModel();
         $getData = $kinerja->find($id);
 
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
             $data = [
                 'kinerja'  => $kinerja->find($id),
             ];
@@ -124,7 +143,7 @@ class Kinerja extends BaseController
     {
         $kinerja = new KinerjaModel();
         $getData = $kinerja->find($this->request->getVar('id_kinerja'));
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
             if ($this->validate([
                 'capaian' => [
                     'label' => 'Capaian Kinerja',

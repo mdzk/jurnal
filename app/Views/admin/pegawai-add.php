@@ -43,7 +43,7 @@
                             <div class="form-group mb-3">
                                 <label for="name">NIP</label>
                                 <div class="position-relative">
-                                    <input required type="number" name="nip" class="form-control" placeholder="1997110220201220" id="name">
+                                    <input required type="text" name="nip" class="form-control" placeholder="1997110220201220" id="nip">
                                 </div>
                             </div>
                             <div class="form-group mb-3">

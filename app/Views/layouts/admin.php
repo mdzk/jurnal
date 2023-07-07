@@ -173,6 +173,37 @@
         $(document).ready(function() {
             $('#kinerja').select2();
         });
+
+        function formatNIP(event) {
+            var input = document.getElementById('nip');
+
+            // Menghapus semua karakter selain angka dari input
+            var cleanInput = input.value.replace(/\D/g, '');
+
+            // Memisahkan input menjadi bagian-bagian sesuai format
+            var part1 = cleanInput.slice(0, 8);
+            var part2 = cleanInput.slice(8, 14);
+            var part3 = cleanInput.slice(14, 15);
+            var part4 = cleanInput.slice(15, 18);
+
+            // Menggabungkan bagian-bagian dengan spasi
+            var formattedNIP = part1 + ' ' + part2 + ' ' + part3 + ' ' + part4;
+
+            // Menghapus spasi tambahan jika ada
+            if (event.keyCode === 8 || event.keyCode === 46) { // Tombol backspace atau hapus
+                formattedNIP = formattedNIP.trim();
+            }
+
+            input.value = formattedNIP;
+        }
+
+        // Event listener untuk setiap perubahan pada nilai input
+        document.getElementById('nip').addEventListener('input', formatNIP);
+
+        // Event listener untuk tombol hapus atau backspace
+        document.getElementById('nip').addEventListener('keydown', formatNIP);
+        document.getElementById('nip').addEventListener('keyup', formatNIP);
+
     </script>
     <script src="<?= base_url(); ?>assets/static/js/main.js"></script>
 

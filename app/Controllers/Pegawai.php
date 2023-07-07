@@ -111,7 +111,7 @@ class Pegawai extends BaseController
             $pegawai = new PegawaiModel();
             $pegawai->save([
                 'nama_pegawai' => $this->request->getVar('nama'),
-                'nip' => $this->request->getVar('nip'),
+                'nip' => preg_replace('/[^0-9]/', '', $this->request->getVar('nip')),
                 'jabatan' => $this->request->getVar('jabatan'),
                 'tmt_jabatan' => $this->request->getVar('tmt_jabatan'),
                 'kerja_thn' => $this->request->getVar('thn_masa_kerja'),
@@ -235,7 +235,7 @@ class Pegawai extends BaseController
             $pegawai = new PegawaiModel();
             $data = [
                 'nama_pegawai' => $this->request->getVar('nama'),
-                'nip' => $this->request->getVar('nip'),
+                'nip' => preg_replace('/[^0-9]/', '', $this->request->getVar('nip')),
                 'jabatan' => $this->request->getVar('jabatan'),
                 'tmt_jabatan' => $this->request->getVar('tmt_jabatan'),
                 'kerja_thn' => $this->request->getVar('thn_masa_kerja'),

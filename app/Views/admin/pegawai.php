@@ -110,10 +110,10 @@
                             <tbody>
                                 <?php $i = 1;
                                 foreach ($pegawai as $data) : ?>
-                                    <tr>
+                                    <tr id="tr">
                                         <td><?= $i++; ?></td>
                                         <td><?= $data['nama_pegawai']; ?></td>
-                                        <td><?= $data['nip']; ?></td>
+                                        <td><?= get_nip($data['nip']); ?></td>
                                         <td><?= $data['jabatan']; ?></td>
                                         <td><?= $data['tmt_jabatan']; ?></td>
                                         <td><?= $data['kerja_thn']; ?> Tahun <?= $data['kerja_bln']; ?> Bulan</td>

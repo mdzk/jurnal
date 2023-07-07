@@ -49,6 +49,7 @@ $routes->get('/kinerja/edit/(:num)', 'Kinerja::edit/$1', ['as' => 'kinerja-edit'
 $routes->post('/kinerja/delete', 'Kinerja::delete', ['as' => 'kinerja-delete', 'filter' => 'auth']);
 $routes->post('/kinerja/update', 'Kinerja::update', ['as' => 'kinerja-update', 'filter' => 'auth']);
 $routes->post('/kinerja/verif', 'Kinerja::verif', ['as' => 'kinerja-verif', 'filter' => 'auth']);
+$routes->post('/kinerja/verif-pimpinan', 'Kinerja::verifPimpinan', ['as' => 'kinerja-verif-pimpinan', 'filter' => 'auth']);
 
 // Jurnal Section
 $routes->get('/jurnal', 'Jurnal::index', ['as' => 'jurnal', 'filter' => 'auth']);
@@ -58,6 +59,7 @@ $routes->get('/jurnal/edit/(:num)', 'Jurnal::edit/$1', ['as' => 'jurnal-edit', '
 $routes->post('/jurnal/delete', 'Jurnal::delete', ['as' => 'jurnal-delete', 'filter' => 'auth']);
 $routes->post('/jurnal/update', 'Jurnal::update', ['as' => 'jurnal-update', 'filter' => 'auth']);
 $routes->post('/jurnal/verif', 'Jurnal::verif', ['as' => 'jurnal-verif', 'filter' => 'auth']);
+$routes->post('/jurnal/verif-pimpinan', 'Jurnal::verifPimpinan', ['as' => 'jurnal-verif-pimpinan', 'filter' => 'auth:pimpinan']);
 
 // Pegawai Section
 $routes->get('/pegawai', 'Pegawai::index', ['as' => 'pegawai', 'filter' => 'auth']);

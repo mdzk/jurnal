@@ -49,6 +49,9 @@ class Jurnal extends BaseController
 
     public function add()
     {
+        if (session('role') == 'admin' || session('role') == 'pimpinan') :
+            return redirect()->to('jurnal');
+        endif;
         $kinerja = new KinerjaModel();
         $data = [
             'kinerja' => $kinerja->where('id_users', session('id_users'))->findAll(),
@@ -116,7 +119,7 @@ class Jurnal extends BaseController
                 'penyelenggara' => $this->request->getVar('penyelenggara'),
                 'id_users' => session('id_users'),
                 'id_kinerja' => $this->request->getVar('id_kinerja'),
-                'status' => "pending",
+                'status' => "admin",
                 'foto' => $nama_file,
             ]);
             $foto->move('foto', $nama_file);
@@ -134,7 +137,7 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $data = $jurnal->find($this->request->getVar('id_jurnal'));
-        if ($data['status'] == 'pending' || session('role') == 'admin') {
+        if ($data['status'] == 'admin' || session('role') == 'admin') {
             unlink('foto/' . $data['foto']);
             $jurnal->delete($this->request->getVar('id_jurnal'));
             session()->setFlashdata('pesan', 'Jurnal Harian berhasil dihapus');
@@ -148,7 +151,25 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $data = $jurnal->find($this->request->getVar('id_jurnal'));
-        if ($data['status'] == 'pending' && session('role') == 'admin') {
+        if ($data['status'] == 'admin' && session('role') == 'admin') {
+            $data = [
+                'status' => 'pimpinan',
+            ];
+            $jurnal->set($data)
+                ->where('id_jurnal', $this->request->getVar('id_jurnal'))
+                ->update();
+            session()->setFlashdata('pesan', 'Jurnal Harian berhasil diverifikasi');
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
+    }
+
+    public function verifPimpinan()
+    {
+        $jurnal = new JurnalModel();
+        $data = $jurnal->find($this->request->getVar('id_jurnal'));
+        if ($data['status'] == 'pimpinan' && session('role') == 'pimpinan') {
             $data = [
                 'status' => 'terverifikasi',
             ];
@@ -167,7 +188,7 @@ class Jurnal extends BaseController
         $jurnal = new JurnalModel();
         $kinerja = new KinerjaModel();
         $getData = $jurnal->find($id);
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
             $data = [
                 'kinerja' => $kinerja->where('status', 'terverifikasi')->where('id_users', session('id_users'))->findAll(),
                 'jurnal'  => $jurnal->find($id),
@@ -182,7 +203,7 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $getData = $jurnal->find($this->request->getVar('id_jurnal'));
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "pending" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
             if ($this->validate([
                 'nama' => [
                     'label' => 'Nama Kegiatan',
@@ -239,7 +260,7 @@ class Jurnal extends BaseController
                         'jam_berakhir' => $this->request->getVar('jam_berakhir'),
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
                         'id_kinerja' => $this->request->getVar('id_kinerja'),
-                        'status' => "pending",
+                        'status' => "admin",
                         'id_users' => session('id_users'),
                     ];
                     $jurnal->set($data)
@@ -256,7 +277,7 @@ class Jurnal extends BaseController
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
                         'id_kinerja' => $this->request->getVar('id_kinerja'),
                         'id_users' => session('id_users'),
-                        'status' => "pending",
+                        'status' => "admin",
                         'foto' => $nama_file,
                     ];
                     unlink('foto/' . $getData['foto']);
