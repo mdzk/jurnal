@@ -55,6 +55,15 @@ class Kinerja extends BaseController
             ],
         ])) {
             $kinerja = new KinerjaModel();
+
+            $cekKinerja  = $kinerja->where('capaian', $this->request->getVar('capaian'))
+                ->where('id_users', session('id_users'))->first();
+
+            if ($cekKinerja !== NULL) {
+                Session()->setFlashdata('errors', ['capaian' => 'Capaian Kinerja sudah terdaftar, ganti Capaian Kinerja yang lain!']);
+                return redirect()->back()->withInput();
+            }
+
             $kinerja->save([
                 'capaian' => $this->request->getVar('capaian'),
                 'realisasi' => $this->request->getVar('realisasi'),
@@ -174,6 +183,16 @@ class Kinerja extends BaseController
                     ]
                 ],
             ])) {
+                $cekKinerjaSekarang  = $kinerja->find($this->request->getVar('id_kinerja'));
+                $cekKinerja  = $kinerja->where('capaian', $this->request->getVar('capaian'))
+                    ->where('id_users', session('id_users'))->first();
+
+                if ($cekKinerjaSekarang['capaian'] !== $this->request->getVar('capaian')) {
+                    if ($cekKinerja !== NULL) {
+                        Session()->setFlashdata('errors', ['capaian' => 'Capaian Kinerja sudah terdaftar, ganti Capaian Kinerja yang lain!']);
+                        return redirect()->back()->withInput();
+                    }
+                }
 
                 $data = [
                     'capaian' => $this->request->getVar('capaian'),

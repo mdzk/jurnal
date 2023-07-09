@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 06, 2023 at 04:55 PM
+-- Generation Time: Jul 09, 2023 at 10:39 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -70,7 +70,7 @@ CREATE TABLE `jurnal` (
   `foto` varchar(255) NOT NULL,
   `jam_mulai` time NOT NULL,
   `jam_berakhir` time NOT NULL,
-  `status` enum('terverifikasi','pending') NOT NULL,
+  `status` enum('terverifikasi','admin','pimpinan') NOT NULL,
   `id_users` int(11) NOT NULL,
   `id_kinerja` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -96,7 +96,7 @@ CREATE TABLE `kinerja` (
   `realisasi` varchar(255) NOT NULL,
   `kuantitas` varchar(255) NOT NULL,
   `point` int(11) NOT NULL,
-  `status` enum('terverifikasi','pending') NOT NULL,
+  `status` enum('terverifikasi','admin','pimpinan') NOT NULL,
   `id_users` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -106,7 +106,8 @@ CREATE TABLE `kinerja` (
 
 INSERT INTO `kinerja` (`id_kinerja`, `capaian`, `realisasi`, `kuantitas`, `point`, `status`, `id_users`) VALUES
 (14, 'Pelaksanaan Penyusunan dan Penetapan Rancangan Awal Dokumen Perencanaan Pembangunan Daerah Kabupaten/Kota', '8 Bulan', '20 Buku', 75, 'terverifikasi', 3),
-(16, 'Pelaksanaan MUSRENBANG Kabupaten/Kota', '1 Bulan', '1 Berita Acara', 20, 'terverifikasi', 3);
+(16, 'Pelaksanaan MUSRENBANG Kabupaten/Kota', '1 Bulan', '1 Berita Acara', 20, 'terverifikasi', 3),
+(18, 'sadsa', 'saf', 'asf', 1, 'terverifikasi', 3);
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,7 @@ INSERT INTO `kinerja` (`id_kinerja`, `capaian`, `realisasi`, `kuantitas`, `point
 CREATE TABLE `pegawai` (
   `id_pegawai` int(11) NOT NULL,
   `nama_pegawai` varchar(255) NOT NULL,
-  `nip` varchar(16) NOT NULL,
+  `nip` varchar(18) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
   `tmt_jabatan` date NOT NULL,
   `golongan` varchar(255) NOT NULL,
@@ -135,13 +136,10 @@ CREATE TABLE `pegawai` (
 
 INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `nip`, `jabatan`, `tmt_jabatan`, `golongan`, `kerja_thn`, `kerja_bln`, `tmt_golongan`, `pendidikan`, `instansi_pendidikan`, `thn_lulus`) VALUES
 (1, 'Julfiana Rizkiah F', '84939392020', 'Fungsional', '2023-07-27', '13', 10, 8, '2023-07-15', 'STRATA II', 'Universitas Lampung', '2022'),
-(7, 'Bastanta Sebayang, SP, MM', '39393003033', 'Sekertaris ', '2026-07-15', '13', 19, 10, '2024-06-26', 'STRATA II', 'Universitas Lampung', '1995'),
 (8, 'Feri Septiawan, SE, MM', '30040443', 'Kepala Bidang Perencanaan dan Pendanaan Daerah', '2025-07-16', '13', 20, 11, '2024-06-11', 'STRATA II', 'Universitas Lampung', '1996'),
 (9, 'Siti Rahmah, S.I.Kom', '44999339', 'Kepala Bidang Pemerintahan dan Perekonomian', '2025-06-17', '12', 19, 8, '2025-06-18', 'STRATA I', 'Universitas Lampung', '1999'),
 (10, 'Sonny Apriadi, SE', '2929293', 'Kepala Bidang Pengendalian dan Pembangunan', '2024-07-17', '12', 20, 16, '2024-06-14', 'STRATA I', 'Universitas Lampung', '1997'),
-(11, 'Hasriansyah Siregar, SE', '748485995', 'Kepala Bidang Riset dan Inovasi Daerah', '2025-07-16', '12', 20, 10, '2025-06-17', 'STRATA I', 'Universitas Lampung', '1996'),
-(12, 'Kiki Rizky Danuswijaya, S.H', '84939932', 'Kepala Bidang Prasarana Wilayah dan Infrastruktur', '2025-06-07', '12', 19, 10, '2025-06-06', 'STRATA I', 'Universitas Lampung', '1999'),
-(13, 'Uzairi Uhida, S.pt., MM', '8427272789484944', 'Fungsional Perencana Ahli Muda Bidang Perencanaan dan Pendanaan Daerah', '2025-06-15', '13', 19, 12, '2025-02-09', 'STRATA II', 'Universitas Lampung', '1997');
+(11, 'Hasriansyah Siregar, SE', '748485995', 'Kepala Bidang Riset dan Inovasi Daerah', '2025-07-16', '12', 20, 10, '2025-06-17', 'STRATA I', 'Universitas Lampung', '1996');
 
 -- --------------------------------------------------------
 
@@ -169,7 +167,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_users`, `name`, `username`, `password`, `role`, `nip`, `golongan`, `jabatan`, `unit`, `kepala`, `picture`) VALUES
 (2, 'Admin Sekertariat', 'admin', '$2y$10$4UDQyhiz801cUw50KR008uHU2Cgu05OyTF8w7AzggtzGF4kKXrwy2', 'admin', 120305893, 7, 'Admin', 'Sekertariat', 'Kasubag Umum dan Kepegawaian', '1686554628_faa13db96fb61e83d413.png'),
-(3, 'User, S.E', 'User', '$2y$10$AmzyIGcJddmCMIrA7LKSfuPlTwYvIvonGW7KnlTfAPoW/9jTomyki', 'user', 44444332, 9, 'Pengelola Data Bidang PPD', 'Perencanaan dan Pendanaan Daerah', 'Feri Septiawan, S.E., M.M', '1686554352_cf18d0b742818240dd3d.png');
+(3, 'User, S.E', 'User', '$2y$10$AmzyIGcJddmCMIrA7LKSfuPlTwYvIvonGW7KnlTfAPoW/9jTomyki', 'user', 44444332, 9, 'Pengelola Data Bidang PPD', 'Perencanaan dan Pendanaan Daerah', 'Feri Septiawan, S.E., M.M', '1686554352_cf18d0b742818240dd3d.png'),
+(10, 'Pimpinan', 'pimpinan', '$2y$10$8.11ncROyFeBuzjOh/u0gOTovR6aXmDJh0uNPHMR0u5cnRkHc5srG', 'pimpinan', 123123, 9, 'pimpinan', 'Kominfo', 'pimpinan', 'default.jpg'),
+(11, 'User 2', 'user2', '$2y$10$Rte/3Nn8CsIfS9FyRXo3V.lzP.9j878SmWHXGRkjwOO2fBHzpq6Xm', 'user', 123131, 4, 'kepala', 'bapperida', 'kominfo', 'default.jpg');
 
 --
 -- Indexes for dumped tables
@@ -219,25 +219,25 @@ ALTER TABLE `golongan`
 -- AUTO_INCREMENT for table `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `kinerja`
 --
 ALTER TABLE `kinerja`
-  MODIFY `id_kinerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_kinerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_users` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

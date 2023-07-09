@@ -110,6 +110,15 @@ class Jurnal extends BaseController
             $nama_file = $foto->getRandomName();
 
             $jurnal = new JurnalModel();
+
+            $cekJurnal  = $jurnal->where('nama', $this->request->getVar('nama'))
+                ->where('id_users', session('id_users'))->first();
+
+            if ($cekJurnal !== NULL) {
+                Session()->setFlashdata('errors', ['jurnal' => 'Nama kegiatan sudah terdaftar, ganti nama kegiatan yang lain!']);
+                return redirect()->back()->withInput();
+            }
+
             $jurnal->save([
                 'nama' => $this->request->getVar('nama'),
                 'tanggal' => $this->request->getVar('tanggal'),
@@ -250,6 +259,17 @@ class Jurnal extends BaseController
                 ],
             ])) {
                 $foto = $this->request->getFile('foto');
+
+                $cekJurnalSekarang  = $jurnal->find($this->request->getVar('id_jurnal'));
+                $cekJurnal  = $jurnal->where('nama', $this->request->getVar('nama'))
+                    ->where('id_users', session('id_users'))->first();
+
+                if ($cekJurnalSekarang['nama'] !== $this->request->getVar('nama')) {
+                    if ($cekJurnal !== NULL) {
+                        Session()->setFlashdata('errors', ['nama' => 'Nama kegiatan sudah terdaftar, ganti nama kegiatan yang lain!']);
+                        return redirect()->back()->withInput();
+                    }
+                }
 
                 if ($foto->getError() == 4) {
                     $data = [

@@ -109,6 +109,17 @@ class Pegawai extends BaseController
             ],
         ])) {
             $pegawai = new PegawaiModel();
+            $cekNIP  = $pegawai->where('nip', preg_replace('/[^0-9]/', '', $this->request->getVar('nip')))->first();
+            if (strlen(preg_replace('/[^0-9]/', '', $this->request->getVar('nip'))) !== 18) {
+                Session()->setFlashdata('errors', ['nip' => 'NIP harus berjumlah 18 angka']);
+                return redirect()->back()->withInput();
+            }
+
+            if ($cekNIP !== NULL) {
+                Session()->setFlashdata('errors', ['nip' => 'NIP telah terdaftar']);
+                return redirect()->back()->withInput();
+            }
+
             $pegawai->save([
                 'nama_pegawai' => $this->request->getVar('nama'),
                 'nip' => preg_replace('/[^0-9]/', '', $this->request->getVar('nip')),
@@ -152,6 +163,7 @@ class Pegawai extends BaseController
 
     public function update()
     {
+        $pegawai = new PegawaiModel();
         if ($this->validate([
             'nama' => [
                 'label' => 'Nama',
@@ -231,8 +243,21 @@ class Pegawai extends BaseController
                 ]
             ],
         ])) {
+            $cekNIPSekarang  = $pegawai->find($this->request->getVar('id_pegawai'));
+            $cekNIP  = $pegawai->where('nip', preg_replace('/[^0-9]/', '', $this->request->getVar('nip')))->first();
 
-            $pegawai = new PegawaiModel();
+            if (strlen(preg_replace('/[^0-9]/', '', $this->request->getVar('nip'))) !== 18) {
+                Session()->setFlashdata('errors', ['nip' => 'NIP harus berjumlah 18 angka']);
+                return redirect()->back()->withInput();
+            }
+
+            if ($cekNIPSekarang['nip'] !== preg_replace('/[^0-9]/', '', $this->request->getVar('nip'))) {
+                if ($cekNIP !== NULL) {
+                    Session()->setFlashdata('errors', ['nip' => 'NIP telah terdaftar']);
+                    return redirect()->back()->withInput();
+                }
+            }
+
             $data = [
                 'nama_pegawai' => $this->request->getVar('nama'),
                 'nip' => preg_replace('/[^0-9]/', '', $this->request->getVar('nip')),
