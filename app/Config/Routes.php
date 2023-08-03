@@ -58,7 +58,8 @@ $routes->get('/jurnal/add', 'Jurnal::add', ['as' => 'jurnal-add', 'filter' => 'a
 $routes->get('/jurnal/edit/(:num)', 'Jurnal::edit/$1', ['as' => 'jurnal-edit', 'filter' => 'auth']);
 $routes->post('/jurnal/delete', 'Jurnal::delete', ['as' => 'jurnal-delete', 'filter' => 'auth']);
 $routes->post('/jurnal/update', 'Jurnal::update', ['as' => 'jurnal-update', 'filter' => 'auth']);
-$routes->post('/jurnal/verif', 'Jurnal::verif', ['as' => 'jurnal-verif', 'filter' => 'auth']);
+$routes->post('/jurnal/verif', 'Jurnal::verif', ['as' => 'jurnal-verif', 'filter' => 'auth:admin']);
+$routes->post('/jurnal/tolak', 'Jurnal::tolak', ['as' => 'jurnal-tolak', 'filter' => 'auth:admin,pimpinan']);
 $routes->post('/jurnal/verif-pimpinan', 'Jurnal::verifPimpinan', ['as' => 'jurnal-verif-pimpinan', 'filter' => 'auth:pimpinan']);
 
 // Pegawai Section

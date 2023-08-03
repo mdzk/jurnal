@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 09, 2023 at 10:39 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Aug 03, 2023 at 10:35 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -70,7 +70,8 @@ CREATE TABLE `jurnal` (
   `foto` varchar(255) NOT NULL,
   `jam_mulai` time NOT NULL,
   `jam_berakhir` time NOT NULL,
-  `status` enum('terverifikasi','admin','pimpinan') NOT NULL,
+  `status` enum('terverifikasi','admin','pimpinan','ditolak') NOT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
   `id_users` int(11) NOT NULL,
   `id_kinerja` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -79,10 +80,10 @@ CREATE TABLE `jurnal` (
 -- Dumping data for table `jurnal`
 --
 
-INSERT INTO `jurnal` (`id_jurnal`, `nama`, `tanggal`, `tempat`, `penyelenggara`, `foto`, `jam_mulai`, `jam_berakhir`, `status`, `id_users`, `id_kinerja`) VALUES
-(16, 'Rapat penyusunan awal dokumen Perencanaan pembangunan', '2023-06-16', 'Kantor', 'Bapperida', '1686887416_07264eeb3d219092e5c8.jpeg', '10:49:00', '11:50:00', 'terverifikasi', 3, 14),
-(17, 'Rapat awal perencanaan kegiatan musrenbang', '2023-06-23', 'Bapperida', 'Dinas Perhubungan', '1687506207_d79c2654b42068bf8d3c.jpeg', '10:32:00', '14:42:00', 'terverifikasi', 3, 16),
-(18, 'Rapat penyusunan awal dokumen Perencanaan pembangunan', '2023-07-03', 'Bapperida', 'Bapperida', '1688363030_ae2a28751a054480ccbf.jpeg', '11:44:00', '12:43:00', 'terverifikasi', 3, 16);
+INSERT INTO `jurnal` (`id_jurnal`, `nama`, `tanggal`, `tempat`, `penyelenggara`, `foto`, `jam_mulai`, `jam_berakhir`, `status`, `keterangan`, `id_users`, `id_kinerja`) VALUES
+(16, 'Rapat penyusunan awal dokumen Perencanaan pembangunan', '2023-06-16', 'hahha ', 'Bapperida', '1686887416_07264eeb3d219092e5c8.jpeg', '10:49:00', '11:50:00', 'terverifikasi', NULL, 3, 14),
+(17, 'Rapat awal perencanaan kegiatan musrenbang', '2023-06-23', 'Bapperida', 'Dinas Perhubungan', '1687506207_d79c2654b42068bf8d3c.jpeg', '10:32:00', '14:42:00', 'terverifikasi', NULL, 3, 16),
+(18, 'Rapat penyusunan awal dokumen Perencanaan pembangunan', '2023-07-03', 'Bapperida', 'Bapperida', '1688363030_ae2a28751a054480ccbf.jpeg', '11:44:00', '12:43:00', 'terverifikasi', NULL, 3, 16);
 
 -- --------------------------------------------------------
 
@@ -150,10 +151,10 @@ INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `nip`, `jabatan`, `tmt_jaba
 CREATE TABLE `users` (
   `id_users` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `role` enum('user','admin','pimpinan','') NOT NULL,
-  `nip` int(16) NOT NULL,
+  `nip` bigint(18) NOT NULL,
   `golongan` int(11) NOT NULL,
   `jabatan` varchar(255) NOT NULL,
   `unit` varchar(255) NOT NULL,
@@ -165,11 +166,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id_users`, `name`, `username`, `password`, `role`, `nip`, `golongan`, `jabatan`, `unit`, `kepala`, `picture`) VALUES
-(2, 'Admin Sekertariat', 'admin', '$2y$10$4UDQyhiz801cUw50KR008uHU2Cgu05OyTF8w7AzggtzGF4kKXrwy2', 'admin', 120305893, 7, 'Admin', 'Sekertariat', 'Kasubag Umum dan Kepegawaian', '1686554628_faa13db96fb61e83d413.png'),
-(3, 'User, S.E', 'User', '$2y$10$AmzyIGcJddmCMIrA7LKSfuPlTwYvIvonGW7KnlTfAPoW/9jTomyki', 'user', 44444332, 9, 'Pengelola Data Bidang PPD', 'Perencanaan dan Pendanaan Daerah', 'Feri Septiawan, S.E., M.M', '1686554352_cf18d0b742818240dd3d.png'),
-(10, 'Pimpinan', 'pimpinan', '$2y$10$8.11ncROyFeBuzjOh/u0gOTovR6aXmDJh0uNPHMR0u5cnRkHc5srG', 'pimpinan', 123123, 9, 'pimpinan', 'Kominfo', 'pimpinan', 'default.jpg'),
-(11, 'User 2', 'user2', '$2y$10$Rte/3Nn8CsIfS9FyRXo3V.lzP.9j878SmWHXGRkjwOO2fBHzpq6Xm', 'user', 123131, 4, 'kepala', 'bapperida', 'kominfo', 'default.jpg');
+INSERT INTO `users` (`id_users`, `name`, `email`, `password`, `role`, `nip`, `golongan`, `jabatan`, `unit`, `kepala`, `picture`) VALUES
+(2, 'Admin Sekertariat', 'admin@mail.com', '$2y$10$4UDQyhiz801cUw50KR008uHU2Cgu05OyTF8w7AzggtzGF4kKXrwy2', 'admin', 111111111111111111, 1, 'Admin Edit', 'Sekertariat', 'Kasubag Umum dan Kepegawaian', '1686554628_faa13db96fb61e83d413.png'),
+(3, 'User, S.E', 'user@mail.com', '$2y$10$AmzyIGcJddmCMIrA7LKSfuPlTwYvIvonGW7KnlTfAPoW/9jTomyki', 'user', 111111111111111112, 1, 'Pengelola Data Bidang PPD', 'Perencanaan dan Pendanaan Daerah', 'Feri Septiawan, S.E., M.M', '1686554352_cf18d0b742818240dd3d.png'),
+(10, 'Pimpinan', 'pimpinan@mail.com', '$2y$10$8.11ncROyFeBuzjOh/u0gOTovR6aXmDJh0uNPHMR0u5cnRkHc5srG', 'pimpinan', 123123, 9, 'pimpinan', 'Kominfo', 'pimpinan', 'default.jpg'),
+(11, 'User 2', 'user2@mail.com', '$2y$10$Rte/3Nn8CsIfS9FyRXo3V.lzP.9j878SmWHXGRkjwOO2fBHzpq6Xm', 'user', 123131, 4, 'kepala', 'bapperida', 'kominfo', 'default.jpg');
 
 --
 -- Indexes for dumped tables
@@ -219,7 +220,7 @@ ALTER TABLE `golongan`
 -- AUTO_INCREMENT for table `jurnal`
 --
 ALTER TABLE `jurnal`
-  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_jurnal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `kinerja`

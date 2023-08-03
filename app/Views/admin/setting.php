@@ -60,6 +60,116 @@
                     </div>
                 </div>
 
+                <div class="col-12">
+                    <div class="card mx-2 my-2">
+                        <div class="card-body py-4 px-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-1">
+                                            <div class="stats-icon red">
+                                                <i class="iconly-boldShield-Done"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="ms-3 name">
+                                            <span class="text-muted">Jabatan</span>
+                                            <h5 class="font-bold"><?= $user['jabatan']; ?>
+                                                <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editjabatan"> Edit
+                                                </button>
+
+                                                <!--Edit jabatan modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="editjabatan">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Edit jabatan</h5>
+                                                            </div>
+                                                            <input type="hidden" wire:model="categoryId">
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label for="basicInput">Masukkan jabatan</label>
+                                                                    <input type="text" value="<?= $user['jabatan']; ?>" name="jabatan" class="form-control" id="basicInput" placeholder="ketik disini">
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
+                                                                    <span class="d-sm-block">Batal</span>
+                                                                </button>
+                                                                <button type="submit" name="submit" class="btn btn-primary ml-1 btn-color" data-bs-dismiss="modal">
+                                                                    <span class="d-sm-block">Simpan</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Edit jabatan modal Content End-->
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mx-2 my-2">
+                        <div class="card-body py-4 px-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar me-1">
+                                            <div class="stats-icon red">
+                                                <i class="iconly-boldShield-Done"></i>
+                                            </div>
+                                        </div>
+
+                                        <div class="ms-3 name">
+                                            <span class="text-muted">Pangkat/Golongan</span>
+                                            <h5 class="font-bold"><?= $user['nama_golongan']; ?>
+                                                <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editgolongan"> Edit
+                                                </button>
+
+                                                <!--Edit golongan modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="editgolongan">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Edit Pangkat/Golongan</h5>
+                                                            </div>
+                                                            <input type="hidden" wire:model="categoryId">
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label for="basicInput">Masukkan Pangkat/Golongan</label>
+                                                                    <select class="form-select" name="golongan" id="role">
+                                                                        <?php foreach ($golongan as $data) : ?>
+                                                                            <option value="<?= $data['id_golongan']; ?>" <?= $user['golongan'] == $data['id_golongan'] ? 'selected' : ''; ?>><?= $data['nama_golongan']; ?></option>
+                                                                        <?php endforeach; ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light-primary" data-bs-dismiss="modal">
+                                                                    <span class="d-sm-block">Batal</span>
+                                                                </button>
+                                                                <button type="submit" name="submit" class="btn btn-primary ml-1 btn-color" data-bs-dismiss="modal">
+                                                                    <span class="d-sm-block">Simpan</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Edit golongan modal Content End-->
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                     <div class="col-12">
                         <div class="card mx-2 my-2">
@@ -74,23 +184,23 @@
                                             </div>
 
                                             <div class="ms-3 name">
-                                                <span class="text-muted">Username</span>
-                                                <h5 class="font-bold"><?= $user['username']; ?>
-                                                    <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editusername"> Edit
+                                                <span class="text-muted">Email</span>
+                                                <h5 class="font-bold"><?= $user['email']; ?>
+                                                    <button type="button" class="btn btn-sm btn-primary btn-color" data-bs-toggle="modal" data-bs-target="#editemail"> Edit
                                                     </button>
 
-                                                    <!--Edit Username Modal Content -->
-                                                    <div class="modal fade text-left modal-borderless" id="editusername">
+                                                    <!--Edit email Modal Content -->
+                                                    <div class="modal fade text-left modal-borderless" id="editemail">
                                                         <div class="modal-dialog" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title">Edit username</h5>
+                                                                    <h5 class="modal-title">Edit email</h5>
                                                                 </div>
                                                                 <input type="hidden" wire:model="categoryId">
                                                                 <div class="modal-body">
                                                                     <div class="form-group">
-                                                                        <label for="basicInput">Masukkan Username</label>
-                                                                        <input type="text" value="<?= $user['username']; ?>" name="username" class="form-control" id="basicInput" placeholder="ketik disini">
+                                                                        <label for="basicInput">Masukkan email</label>
+                                                                        <input type="email" value="<?= $user['email']; ?>" name="email" class="form-control" id="basicInput" placeholder="ketik disini">
                                                                     </div>
                                                                 </div>
                                                                 <div class="modal-footer">
@@ -104,7 +214,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--Edit Username Modal Content End-->
+                                                    <!--Edit email Modal Content End-->
                                                 </h5>
                                             </div>
                                         </div>

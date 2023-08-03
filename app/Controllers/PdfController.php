@@ -6,6 +6,7 @@ use App\Models\JurnalModel;
 use App\Models\PegawaiModel;
 use App\Models\UsersModel;
 use Dompdf\Dompdf;
+use PhpParser\Node\Stmt\Echo_;
 
 class PdfController extends BaseController
 {
@@ -86,7 +87,9 @@ class PdfController extends BaseController
             return redirect()->back();
         } else {
             $filename = date('y-m-d-H-i-s') . '-jurnal';
-            $dompdf = new Dompdf();
+            $dompdf = new Dompdf([
+                'chroot' => FCPATH,
+            ]);
             $user = new UsersModel();
             $data = [
                 'bulan' => $this->request->getVar('bulan'),

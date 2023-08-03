@@ -20,9 +20,9 @@ class Auth extends BaseController
         $model    = new UsersModel();
         $golonganModel    = new GolonganModel();
 
-        $username = $this->request->getVar('username');
+        $email = $this->request->getVar('email');
         $password = $this->request->getVar('password');
-        $data = $model->where('username', $username)->first();
+        $data = $model->where('email', $email)->first();
         if ($data) {
             $pass = $data['password'];
             $verify_pass = password_verify($password, $pass);
@@ -32,7 +32,7 @@ class Auth extends BaseController
                     'id_users'   => $data['id_users'],
                     'name'      => $data['name'],
                     'role'      => $data['role'],
-                    'username'  => $data['username'],
+                    'email'  => $data['email'],
                     'nip'  => $data['nip'],
                     'unit'  => $data['unit'],
                     'id_golongan'  => $data['golongan'],
@@ -49,7 +49,7 @@ class Auth extends BaseController
                 return redirect()->to('/login');
             }
         } else {
-            $session->setFlashdata('msg', 'Username Tidak Ditemukan');
+            $session->setFlashdata('msg', 'email Tidak Ditemukan');
             return redirect()->to('/login');
         }
     }

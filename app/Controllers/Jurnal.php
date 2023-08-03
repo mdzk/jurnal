@@ -76,6 +76,13 @@ class Jurnal extends BaseController
                     'required' => '{field} Wajib diisi !',
                 ]
             ],
+            'tempat' => [
+                'label' => 'tempat',
+                'rules' => "required",
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
+                ]
+            ],
             'jam_mulai' => [
                 'label' => 'Jam Mulai',
                 'rules' => 'required',
@@ -84,7 +91,7 @@ class Jurnal extends BaseController
                 ]
             ],
             'jam_berakhir' => [
-                'label' => 'jam_berakhir',
+                'label' => 'jam berakhir',
                 'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib diisi !',
@@ -99,8 +106,9 @@ class Jurnal extends BaseController
             ],
             'foto' => [
                 'label' => 'Foto',
-                'rules' => 'max_size[foto,10240]|mime_in[foto,image/png,image/jpeg]',
+                'rules' => 'uploaded[foto]|max_size[foto,10240]|mime_in[foto,image/png,image/jpeg]',
                 'errors' => [
+                    'uploaded' => '{field} Wajib diisi!',
                     'max_size' => 'Ukuran {field} max 10 Mb',
                     'mime_in' => 'Format {field} wajib png, jpg, dan jpeg',
                 ]
@@ -174,6 +182,21 @@ class Jurnal extends BaseController
         }
     }
 
+    public function tolak()
+    {
+        $jurnal = new JurnalModel();
+        $data = $jurnal->find($this->request->getVar('id_jurnal'));
+        $data = [
+            'status' => 'ditolak',
+            'keterangan' => $this->request->getVar('keterangan')
+        ];
+        $jurnal->set($data)
+            ->where('id_jurnal', $this->request->getVar('id_jurnal'))
+            ->update();
+        session()->setFlashdata('pesan', 'Jurnal Harian berhasil ditolak');
+        return redirect()->back();
+    }
+
     public function verifPimpinan()
     {
         $jurnal = new JurnalModel();
@@ -197,7 +220,7 @@ class Jurnal extends BaseController
         $jurnal = new JurnalModel();
         $kinerja = new KinerjaModel();
         $getData = $jurnal->find($id);
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && ($getData['status'] == "admin" || $getData['status'] == "ditolak") && session('role') !== 'pimpinan') {
             $data = [
                 'kinerja' => $kinerja->where('status', 'terverifikasi')->where('id_users', session('id_users'))->findAll(),
                 'jurnal'  => $jurnal->find($id),
@@ -212,7 +235,7 @@ class Jurnal extends BaseController
     {
         $jurnal = new JurnalModel();
         $getData = $jurnal->find($this->request->getVar('id_jurnal'));
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && ($getData['status'] == "admin" || $getData['status'] == "ditolak") && session('role') !== 'pimpinan') {
             if ($this->validate([
                 'nama' => [
                     'label' => 'Nama Kegiatan',
@@ -281,6 +304,7 @@ class Jurnal extends BaseController
                         'penyelenggara' => $this->request->getVar('penyelenggara'),
                         'id_kinerja' => $this->request->getVar('id_kinerja'),
                         'status' => "admin",
+                        'keterangan' => NULL,
                         'id_users' => session('id_users'),
                     ];
                     $jurnal->set($data)

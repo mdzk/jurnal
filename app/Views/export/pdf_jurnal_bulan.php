@@ -165,7 +165,8 @@
                     <td><?= $data['tempat']; ?></td>
                     <td><?= $data['penyelenggara']; ?></td>
                     <td>
-                    <img src="<?= base_url(); ?>foto/<?= $data['foto'] ?>" style="width: 100px; height: 100px;object-fit: cover;"> </td>
+                        <img src="<?= FCPATH . 'foto/' . $data['foto']; ?>" style="width: 100px; height: 100px;object-fit: cover;">
+                    </td>
                 </tr>
                 <?php $total_jam += $since_start->h; ?>
             <?php endforeach; ?>

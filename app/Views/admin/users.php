@@ -58,7 +58,7 @@
                                     <div class="form-group has-icon-left">
                                         <label for="name">NIP</label>
                                         <div class="position-relative">
-                                            <input type="number" name="nip" class="form-control" placeholder="Masukkan NIP" id="name">
+                                            <input maxlength="18" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="nip" class="form-control" placeholder="Masukkan NIP" id="name">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person"></i>
                                             </div>
@@ -105,9 +105,9 @@
                                     </div>
 
                                     <div class="form-group has-icon-left">
-                                        <label for="username">Username</label>
+                                        <label for="email">email</label>
                                         <div class="position-relative">
-                                            <input type="text" name="username" class="form-control" placeholder="Masukkan Username" id="username">
+                                            <input type="email" name="email" class="form-control" placeholder="Masukkan email" id="email">
                                             <div class="form-control-icon">
                                                 <i class="bi bi-person-badge"></i>
                                             </div>
@@ -247,7 +247,7 @@
                                                                 <div class="form-group has-icon-left">
                                                                     <label for="name">NIP</label>
                                                                     <div class="position-relative">
-                                                                        <input value="<?= $user['nip']; ?>" type="number" name="nip" class="form-control" placeholder="Masukkan NIP" id="name">
+                                                                        <input maxlength="18" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" value="<?= $user['nip']; ?>" type="number" name="nip" class="form-control" placeholder="Masukkan NIP" id="name">
                                                                         <div class="form-control-icon">
                                                                             <i class="bi bi-person"></i>
                                                                         </div>
@@ -294,9 +294,9 @@
                                                                 </div>
 
                                                                 <div class="form-group has-icon-left">
-                                                                    <label for="username">Username</label>
+                                                                    <label for="email">email</label>
                                                                     <div class="position-relative">
-                                                                        <input value="<?= $user['username']; ?>" type="text" name="username" class="form-control" placeholder="Masukkan Username" id="username">
+                                                                        <input value="<?= $user['email']; ?>" type="email" name="email" class="form-control" placeholder="Masukkan email" id="email">
                                                                         <div class="form-control-icon">
                                                                             <i class="bi bi-person-badge"></i>
                                                                         </div>

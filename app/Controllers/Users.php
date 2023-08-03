@@ -34,12 +34,12 @@ class Users extends BaseController
                     'required' => '{field} Wajib diisi !',
                 ]
             ],
-            'username' => [
-                'label' => 'Username',
-                'rules' => "required|is_unique[users.username]",
+            'email' => [
+                'label' => 'email',
+                'rules' => "required|is_unique[users.email]",
                 'errors' => [
                     'required' => '{field} Wajib diisi !',
-                    'is_unique' => 'Username sudah digunakan, cari yang lain!'
+                    'is_unique' => 'email sudah digunakan, cari yang lain!'
                 ]
             ],
             'role' => [
@@ -57,10 +57,13 @@ class Users extends BaseController
                 ]
             ],
             'nip' => [
-                'label' => 'NIP',
-                'rules' => 'required',
+                'label' => 'nip',
+                'rules' => "required|is_unique[users.nip]|min_length[18]|max_length[18]",
                 'errors' => [
                     'required' => '{field} Wajib diisi !',
+                    'is_unique' => '{field} sudah digunakan, cari yang lain!',
+                    'min_length' => 'Minimal {field} 18 Angka',
+                    'max_length' => 'Maksimal {field} 18 Angka',
                 ]
             ],
             'golongan' => [
@@ -95,7 +98,7 @@ class Users extends BaseController
             $user = new UsersModel();
             $user->save([
                 'name' => $this->request->getVar('name'),
-                'username' => $this->request->getVar('username'),
+                'email' => $this->request->getVar('email'),
                 'nip' => $this->request->getVar('nip'),
                 'golongan' => $this->request->getVar('golongan'),
                 'jabatan' => $this->request->getVar('jabatan'),
@@ -140,12 +143,12 @@ class Users extends BaseController
                     'required' => '{field} Wajib diisi !',
                 ]
             ],
-            'username' => [
-                'label' => 'Username',
-                'rules' => "required|is_unique[users.username, id_users, $id]",
+            'email' => [
+                'label' => 'email',
+                'rules' => "required|is_unique[users.email, id_users, $id]",
                 'errors' => [
                     'required' => '{field} Wajib diisi !',
-                    'is_unique' => 'Username sudah digunakan, cari yang lain!'
+                    'is_unique' => 'email sudah digunakan, cari yang lain!'
                 ]
             ],
             'role' => [
@@ -156,10 +159,13 @@ class Users extends BaseController
                 ]
             ],
             'nip' => [
-                'label' => 'NIP',
-                'rules' => 'required',
+                'label' => 'nip',
+                'rules' => "required|is_unique[users.nip, id_users, $id]|min_length[18]|max_length[18]",
                 'errors' => [
                     'required' => '{field} Wajib diisi !',
+                    'is_unique' => '{field} sudah digunakan, cari yang lain!',
+                    'min_length' => 'Minimal {field} 18 Angka',
+                    'max_length' => 'Maksimal {field} 18 Angka',
                 ]
             ],
             'golongan' => [
@@ -194,7 +200,7 @@ class Users extends BaseController
             $user->replace([
                 'id_users' => $this->request->getVar('id_users'),
                 'name' => $this->request->getVar('name'),
-                'username' => $this->request->getVar('username'),
+                'email' => $this->request->getVar('email'),
                 'nip' => $this->request->getVar('nip'),
                 'golongan' => $this->request->getVar('golongan'),
                 'jabatan' => $this->request->getVar('jabatan'),

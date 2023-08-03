@@ -128,23 +128,25 @@
                                     <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                         <td><?= $data['name']; ?></td>
                                     <?php endif; ?>
-                                    <td><span class="badge <?php if ($data['status'] !== 'terverifikasi') {
-                                                                echo 'bg-warning';
-                                                            } else {
+                                    <td>
+                                        <span class="badge <?php if ($data['status'] == 'terverifikasi') {
                                                                 echo 'bg-primary';
+                                                            } else {
+                                                                echo 'bg-warning';
                                                             } ?>">
                                             <?php if ($data['status'] == 'terverifikasi') {
                                                 echo 'Terverifikasi';
                                             } ?>
 
                                             <?php if ($data['status'] == 'admin') {
-                                                echo 'Menunggu Admin';
+                                                echo 'Menunggu Accept Admin';
                                             } ?>
 
                                             <?php if ($data['status'] == 'pimpinan') {
-                                                echo 'Menunggu Pimpinan';
+                                                echo 'Menunggu verifikasi pimpinan';
                                             }
-                                            ?></span></td>
+                                            ?></span>
+                                    </td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
                                             <?php if ($data['status'] == 'admin' && $data['id_users'] == session('id_users')) : ?>
@@ -200,7 +202,7 @@
                                             <?php if ($data['status'] == 'admin' && session('role') == 'admin') : ?>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifkinerja<?= $data['id_kinerja']; ?>">
-                                                        <i class="ti-check"></i>
+                                                        <?= $data['status'] == 'admin' ? 'ACC' : 'Verifikasi'; ?>
                                                     </button>
                                                 </li>
 

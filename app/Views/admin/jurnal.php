@@ -164,30 +164,41 @@
                                     <td><?= $data['jam_mulai']; ?> - <?= $data['jam_berakhir']; ?></td>
                                     <td><?= $data['tempat']; ?></td>
                                     <td><?= $data['penyelenggara']; ?></td>
-                                    <td><span class="badge <?php if ($data['status'] !== 'terverifikasi') {
-                                                                echo 'bg-warning';
-                                                            } else {
+                                    <td><span class="badge <?php if ($data['status'] == 'terverifikasi') {
                                                                 echo 'bg-primary';
+                                                            } else if ($data['status'] == 'ditolak') {
+                                                                echo 'bg-danger';
+                                                            } else {
+                                                                echo 'bg-warning';
                                                             } ?>">
                                             <?php if ($data['status'] == 'terverifikasi') {
                                                 echo 'Terverifikasi';
                                             } ?>
 
                                             <?php if ($data['status'] == 'admin') {
-                                                echo 'Menunggu Admin';
+                                                echo 'Menunggu Accept Admin';
                                             } ?>
 
                                             <?php if ($data['status'] == 'pimpinan') {
-                                                echo 'Menunggu Pimpinan';
+                                                echo 'Menunggu verifikasi pimpinan';
+                                            } ?>
+
+                                            <?php if ($data['status'] == 'ditolak') {
+                                                echo 'Ditolak';
                                             }
                                             ?>
-                                        </span></td>
+                                        </span>
+                                        <?php if ($data['keterangan'] !== NULL) : ?>
+                                            <span>Keterangan: <br></span>
+                                            <span><?= $data['keterangan']; ?></span>
+                                        <?php endif; ?>
+                                    </td>
                                     <td>
                                         <img src=" <?= base_url(); ?>foto/<?= $data['foto'] ?>" style="width: 150px; height: 150px;object-fit: cover;">
                                     </td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
-                                            <?php if ($data['status'] == 'admin' && session('role') == 'user') : ?>
+                                            <?php if (($data['status'] == 'admin' || $data['status'] == 'ditolak') && session('role') == 'user') : ?>
                                                 <li class="list-inline-item mail-delete">
                                                     <a href="<?= base_url(''); ?>jurnal/edit/<?= $data['id_jurnal']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
                                                         <i class="ti-pencil"></i>
@@ -235,10 +246,52 @@
 
                                             <?php if ($data['status'] == 'admin' && session('role') == 'admin') : ?>
                                                 <li class="list-inline-item mail-unread">
-                                                    <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnal<?= $data['id_jurnal']; ?>">
-                                                        <i class="ti-check"></i>
+                                                    <button type="button" class="btn-outline-success btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnal<?= $data['id_jurnal']; ?>">
+                                                        ACC
+                                                    </button>
+                                                    <button type="button" class="btn-outline-danger btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#tolak<?= $data['id_jurnal']; ?>">
+                                                        Tolak
                                                     </button>
                                                 </li>
+
+                                                <!--Tolak Jurnal Harian Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="tolak<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Berikan Keterangan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('jurnal-tolak'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <label for="name">Keterangan</label>
+                                                                        <div class="position-relative">
+                                                                            <input type="text" name="keterangan" class="form-control" placeholder="Masukkan Keterangan" id="name">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-pencil"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <input type="number" name="id_jurnal" value="<?= $data['id_jurnal']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Tolak Jurnal Harian Modal Content End-->
+
 
                                                 <!--Verifikasi Jurnal Harian Modal Content -->
                                                 <div class="modal fade text-left modal-borderless" id="verifjurnal<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
@@ -271,14 +324,58 @@
                                                     </div>
                                                 </div>
                                                 <!--Verifikasi Jurnal Harian Modal Content End-->
+
+
                                             <?php endif; ?>
+
 
                                             <?php if ($data['status'] == 'pimpinan' && session('role') == 'pimpinan') : ?>
                                                 <li class="list-inline-item mail-unread">
-                                                    <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnalp<?= $data['id_jurnal']; ?>">
-                                                        <i class="ti-check"></i>
+                                                    <button type="button" class="btn-outline-success  btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifjurnalp<?= $data['id_jurnal']; ?>">
+                                                        Verifikasi
+                                                    </button>
+                                                    <button type="button" class="btn-outline-danger  btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#tolak<?= $data['id_jurnal']; ?>">
+                                                        Tolak
                                                     </button>
                                                 </li>
+
+                                                <!--Tolak Jurnal Harian Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="tolak<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Berikan Keterangan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('jurnal-tolak'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <label for="name">Keterangan</label>
+                                                                        <div class="position-relative">
+                                                                            <input type="text" name="keterangan" class="form-control" placeholder="Masukkan Keterangan" id="name">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-pencil"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <input type="number" name="id_jurnal" value="<?= $data['id_jurnal']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Tolak Jurnal Harian Modal Content End-->
 
                                                 <!--Verifikasi Pimpinan Jurnal Harian Modal Content -->
                                                 <div class="modal fade text-left modal-borderless" id="verifjurnalp<?= $data['id_jurnal']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">

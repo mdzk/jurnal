@@ -83,23 +83,25 @@
             </div>
         </div>
         <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
-            <h4 class="fw-300 c-grey-900 mB-40"><center>E-GaWai</center></h4>
+            <h4 class="fw-300 c-grey-900 mB-40">
+                <center>E-GaWai</center>
+            </h4>
             <h4 class="fw-300 c-grey-900 mB-40"><b>Login</b></h4>
             <?php if (session()->getFlashdata('msg')) : ?>
                 <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
-            <?php endif; ?>
-            <form action="<?= route_to('auth'); ?>" method="POST">
-                <div class="mb-3"><label class="text-normal text-dark form-label">Username</label> <input type="text" class="form-control" name="username" placeholder="Masukkan Username"></div>
-                <div class="mb-3"><label class="text-normal text-dark form-label">Password</label> <input type="password" class="form-control" name="password" placeholder="Masukkan Password"></div>
-                <div class="">
-                    <div class="peers ai-c jc-sb fxw-nw">
-                        <div class="peer">
-                            <button type="submit" name="submit" class="btn btn-primary btn-color">Login</button>
+                <?php endif; ?>
+                <form action="<?= route_to('auth'); ?>" method="POST">
+                    <div class="mb-3"><label class="text-normal text-dark form-label">Email</label> <input type="email" class="form-control" name="email" placeholder="Masukkan email"></div>
+                    <div class="mb-3"><label class="text-normal text-dark form-label">Password</label> <input type="password" class="form-control" name="password" placeholder="Masukkan Password"></div>
+                    <div class="">
+                        <div class="peers ai-c jc-sb fxw-nw">
+                            <div class="peer">
+                                <button type="submit" name="submit" class="btn btn-primary btn-color">Login</button>
+                            </div>
+                            <div class="peer">&nbsp;</div>
                         </div>
-                        <div class="peer">&nbsp;</div>
                     </div>
-                </div>
-            </form>
+                </form>
         </div>
     </div>
 </body>

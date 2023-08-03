@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\GolonganModel;
 use App\Models\UsersModel;
 
 class Setting extends BaseController
@@ -9,8 +10,10 @@ class Setting extends BaseController
     public function index()
     {
         $user       = new UsersModel();
+        $golongan = new GolonganModel();
         $data = [
-            'user'  => $user->find(session()->get('id_users')),
+            'user'  => $user->join('golongan', 'golongan.id_golongan = users.golongan')->find(session()->get('id_users')),
+            'golongan'  => $golongan->orderBy('nama_golongan', "ASC")->findAll(),
         ];
         return view('admin/setting', $data);
     }
@@ -28,12 +31,18 @@ class Setting extends BaseController
                     'required' => '{field} Wajib diisi !',
                 ]
             ],
-            'username' => [
-                'label' => 'Username',
-                'rules' => "required|is_unique[users.username, id_users, $id]",
+            'golongan' => [
+                'label' => 'Pangkat/Golongan',
+                'rules' => 'required',
                 'errors' => [
                     'required' => '{field} Wajib diisi !',
-                    'is_unique' => 'Username sudah digunakan, cari yang lain!'
+                ]
+            ],
+            'jabatan' => [
+                'label' => 'Jabatan',
+                'rules' => 'required',
+                'errors' => [
+                    'required' => '{field} Wajib diisi !',
                 ]
             ],
             'foto' => [
@@ -45,11 +54,30 @@ class Setting extends BaseController
                 ]
             ],
         ])) {
+
+            if (session('role') == 'admin' || session('role') == 'pimpinan') {
+                if (!$this->validate([
+                    'email'    => [
+                        'label'  => 'email',
+                        'rules'  => "required|is_unique[users.email, id_users, $id]",
+                        'errors' => [
+                            'required'  => '{field} Wajib diisi !',
+                            'is_unique' => 'email sudah digunakan, cari yang lain!'
+                        ]
+                    ]
+                ])) {
+                    Session()->setFlashdata('errors', \config\Services::validation()->getErrors());
+                    return redirect()->back();
+                }
+            }
+
             $foto = $this->request->getFile('foto');
             if ($foto->getError() == 4) {
                 $data = [
                     'name' => $this->request->getVar('name') ? $this->request->getVar('name') : $data['name'],
-                    'username' => $this->request->getVar('username') ? $this->request->getVar('username') : $data['username'],
+                    'email' => $this->request->getVar('email') ? $this->request->getVar('email') : $data['email'],
+                    'golongan' => $this->request->getVar('golongan') ? $this->request->getVar('golongan') : $data['golongan'],
+                    'jabatan' => $this->request->getVar('jabatan') ? $this->request->getVar('jabatan') : $data['jabatan'],
                     'role' => $data['role'],
                     'password' => empty($this->request->getVar('password')) ? $data['password'] : password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                 ];
@@ -65,7 +93,9 @@ class Setting extends BaseController
 
                 $data = [
                     'name' => $this->request->getVar('name') ? $this->request->getVar('name') : $data['name'],
-                    'username' => $this->request->getVar('username') ? $this->request->getVar('username') : $data['username'],
+                    'email' => $this->request->getVar('email') ? $this->request->getVar('email') : $data['email'],
+                    'golongan' => $this->request->getVar('golongan') ? $this->request->getVar('golongan') : $data['golongan'],
+                    'jabatan' => $this->request->getVar('jabatan') ? $this->request->getVar('jabatan') : $data['jabatan'],
                     'role' => $data['role'],
                     'password' => empty($this->request->getVar('password')) ? $data['password'] : password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
                     'picture' => $nama_file,
