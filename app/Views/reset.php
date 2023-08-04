@@ -86,24 +86,30 @@
             <h4 class="fw-300 c-grey-900 mB-40">
                 <center>E-GaWai</center>
             </h4>
-            <h4 class="fw-300 c-grey-900 mB-40"><b>Login</b></h4>
-            <?php if (session()->getFlashdata('msg')) : ?>
-                <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
+            <h4 class="fw-300 c-grey-900 mB-40"><b>Reset Password</b></h4>
+            <?php if ($errors = session()->getFlashdata('msg')) : ?>
+                <div class="alert alert-danger">
+                    <?php foreach ($errors as $key => $value) { ?>
+                        <li><?= esc($value) ?></li>
+                    <?php } ?>
+                </div>
             <?php endif; ?>
-            <form action="<?= route_to('auth'); ?>" method="POST">
-                <div class="mb-3"><label class="text-normal text-dark form-label">Email</label> <input type="email" class="form-control" name="email" placeholder="Masukkan email"></div>
-                <div class="mb-3"><label class="text-normal text-dark form-label">Password</label> <input type="password" class="form-control" name="password" placeholder="Masukkan Password"></div>
-                <a style="margin-bottom: 10px;display: block;" href="<?= base_url('forgot'); ?>">Lupa Password?</a>
+            <?php if (session()->getFlashdata('pesan')) : ?>
+                <div class="alert alert-success"><?= session()->getFlashdata('pesan') ?></div>
+            <?php endif; ?>
+            <form action="<?= route_to('update-password'); ?>" method="POST">
+                <input type="hidden" name="token" value="<?= $token ?>">
+                <div class="mb-3"><label class="text-normal text-dark form-label">Password</label> <input type="password" class="form-control" name="password" placeholder="*******"></div>
+                <div class="mb-3"><label class="text-normal text-dark form-label">Konfirmasi Password</label> <input type="password" class="form-control" name="password2" placeholder="*******"></div>
                 <div class="">
                     <div class="peers ai-c jc-sb fxw-nw">
                         <div class="peer">
-                            <button type="submit" name="submit" class="btn btn-primary btn-color">Login</button>
+                            <button type="submit" name="submit" class="btn btn-primary btn-color">Reset</button>
                         </div>
                         <div class="peer">&nbsp;</div>
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2023 at 10:35 PM
+-- Generation Time: Aug 04, 2023 at 02:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -145,6 +145,27 @@ INSERT INTO `pegawai` (`id_pegawai`, `nama_pegawai`, `nip`, `jabatan`, `tmt_jaba
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created` date NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tokens`
+--
+
+INSERT INTO `tokens` (`id`, `token`, `created`, `user_id`) VALUES
+(16, 'f7ea2d9c69519a4ea1c985e587108447', '2023-08-04', 3),
+(17, '77a29267debdd22af2ccb90cefd056f4', '2023-08-04', 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -168,7 +189,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_users`, `name`, `email`, `password`, `role`, `nip`, `golongan`, `jabatan`, `unit`, `kepala`, `picture`) VALUES
 (2, 'Admin Sekertariat', 'admin@mail.com', '$2y$10$4UDQyhiz801cUw50KR008uHU2Cgu05OyTF8w7AzggtzGF4kKXrwy2', 'admin', 111111111111111111, 1, 'Admin Edit', 'Sekertariat', 'Kasubag Umum dan Kepegawaian', '1686554628_faa13db96fb61e83d413.png'),
-(3, 'User, S.E', 'user@mail.com', '$2y$10$AmzyIGcJddmCMIrA7LKSfuPlTwYvIvonGW7KnlTfAPoW/9jTomyki', 'user', 111111111111111112, 1, 'Pengelola Data Bidang PPD', 'Perencanaan dan Pendanaan Daerah', 'Feri Septiawan, S.E., M.M', '1686554352_cf18d0b742818240dd3d.png'),
+(3, 'User, S.E', 'user@mail.com', '$2y$10$zHnJZdhd1u0cWzVkyVhYMeuHuU1RiudB1gL3UaSzSYpnnOYoz/Auy', 'user', 111111111111111112, 1, 'Pengelola Data Bidang PPD', 'Perencanaan dan Pendanaan Daerah', 'Feri Septiawan, S.E., M.M', '1686554352_cf18d0b742818240dd3d.png'),
 (10, 'Pimpinan', 'pimpinan@mail.com', '$2y$10$8.11ncROyFeBuzjOh/u0gOTovR6aXmDJh0uNPHMR0u5cnRkHc5srG', 'pimpinan', 123123, 9, 'pimpinan', 'Kominfo', 'pimpinan', 'default.jpg'),
 (11, 'User 2', 'user2@mail.com', '$2y$10$Rte/3Nn8CsIfS9FyRXo3V.lzP.9j878SmWHXGRkjwOO2fBHzpq6Xm', 'user', 123131, 4, 'kepala', 'bapperida', 'kominfo', 'default.jpg');
 
@@ -199,6 +220,12 @@ ALTER TABLE `kinerja`
 --
 ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`id_pegawai`);
+
+--
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -233,6 +260,12 @@ ALTER TABLE `kinerja`
 --
 ALTER TABLE `pegawai`
   MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`

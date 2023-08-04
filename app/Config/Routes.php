@@ -84,6 +84,13 @@ $routes->get('/logout', 'Auth::logout', ['as' => 'logout']);
 // Setting Section
 $routes->get('/setting', 'Setting::index', ['as' => 'setting', 'filter' => 'auth']);
 $routes->post('/setting/update', 'Setting::update', ['as' => 'setting-update', 'filter' => 'auth']);
+
+// Forgot Section
+// --- Forgot Password Section
+$routes->get('/forgot', 'Auth::forgot', ['as' => 'forgot']);
+$routes->post('/forgot/password', 'Auth::forgotPassword', ['as' => 'forgot-password']);
+$routes->get('/reset-password/(:segment)', 'Auth::resetPassword/$1', ['as' => 'reset-password']);
+$routes->post('/update-password', 'Auth::updatePassword', ['as' => 'update-password']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
