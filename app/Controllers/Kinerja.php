@@ -114,6 +114,21 @@ class Kinerja extends BaseController
         }
     }
 
+    public function tolak()
+    {
+        $kinerja = new KinerjaModel();
+        $data = $kinerja->find($this->request->getVar('id_kinerja'));
+        $data = [
+            'status' => 'ditolak',
+            'keterangan' => $this->request->getVar('keterangan')
+        ];
+        $kinerja->set($data)
+            ->where('id_kinerja', $this->request->getVar('id_kinerja'))
+            ->update();
+        session()->setFlashdata('pesan', 'Kinerja berhasil ditolak');
+        return redirect()->back();
+    }
+
     public function verifPimpinan()
     {
         $kinerja = new KinerjaModel();
@@ -138,7 +153,7 @@ class Kinerja extends BaseController
         $kinerja = new KinerjaModel();
         $getData = $kinerja->find($id);
 
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && ($getData['status'] == "admin" || $getData['status'] == "ditolak") && session('role') !== 'pimpinan') {
             $data = [
                 'kinerja'  => $kinerja->find($id),
             ];
@@ -152,7 +167,7 @@ class Kinerja extends BaseController
     {
         $kinerja = new KinerjaModel();
         $getData = $kinerja->find($this->request->getVar('id_kinerja'));
-        if (session('id_users') == $getData['id_users'] && $getData['status'] == "admin" && session('role') !== 'pimpinan') {
+        if (session('id_users') == $getData['id_users'] && ($getData['status'] == "admin" || $getData['status'] == "ditolak") && session('role') !== 'pimpinan') {
             if ($this->validate([
                 'capaian' => [
                     'label' => 'Capaian Kinerja',
@@ -199,6 +214,8 @@ class Kinerja extends BaseController
                     'realisasi' => $this->request->getVar('realisasi'),
                     'kuantitas' => $this->request->getVar('kuantitas'),
                     'point' => $this->request->getVar('point'),
+                    'keterangan' => NULL,
+                    'status' => 'admin',
                     'id_users' => session('id_users'),
                 ];
                 $kinerja->set($data)

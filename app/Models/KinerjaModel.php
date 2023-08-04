@@ -8,5 +8,5 @@ class KinerjaModel extends Model
 {
     protected $table      = 'kinerja';
     protected $primaryKey = 'id_kinerja';
-    protected $allowedFields = ['capaian', 'realisasi', 'kuantitas', 'point', 'status', 'id_users'];
+    protected $allowedFields = ['keterangan', 'capaian', 'realisasi', 'kuantitas', 'point', 'status', 'id_users'];
 }

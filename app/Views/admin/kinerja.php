@@ -128,9 +128,10 @@
                                     <?php if (session('role') == 'admin' || session('role') == 'pimpinan') : ?>
                                         <td><?= $data['name']; ?></td>
                                     <?php endif; ?>
-                                    <td>
-                                        <span class="badge <?php if ($data['status'] == 'terverifikasi') {
+                                    <td><span class="badge <?php if ($data['status'] == 'terverifikasi') {
                                                                 echo 'bg-primary';
+                                                            } else if ($data['status'] == 'ditolak') {
+                                                                echo 'bg-danger';
                                                             } else {
                                                                 echo 'bg-warning';
                                                             } ?>">
@@ -144,12 +145,21 @@
 
                                             <?php if ($data['status'] == 'pimpinan') {
                                                 echo 'Menunggu verifikasi pimpinan';
+                                            } ?>
+
+                                            <?php if ($data['status'] == 'ditolak') {
+                                                echo 'Ditolak';
                                             }
-                                            ?></span>
+                                            ?>
+                                        </span>
+                                        <?php if ($data['keterangan'] !== NULL) : ?>
+                                            <span>Keterangan: <br></span>
+                                            <span><?= $data['keterangan']; ?></span>
+                                        <?php endif; ?>
                                     </td>
                                     <td>
                                         <ul class="list-inline m-0 d-flex">
-                                            <?php if ($data['status'] == 'admin' && $data['id_users'] == session('id_users')) : ?>
+                                            <?php if (($data['status'] == 'admin' || $data['status'] == 'ditolak') && $data['id_users'] == session('id_users')) : ?>
 
                                                 <li class="list-inline-item mail-delete">
                                                     <a href="<?= base_url(''); ?>kinerja/edit/<?= $data['id_kinerja']; ?>" class="td-n btn c-deep-purple-500 cH-blue-500 fsz-md p-5">
@@ -158,7 +168,7 @@
                                                 </li>
                                             <?php endif; ?>
 
-                                            <?php if ($data['id_users'] == session('id_users') && session('role') == 'user' && $data['status'] == 'admin') : ?>
+                                            <?php if ($data['id_users'] == session('id_users') && session('role') == 'user' && ($data['status'] == 'admin' || $data['status'] == 'ditolak')) : ?>
                                                 <li class="list-inline-item mail-unread">
                                                     <button type="button" class="td-n btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#hapuskinerja<?= $data['id_kinerja']; ?>">
                                                         <i class="ti-trash"></i>
@@ -201,10 +211,51 @@
 
                                             <?php if ($data['status'] == 'admin' && session('role') == 'admin') : ?>
                                                 <li class="list-inline-item mail-unread">
-                                                    <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifkinerja<?= $data['id_kinerja']; ?>">
-                                                        <?= $data['status'] == 'admin' ? 'ACC' : 'Verifikasi'; ?>
+                                                    <button type="button" class="btn-outline-success btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifkinerja<?= $data['id_kinerja']; ?>">
+                                                        ACC
+                                                    </button>
+                                                    <button type="button" class="btn-outline-danger btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#tolak<?= $data['id_kinerja']; ?>">
+                                                        Tolak
                                                     </button>
                                                 </li>
+
+                                                <!--Tolak Kinerja Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="tolak<?= $data['id_kinerja']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Berikan Keterangan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('kinerja-tolak'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <label for="name">Keterangan</label>
+                                                                        <div class="position-relative">
+                                                                            <input type="text" name="keterangan" class="form-control" placeholder="Masukkan Keterangan" id="name">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-pencil"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <input type="number" name="id_kinerja" value="<?= $data['id_kinerja']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Tolak Kinerja Modal Content End-->
 
                                                 <!--Verifikasi Kinerja Modal Content -->
                                                 <div class="modal fade text-left modal-borderless" id="verifkinerja<?= $data['id_kinerja']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
@@ -241,10 +292,51 @@
 
                                             <?php if ($data['status'] == 'pimpinan' && session('role') == 'pimpinan') : ?>
                                                 <li class="list-inline-item mail-unread">
-                                                    <button type="button" class="td-n btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifkinerjap<?= $data['id_kinerja']; ?>">
-                                                        <i class="ti-check"></i>
+                                                    <button type="button" class="btn-outline-success btn c-green-500 cH-green-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#verifkinerjap<?= $data['id_kinerja']; ?>">
+                                                        Verifikasi
+                                                    </button>
+                                                    <button type="button" class="btn-outline-danger  btn c-red-500 cH-red-500 fsz-md p-5" data-bs-toggle="modal" data-bs-target="#tolak<?= $data['id_kinerja']; ?>">
+                                                        Tolak
                                                     </button>
                                                 </li>
+
+                                                <!--Tolak Kinerja Modal Content -->
+                                                <div class="modal fade text-left modal-borderless" id="tolak<?= $data['id_kinerja']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Berikan Keterangan</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                </button>
+                                                            </div>
+
+                                                            <form action="<?= route_to('kinerja-tolak'); ?>" method="POST">
+
+                                                                <div class="modal-body">
+                                                                    <div class="form-group has-icon-left">
+                                                                        <label for="name">Keterangan</label>
+                                                                        <div class="position-relative">
+                                                                            <input type="text" name="keterangan" class="form-control" placeholder="Masukkan Keterangan" id="name">
+                                                                            <div class="form-control-icon">
+                                                                                <i class="bi bi-pencil"></i>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <input type="number" name="id_kinerja" value="<?= $data['id_kinerja']; ?>" hidden>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-primary ml-1" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Tidak</span>
+                                                                    </button>
+                                                                    <button name="submit" type="submit" class="btn btn-primary btn-color" data-bs-dismiss="modal">
+                                                                        <span class="d-sm-block">Ya</span>
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Tolak Kinerja Modal Content End-->
 
                                                 <!--Verifikasi Kinerja Modal Content -->
                                                 <div class="modal fade text-left modal-borderless" id="verifkinerjap<?= $data['id_kinerja']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">

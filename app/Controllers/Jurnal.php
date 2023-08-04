@@ -54,7 +54,7 @@ class Jurnal extends BaseController
         endif;
         $kinerja = new KinerjaModel();
         $data = [
-            'kinerja' => $kinerja->where('id_users', session('id_users'))->findAll(),
+            'kinerja' => $kinerja->where('id_users', session('id_users'))->where('status', 'terverifikasi')->findAll(),
         ];
         return view('admin/jurnal-add', $data);
     }

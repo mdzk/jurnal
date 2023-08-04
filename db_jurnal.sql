@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 04, 2023 at 02:52 AM
+-- Generation Time: Aug 04, 2023 at 08:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -97,7 +97,8 @@ CREATE TABLE `kinerja` (
   `realisasi` varchar(255) NOT NULL,
   `kuantitas` varchar(255) NOT NULL,
   `point` int(11) NOT NULL,
-  `status` enum('terverifikasi','admin','pimpinan') NOT NULL,
+  `status` enum('terverifikasi','admin','pimpinan','ditolak') NOT NULL,
+  `keterangan` varchar(255) DEFAULT NULL,
   `id_users` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -105,10 +106,10 @@ CREATE TABLE `kinerja` (
 -- Dumping data for table `kinerja`
 --
 
-INSERT INTO `kinerja` (`id_kinerja`, `capaian`, `realisasi`, `kuantitas`, `point`, `status`, `id_users`) VALUES
-(14, 'Pelaksanaan Penyusunan dan Penetapan Rancangan Awal Dokumen Perencanaan Pembangunan Daerah Kabupaten/Kota', '8 Bulan', '20 Buku', 75, 'terverifikasi', 3),
-(16, 'Pelaksanaan MUSRENBANG Kabupaten/Kota', '1 Bulan', '1 Berita Acara', 20, 'terverifikasi', 3),
-(18, 'sadsa', 'saf', 'asf', 1, 'terverifikasi', 3);
+INSERT INTO `kinerja` (`id_kinerja`, `capaian`, `realisasi`, `kuantitas`, `point`, `status`, `keterangan`, `id_users`) VALUES
+(14, 'Pelaksanaan Penyusunan dan Penetapan Rancangan Awal Dokumen Perencanaan Pembangunan Daerah Kabupaten/Kota', '8 Bulan', '20 Buku', 75, 'terverifikasi', NULL, 3),
+(16, 'Pelaksanaan MUSRENBANG Kabupaten/Kota', '1 Bulan', '1 Berita Acara', 20, 'terverifikasi', NULL, 3),
+(18, 'Membuat Laporan', '1 Bulan', '1 Laporan', 20, 'terverifikasi', NULL, 3);
 
 -- --------------------------------------------------------
 

@@ -49,6 +49,7 @@ $routes->get('/kinerja/edit/(:num)', 'Kinerja::edit/$1', ['as' => 'kinerja-edit'
 $routes->post('/kinerja/delete', 'Kinerja::delete', ['as' => 'kinerja-delete', 'filter' => 'auth']);
 $routes->post('/kinerja/update', 'Kinerja::update', ['as' => 'kinerja-update', 'filter' => 'auth']);
 $routes->post('/kinerja/verif', 'Kinerja::verif', ['as' => 'kinerja-verif', 'filter' => 'auth']);
+$routes->post('/kinerja/tolak', 'Kinerja::tolak', ['as' => 'kinerja-tolak', 'filter' => 'auth']);
 $routes->post('/kinerja/verif-pimpinan', 'Kinerja::verifPimpinan', ['as' => 'kinerja-verif-pimpinan', 'filter' => 'auth']);
 
 // Jurnal Section
